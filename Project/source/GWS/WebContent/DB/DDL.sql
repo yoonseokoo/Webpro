@@ -31,17 +31,17 @@ CREATE TABLE MEMBER(
 DROP TABLE BOARD;
  
  CREATE TABLE BOARD(
-    BID NUMBER(6) PRIMARY KEY,                                                  -- 글번호
+    BID NUMBER(6) PRIMARY KEY,                           -- 글번호
     MID VARCHAR2(30) REFERENCES MEMBER(MID) NOT NULL,    -- 고객 아이디
-    BTITLE VARCHAR2(100) NOT NULL,                                           -- 글제목
-    BCONTENT VARCHAR2(4000),                                                      -- 글내용
-    BIMAGE VARCHAR2(30),                                                              -- 글 첨부 이미지
-    BHIT NUMBER(6) DEFAULT 0 NOT NULL,                                    -- 조회수
-    BGROUP NUMBER(6) NOT NULL,                                                --  답글위한 그룹
-    BSTEP NUMBER(6) DEFAULT 0 NOT NULL,                                 -- 글 순서
-    BINDENT NUMBER(6) DEFAULT 0 NOT NULL,                              -- 들여쓰기기
-    BRDATE DATE DEFAULT SYSDATE,                                             -- 글작성일
-    ONO NUMBER(6));                                                                       -- 주문번호
+    BTITLE VARCHAR2(100) NOT NULL,                       -- 글제목
+    BCONTENT VARCHAR2(4000),                             -- 글내용
+    BIMAGE VARCHAR2(30),                                 -- 글 첨부 이미지
+    BHIT NUMBER(6) DEFAULT 0 NOT NULL,                   -- 조회수
+    BGROUP NUMBER(6) NOT NULL,                           --  답글위한 그룹
+    BSTEP NUMBER(6) DEFAULT 0 NOT NULL,                  -- 글 순서
+    BINDENT NUMBER(6) DEFAULT 0 NOT NULL,                -- 들여쓰기기
+    BRDATE DATE DEFAULT SYSDATE,                         -- 글작성일
+    ONO NUMBER(6));                                      -- 주문번호
 
  DROP SEQUENCE BOARD_SEQ;
  
@@ -55,12 +55,12 @@ DROP TABLE BOARD;
 DROP TABLE ORDERS CASCADE CONSTRAINTS;
 
 CREATE TABLE ORDERS(
-    ONO NUMBER(6) PRIMARY KEY,                                   -- 주문번호
-    ONAME VARCHAR2(30),                                                 -- 주문 고객 이름
-    OPHONE VARCHAR2(30),                                               -- 받는사람 이름                                       
-    OADDRESS VARCHAR2(100),                                           -- 배달 주소
-    ODATE DATE DEFAULT SYSDATE,                                  -- 주문일
-    MID VARCHAR2(30) REFERENCES MEMBER(MID) );       --고객 아이디
+    ONO NUMBER(6) PRIMARY KEY,                            -- 주문번호
+    ONAME VARCHAR2(30),                                   -- 주문 고객 이름
+    OPHONE VARCHAR2(30),                                  -- 받는사람 이름                                       
+    OADDRESS VARCHAR2(100),                               -- 배달 주소
+    ODATE DATE DEFAULT SYSDATE,                           -- 주문일
+    MID VARCHAR2(30) REFERENCES MEMBER(MID) );            --고객 아이디
     
 DROP SEQUENCE ORDERNUM_SEQ;
 
@@ -81,13 +81,7 @@ CREATE TABLE ORDER_DETAIL(
     TOTCOST NUMBER(9) NOT NULL,
     DISCOUNT NUMBER(9),
     PAYAMOUNT NUMBER(9) NOT NULL);
-    
-DROP SEQUENCE ORDERNUM_SEQ;
-
-CREATE SEQUENCE ORDERNUM_SEQ
-    MAXVALUE 999999
-    NOCYCLE
-    NOCACHE;    
+     
 
 
 -- ■■■■■ PRODUCT TABLE ■■■■■ --
@@ -148,7 +142,7 @@ CREATE SEQUENCE REVIEW_SEQ
 DROP TABLE CART;
 
 CREATE TABLE CART(
-    CARTTNO NUMBER(6) PRIMARY KEY,
+    CARTNO NUMBER(6) PRIMARY KEY,
     MID VARCHAR2(30) REFERENCES MEMBER(MID),
     PID VARCHAR2(30) REFERENCES PRODUCT(PID),
     PCNT NUMBER(6) NOT NULL);
