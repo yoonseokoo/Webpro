@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+
+            table tr td {
+                width: 100px;
+                background-color: white;
+                text-align: center;
+            }
+    </style>
+    <script>
+        window.onkeyup = function () {
+            var num = 0;
+            var color;
+            var coordinate = document.querySelectorAll('td'); //배열로 받고
+            
+            if (event.keyCode >= 48 && event.keyCode < 57) {
+                num = Number(event.keyCode) - 48;
+                color = 'yellow';
+            } else if (event.keyCode >= 96 && event.keyCode < 105) {
+                num = Number(event.keyCode) - 96;
+                color = 'red';
+            }
+            for (var i in coordinate) {
+                coordinate[i].style.backgroundColor = 'white'; //나머지 흰색
+                var coord = Number(coordinate[i].innerText);
+                if (num == coord) {
+                    coordinate[i].style.backgroundColor = color;
+                }
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+    </table>
+</body>
+</html>

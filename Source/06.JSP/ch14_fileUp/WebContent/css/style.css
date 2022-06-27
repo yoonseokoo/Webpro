@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+	body { 
+		background-color: beige;
+		font-size: 9pt;
+	}
+	table {
+		border: 3px solid #c7b198; 
+		width:95%; 
+		margin: 10px auto;
+	}
+	table tr { 
+		background-color:  #c7b198; 
+		height: 40px;
+	}
+	table tr:hover {
+		background-color: #c7b198;
+		cursor: pointer;
+	}
+	td, th {
+		text-align: center; 
+		padding:5px; 
+	}
+	caption {
+		font-size: 25px; 
+		padding:10px;
+	}
+	h2, b{
+		text-align: center; 
+		color:red;
+	}
+	a { 
+		text-decoration: none; 
+		color:#596e79;
+	}
+	.left{
+		text-align: left;
+	}
+	.paging {
+		text-align: center;
+	}
+	input:not(.btn), textarea {
+		width: 90%;
+	}
+	

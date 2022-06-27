@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        String.prototype.replaceA = function(oldStr, newStr) {
+            var s1 = this.split(oldStr);
+            var s2 = s1.join(newStr);
+            return s2;
+};
+var str = 'abc@abcd@abc';
+        document.write('Change @ to - : ' + str.replaceA('@', '-') + '<br>'); // abc-abcd-abc
+        document.write('Remove all @ : ' + str.replaceA('@', '') + '<br>'); //abcacbacb
+        document.write('String length : ' + str.length + '<br>'); //12
+        document.write('Connect strings : ' + str.concat(str) + '<br>'); //@abcd@abc
+        document.write('Print 5 letters starting from the 3rd: ' + str.substr(3, 5) + '<br>'); //@abcd
+        document.write('Print letters between 3rd and 5th: ' + str.substring(3, 5) + '<br>'); //@a
+        document.write('first @: ' + str.indexOf('@') + '<br>'); //3
+        document.write('last @: ' + str.lastIndexOf('@') + '<br>'); //8
+        document.write('Attempt of finding inexisting letter' + str.indexOf('x') + '<br>'); //-1
+        document.write('elimiate space that surrounds word: ' + '   abc   '.trim() + '<br>');
+        document.write('elimiate space: ' + '   abc   abc  '.replaceA(' ', '') + '<br>');
+        document.write('Changing to uppercase: ' + str.toUpperCase() + '<br>');
+        document.write('Changing to lowercase: ' + str.toLowerCase() + '<br>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

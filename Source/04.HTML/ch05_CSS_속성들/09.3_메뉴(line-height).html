@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav {
+            width: 800px;
+            margin: 10px auto;
+            border: 1px solid black;
+        }
+
+            #nav ul {
+                overflow: hidden;
+            }
+
+                #nav ul li {
+                    float: left;
+                    list-style: none;
+                    width: 150px;
+                    height: 100px;
+                    line-height: 100px;
+                    text-align: center;
+                    margin: 5px;
+                    border-top: 1px solid red;
+                    border-bottom: 1px solid red;
+                    font-size: 24px;
+                }
+
+                    #nav ul li a {
+                        text-decoration: none;
+                        color: blue;
+                        display: block; /*a 태그의 영역을 확장*/
+                    }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul>
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+            <li><a href="#">menu5</a></li>
+        </ul>
+    </div>
+</body>
+</html>

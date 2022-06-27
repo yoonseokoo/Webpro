@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$('tr').click(function(){
+				var no = $(this).children().eq(0).text();
+				//alert(no);
+				if(!isNaN(Number(no))){
+				 location.href = "03_toggle.htm?no="+no;
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<body>
+	<table>
+		<tr><th>Post No</th><th>Title</th><th>Writer</th><th>Clicks</th></tr>
+		<tr><th>4</th><th>Title4</th><th>Don</th><th>44</th></tr>
+		<tr><th>3</th><th>Title3</th><th>Charlie</th><th>20</th></tr>
+		<tr><th>2</th><th>Title2</th><th>Ben</th><th>30</th></tr>
+		<tr><th>1</th><th>Title1</th><th>Amy</th><th>7</th></tr>
+	</table>
+</body>
+</body>
+</html>

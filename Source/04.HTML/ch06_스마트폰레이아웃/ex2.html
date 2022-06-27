@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
+    <title></title>
+    <!-- 인터넷 폰트-->
+    <style>
+        /**********페이지 초기화**********/
+        * {
+            padding:0;
+            margin:0;
+            font-family: 'Gill Sans'
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration:none;
+        }
+        /**********header**********/
+        header {
+            background-color: #ea8f00;
+            height:100px;
+        }
+        /**********header #logo_wrap**********/
+        header #logo_wrap{
+            height: 50px;
+            line-height:50px;
+            text-align:center;
+            position:relative;
+        }
+        header #logo_wrap img.menu {
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        header #logo_wrap img.myinfo {
+            position:absolute;
+            top:0;
+            right:0;
+        }
+        header #logo_wrap a.logo {
+            color:#FFFFFF;
+        }
+        /**********header #search**********/
+        header #search {
+            height:50px;
+            position:relative;
+        }
+        header #search input[type='text']{
+            width:100%;
+            height:50px;
+            border:3px solid #ea8f00;
+            padding: 5px 55px 5px 55px;
+            box-sizing:border-box;
+            font-size:1.3em;
+            outline:none;
+        }
+        header #search input[type='submit']{ /*space indicates "#search that is under header", and no space indicates "input of type..."*/
+            height:50px;
+            width:50px;
+            background: url('img2/search.png');
+            border:0;
+            outline:0;
+            position:absolute;
+            top:0;
+            right:0px;
+        }
+        /********** #lnb **********/
+        #lnb ul{
+            overflow:hidden;
+            margin:5px 0;
+        }
+        #lnb ul li{
+            float:left;
+            width:16.666666%;
+            text-align:center;
+            border-right: 1px solid #ea8f00;
+            box-sizing:border-box;
+        }
+        #lnb ul li:last-child{
+            border:0;
+        }
+        #lnb ul li a{
+            color: Highlight;
+            font-weight:bold;
+        }
+        /********** #section1 **********/
+        #section1 .row1, #section1 .row2, #section1 .row3{
+            overflow:hidden;
+        }
+         .row1 div, .row2 div, .row3 div{
+            float:left;
+            width:50%;
+            height:135px;
+            border:2px solid white;
+            box-sizing:border-box;
+        }
+        #section1 img {
+            width:100%;
+            height: inherit;
+        }
+        /********** #section2 **********/
+        #section2{
+            margin:5px;
+        }
+        #section2 ul li{
+            border:1px solid lightgray;
+            padding:8px;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        #section2 ul li a{
+            color:black;
+            font-weight:bold;
+        }
+        /********** #section3 **********/
+        #section3 ul li {
+            border:1px solid lightgray;
+            margin:5px;
+            padding:5px;
+            height:120px;
+            position:relative;
+        }
+        #section3 ul li p.img{
+            position:absolute;
+        }
+        #section3 ul li p.txt{
+            width:100%-100px;
+            padding: 5px 10px 0 110px;
+        }
+        #section3 ul li p.txt span:first-child{
+            display:block;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            font-size:1.2em;
+            font-weight:bold;
+            color:darkblue;
+        }
+        /********** #footer **********/
+        footer {
+            background-color:#ea8f00;
+            text-align:center;
+            padding-bottom:10px;
+        }
+        footer p:last-child{
+            font-size: .8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo_wrap">
+            <img src="img2/menu.png" class="menu" alt="매뉴 아이콘" />
+            <a href="ex2.html" class="logo"><h3>mobile logo</h3></a>
+            <img src="img2/myinfo.png" class="myinfo" alt="내정보 아이콘" />
+        </div>
+        <div id="search">
+            <form action="#">
+                <input type="text" name="query_word" />
+                <input type="submit" value="" />
+            </form>
+        </div>
+    </header>
+    <div id="lnb">
+        <ul>
+            <li><a href="#lnb1">lnb1</a></li>
+            <li><a href="#lnb2">lnb2</a></li>
+            <li><a href="#lnb3">lnb3</a></li>
+            <li><a href="#lnb4">lnb4</a></li>
+            <li><a href="#lnb5">lnb5</a></li>
+            <li><a href="#lnb6">lnb6</a></li>
+        </ul>
+    </div>
+    <section>
+        <div id="section1">
+            <div class="row1">
+                <div>
+                    <a href="https://www.vogue.com/article/rihanna-cover-may-2022">
+                        <img src="https://assets.vogue.com/photos/625455c9f823afe13d322298/master/w_960,c_limit/VO0522_CoverStory_01_b.jpg" alt="1행1열 기사" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.vogue.com/article/bella-hadid-cover-april-2022">
+                        <img src="https://assets.vogue.com/photos/622b6938f1c0bf717ac69d00/master/w_960,c_limit/VO0422_SocialCover_Logo.jpg" alt="1행2열 기사" />
+                    </a>
+                </div>
+            </div>
+            <div class="row2">
+                <div>
+                    <a href="https://www.vogue.com/article/hoyeon-jung-squid-game-actress-cover-story-profile">
+                        <img src="https://assets.vogue.com/photos/61bd03294e719539997e9d25/master/w_960,c_limit/VO0222_CoverStory_01_horizontal.jpg" alt="2행1열 기사" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.vogue.com/article/just-one-thing-may-2022">
+                        <img src="https://assets.vogue.com/photos/62585d7dee7adf6ba23fb045/master/w_960,c_limit/220303_CM_VOGUE_LOOK05_6202_R5.jpg" alt="2행2열 기사" />
+                    </a>
+                </div>
+            </div>
+            <div class="row3">
+                <div>
+                    <a href="https://www.vogue.com/article/female-correspondents-war-coverage-ukraine">
+                        <img src="https://assets.vogue.com/photos/6261ced61f84b2127bc86a81/master/w_960,c_limit/VO0622_Correspondents_01.jpg" alt="3행1열 기사" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.vogue.com/article/florence-welch-florence-and-the-machine-dance-fever">
+                        <img src="https://assets.vogue.com/photos/6262b320cade8f348f22fa78/master/w_960,c_limit/53770009_FW_DE-WILDE_JB04C.jpg" alt="3행2열 기사" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="section2">
+            <ul>
+                <li>
+                    <a href="https://edition.cnn.com/2022/05/09/politics/linda-thomas-greenfield-vladimir-putin-victory-day/index.html">Exclusive: Putin 'has recognized he has no victory to celebrate'</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="https://edition.cnn.com/2022/05/09/business/mideast-oil-eu-mime-intl/index.html">The Middle East won't rescue Europe if it turns off Russian oil</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="https://edition.cnn.com/2022/05/09/asia/philippines-election-polls-close-intl-hnk/index.html">Polls close in pivotal Philippines election that could put Marcoses back in power</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="https://edition.cnn.com/2022/05/09/us/vicky-casey-white-alabama-manhunt-monday/index.html">Alabama corrections officer who escaped with inmate has died in hospital, sheriff says</a>
+                </li>
+            </ul>
+        </div>
+        <div id="section3">
+            <ul>
+                <li>
+                    <p class="img">
+                        <img src="https://via.placeholder.com/100x100" />
+                    </p>
+                    <p class="txt">
+                        <span>첫번째 span부분은 말줄임 할 예정입니다. 길면 말줄임태그 효과가 보이고 짧으면 효과가 안 보이지</span>
+                        <span>두번째 span부분은 다 나와. 그래서 2줄이상이 되기도 하죠.</span>
+                    </p>
+                </li>
+                <li>
+                    <p class="img">
+                        <img src="https://via.placeholder.com/100x100" />
+                    </p>
+                    <p class="txt">
+                        <span>첫번째 span부분은 말줄임 할 예정</span>
+                        <span>두번째 span부분은 다 나와. 그래서 2줄이상이 되기도 하죠.</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p><img src="img2/logo.png" alt="회사로고"/></p>
+        <p>서울시 강남구 역삼동 좋은빌딩 402호</p>
+    </footer>
+</body>
+</html>

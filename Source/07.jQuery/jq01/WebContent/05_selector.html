@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$('tr:even').css('background-color', 'gray');
+			$('tr:odd').css('background-color', '#FFFFAA');
+			$('tr:nth-child(2n)').css('color','red');
+			$('tr:eq(0)').css('background-color','black').css('color', 'white');
+		});
+	</script>
+
+</head>
+<body>
+	<table>
+		<tr><th>Post No</th><th>Title</th><th>Writer</th><th>Clicks</th></tr>
+		<tr><th>4</th><th>Title4</th><th>Don</th><th>44</th></tr>
+		<tr><th>3</th><th>Title3</th><th>Charlie</th><th>20</th></tr>
+		<tr><th>2</th><th>Title2</th><th>Ben</th><th>30</th></tr>
+		<tr><th>1</th><th>Title1</th><th>Amy</th><th>7</th></tr>
+	</table>
+</body>
+</html>

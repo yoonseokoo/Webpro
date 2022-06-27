@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		.purple{
+			color: #b8a9c9;
+		}
+		.blue{
+			color:#5b9aa0
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			var h1HitCnt = 0;
+			$('#h2').click(function() {
+				$(this).prepend('<b class="purple">♥</b>');
+				$(this).append('<b class="blue">♥</b>');
+			});
+			$('#h1').click(function() {
+				h1HitCnt ++;
+				if(h1HitCnt < 6) {
+					$(this).prepend('<span class="purple">♥</span>');
+					$(this).append('<span class="blue">♥</span>');
+				} else {
+					$('#h1').off();
+				}
+			});
+			setInterval(function(){
+				$('h1').first().trigger('click');
+			}, 2000);
+		});
+	</script>
+
+</head>
+<body>
+	<h1 id="h1">start1</h1>
+	<h1 id="h2">start2</h1>
+</body>
+</html>

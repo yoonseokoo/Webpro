@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function chk() {
+            if (idConfirm.value != 1) {
+               alert('중복확인 후 다시 실행하세요');
+                return false;
+            }
+        }
+                function checkId() {
+                   
+                    var child = open('confirm.html', '', 'width=600, height=700, left=100');
+                    if (!child) {
+                        alert('Please allow pop-ups');
+                    }
+                }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <form onsubmit="return chk()">
+            <input type="hidden" name="idConfirm" id="idConfirm" value="0"/>
+            <p>
+                아이디
+                <input type="text" id="id" size="14" />
+                <input type="button" value="중복확인" onclick="checkId();" size="5" />
+            </p>
+            <p><input type="submit" value="회원가입" size="5" /></p>
+        </form>
+    </div>
+</body>
+</html>

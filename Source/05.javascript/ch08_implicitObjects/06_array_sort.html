@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var arr1 = new Array('big', 'abc', 'zyx');
+        var arr2 = [52, 103, 273, 32, 57];
+
+        // [1] SORTING STRING VALUES (ascii code)
+        document.write('arr1 before sorting : ' + arr1 + '<br>');
+        arr1.sort();
+        document.write('arr1 sorted: ' + arr1 + '<br>');
+
+        // [2] SORTING NUMBER VALUES
+        document.write('arr2 before sorting : ' + arr2 + '<br>');
+        arr2.sort(function (left, right) {
+            return left - right; });
+        document.write('arr2 sorted: ' + arr2 + '<br>');
+
+        // [3] REVERSING ORDER
+        arr2.reverse();
+        document.write('arr2 reversed: ' + arr2 + '<br>');
+
+        // [4] SLICING
+        var sliceArr2 = arr2.slice(0, 3); //top three
+        document.write('arr2 top 3: ' + sliceArr2 + '<br>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:61265/sss.html# -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <style>
+        * {
+            padding:0;
+            margin:0;
+        }
+        @font-face {
+            font-family: 'unie';
+            src: url('Libre.ttf');
+        }
+        #back img {
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            opacity: 50%;
+        }
+        #wrap {
+            border: 1px solid black;
+            padding: 5px;
+            block-size: fit-content;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'unie';
+            position: relative;
+            height: 100%;
+            font-weight: bold;
+        }
+        #header {
+            margin: 5px;
+            padding: 5px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            block-size: fit-content;
+        }
+        #nav {
+            border: 1px solid black;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            height: 86px;
+            position:relative;
+        }
+
+        #menu ul {
+            overflow: hidden;
+            text-align: center;
+            padding: 5px;
+        }
+
+        #menu > ul > li {
+            width: 17%;
+            padding: 3px;
+            margin: 1%;
+            float: left;
+            list-style: none;
+            text-align: center;
+            background-color: #e6e3e4;
+        }
+        
+        #menu ul li a{
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            display:block;
+        }
+        #nav #menu > ul >li:hover a{
+            color: #865065;
+        }
+        #nav #menu .sub{
+            display: none;
+        }
+        #nav #menu > ul > li:hover .sub {
+            display: block;
+        }
+
+        ul li:first-child { /* 첫번째 li*/
+            border-radius: 20px 0 0 20px; /* 좌상 우상 우하 좌하 */
+            background-color: #dddddd;
+        }
+
+        ul li:last-child {
+            border-radius: 0 20px 20px 0;
+            background-color: #dddddd;
+        }
+        #content {
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+            overflow: hidden;
+            height: 50%;
+        }
+        #content .left {
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            width: 58%;
+            height: 192px;
+            }
+         #content .right {
+            border: 1px solid black;
+            float: left;
+            padding: 5px;
+            width: 34%;
+            margin: 5px;
+            height: 192px;
+            }
+        #footer {
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+            height: 10%;
+            font-size:12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="back">
+        <img src="./sss_files/gucci.jpg">
+        <div id="wrap">
+            <div id="header">
+                    <p>MILAN FASHION WEEK 2022</p>
+            </div>
+
+            <div id="nav">
+                <div class="up">
+                    <p>HIGH-END BRANDS</p>
+                </div>
+                <div class="down">
+                    <div id="menu">
+                        <ul>
+                            <li>
+                                <a href="http://localhost:61265/sss.html#1">menu1</a>
+                                <ul class="sub">
+                                    <li><a href="http://localhost:61265/sss.html#">111</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">222</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="http://localhost:61265/sss.html#2">menu2</a>
+                                <ul class="sub">
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="http://localhost:61265/sss.html#3">menu3</a>
+                                <ul class="sub">
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="http://localhost:61265/sss.html#4">menu4</a>
+                                <ul class="sub">
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="http://localhost:61265/sss.html#5">menu5</a> <ul class="sub">
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                    <li><a href="http://localhost:61265/sss.html#">Sub Item</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content">
+                <div class="left">
+                    <p>CONTENT</p>
+                </div>
+                <div class="right">
+                    <p>BANNER</p>
+                </div>
+            </div>
+
+            <div id="footer">
+                <p>
+                    © [name of rightsholder or rightsholders] [publication year]: e.g.  © XYZ Press and contributors 2014
+
+                    [date of terms of use]
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body></html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html> 
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--In the head section we set: [1] Design of the web document, [2] Dynamic part and [3] Setting-->
+    <meta charset="utf-8" /> 
+    <title> ch01 </title>
+    <style> /* Design(CSS)*/
+        body {
+            background-color: lightpink;
+            font-size: 30pt;
+        }
+    </style>
+    <script> /* Dynamic part (JavaScript)*/
+        name = prompt("What's your name?", "Eva Smith"); /* no need to specify type of variable (String/int/..)*/
+        if (name != 'null') {
+            document.write(name + "~ Welcome <br>");
+        }
+    </script>
+    </head>
+    <body>
+    <!-- In the body, we insert the content that will be printed -->
+    Hello <br />
+    The class will start today <br />
+    Nice to meet you
+</body>
+</html>

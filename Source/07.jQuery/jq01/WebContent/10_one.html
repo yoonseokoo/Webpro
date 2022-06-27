@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$('h1').one('click', function(){
+				$(this).append('<b>♥</b>').prepend('<b>♥</b>').css('color','green');
+			});
+			/* $('h1').click(function(){
+				$(this).append('<b>♥</b>').prepend('<b>♥</b>').css('color','green');
+				$(this).off();
+			}); */
+		});
+	</script>
+
+</head>
+<body>
+	<h1>This can be liked one time</h1>
+	<h1>This too can be liked only one time</h1>
+</body>
+</html>

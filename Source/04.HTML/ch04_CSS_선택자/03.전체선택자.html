@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * { /*SELECTS EVERYTHING*/
+            background-color: pink;
+            margin: 0;
+            padding: 0;
+            color: #6280aa;
+        }
+        header, nav, section, footer {
+            width: 500px;
+            margin: 10px auto; /*TOP, RIGHT, LOW, LEFT*/
+            border: 1px solid #6280aa;
+        }
+            header h1 {
+                text-align: center;
+            }
+            nav ul {
+                overflow : hidden; 
+            }
+            nav ul li { /*수직 li를 수평으로 배치*/
+                float : left;
+                list-style : none;
+                width: 125px;
+                text-align:center;
+            }
+            section{
+                clear: both; /*over flow : hidden; 을 잘 쟇ㅆ으면 생략하기도 함*/
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>00 주식회사</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>회사소개</li>
+            <li>서비스</li>
+            <li>고객센터</li>
+            <li>공지사항</li>
+        </ul>
+    </nav>
+    <section>
+        <p>
+            A brown smoke trail from a rocket drifted overhead, and three artillery shells landed perhaps a mile east of the road one recent afternoon, as Major Oleg Kravchenko drove at furious speed towards a forward medical post close to the advancing Russian front lines.
+        </p>
+        <p>
+            "Every day it's blood, blood, blood, blood," said Maj Kravchenko, a wry, burly figure who heads the army's medical teams in the area.
+
+        </p>
+    </section>
+    <footer>
+        <p>서울시 강남구 강남대로 94길 13 좋은빌딩 402호</p>
+    </footer>
+</body>
+</html>

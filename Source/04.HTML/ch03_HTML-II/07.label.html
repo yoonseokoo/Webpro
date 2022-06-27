@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        b{
+        color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>회원정보</legend>
+            <ul>
+                <li>
+                    <label for="name">이 름<b>*</b></label>
+                    <input type="text" name="name" id="name" autofocus="autofocus" required="required" />
+                </li>
+
+                <li>
+                    <label for="id">아이디<b>*</b></label>
+                    <input type="text" name="id" id="id" required="required" />
+                </li>
+
+                <li>
+                    <label for="password">비밀번호<b>*</b></label>
+                    <input type="text" name="pw" id="pw" required="required" />
+                </li>
+
+                <li>
+                    <label for="tel">전화번호</label>
+                    <input type="tel" name="tel" id="tel" />
+                </li>
+
+                <li>
+                    사용기술
+                    <input type="checkbox" name="tech" value="java" id="java" />
+                    <label for="java">Java</label>
+                    <input type="checkbox" name="tech" value="dbms" id="dbms" />
+                    <label for="java">DBMS</label>
+                    <input type="checkbox" name="tech" value="html5" id="html5" />
+                    <label for="java">HTML5</label>
+                    <input type="checkbox" name="tech" value="jsp" id="jsp" />
+                    <label for="java">JSP</label>
+                </li>
+
+                <li>
+                    성별
+                    <input type="radio" name="gender" value="m" id="m" />
+                    <label for="m">남자</label>
+                    <input type="radio" name="gender" value="f" id="f" />
+                    <label for="f">여자</label>
+                </li>
+            </ul>
+            <center><input type="submit"/></center>
+        </fieldset>
+    </form>
+</body>
+</html>

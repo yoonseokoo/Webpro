@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+  <title></title>
+    <style>
+        p {
+            text-align: center;
+        }
+
+        input[type='number'] {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function chk() {
+            var name = frm.name.value;
+            var email = frm.email.value
+            var pw = frm.pw.value;
+            var pwChk = frm.pwChk.value;
+            
+            
+
+            var regName = /^[A-Za-z]|[가-힣ㄱ-ㅎㅏ-ㅣ]$/;
+            var regEmail = /[a-zA-Z0-9][a-zA-Z0-9_.]+@[a-zA-z]\w+(\.[a-z]+){1,2}/;
+            var patternNum = /[0-9]/; 
+            var patternEng = /[A-Za-z]/;
+            var patternSpc = /[~`!@#$%^&*()-_+=|\\\[\]?''""]/;
+
+            
+            if (!regName.test(name) || !name) {
+                alert("Please enter a valid name (no special characters and no numbers)");
+                frm.name.focus();
+                return false;
+            } else if (!email || !regEmail.test(email)) {
+                alert("Please enter a valid email");
+                frm.email.focus();
+                return false;
+            } else if (!pw || pw.length < 4 || (!patternNum.test(pw)) || (!patternEng.test(pw)) || (!patternSpc.test(pw))) {
+                alert("Password must contain one letter, number and special character");
+                frm.pw.focus();
+                return false;
+            } else if (pw != pwChk) {
+                alert('Passwords do not match');
+                frm.pwChk.focus();
+                frm.pw.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="frm" onsubmit="return chk()">
+        <fieldset>
+            <p>
+                <label for="name">이름: </label>
+                <input type="text" name="name" id="name" placeholder="특수문자와 숫자 못 와"/>
+            </p>
+            <p>
+                <label for="email">이메일 : </label>
+                <input type="email" name="email" id="email" placeholder="메일형식을 맞추세요" />
+            </p>
+            <p>
+                <label for="pw">비밀번호: </label>
+                <input type="password" name="pw" id="pw" placeholder="**" />
+            </p>
+            <p>
+                <label for="pw">비밀번호: </label>
+                <input type="password" name="pwChk" id="pwChk"  placeholder="**" />
+            </p>
+            <p><input type="submit" value="회원가입" />
+           <input type="reset" name="exit" value="취소" />
+            <input type="button" value="로그인" /></p>
+        </fieldset>
+    </form>
+</body>
+</html>

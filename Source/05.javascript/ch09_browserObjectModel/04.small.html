@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var child;
+        function openBig() { //open new window
+            child = open('04.big.html', '', 'width=500,height=610');
+            if (!child) {
+                alert('Please remove pop-up block to load new window');
+            }
+        }
+        function closeBig() { //close new window
+            child.close();
+        }
+    </script>
+</head>
+<body>
+    <h3>작은 그림의 parent창</h3>
+    <img src="img/small.jpg" alt="작은그림"
+         onmouseover="openBig()"
+         onmouseout="closeBig()"/>
+</body>
+</html>

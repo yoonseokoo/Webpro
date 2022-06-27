@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+       
+        do {
+           var num = Number(prompt('출력하고 싶은 구구단은? [1-9]'));
+            if (isNaN(num) && (num < 2 && num > 9)) {
+                alert('2~9단만 출력가능합니다');
+            } else {
+                break;8
+            }
+        } while (true) 
+
+        document.write('<h3>' + num + '단 구구단</h3>');
+        for (var i = 1; i <= 9; i++) {
+            document.write(num + '*' + i + '=' + num * i + '<br>');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

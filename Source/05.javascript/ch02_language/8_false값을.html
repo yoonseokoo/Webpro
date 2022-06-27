@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+   <script>
+       // false values: 0, " ", NaN, nul, undefined
+       var i;
+       document.write("The value of i is " + i + ", and converted to type boolean: " + Boolean(i) + "<br>");
+       i = 0;
+       document.write("The value of i is " + i + ", and converted to type boolean: " + Boolean(i) + "<br>");
+       i = Number("a");
+       document.write("The value of i is " + i + ", and converted to type boolean: " + Boolean(i) + "<br>");
+       i = "";
+       document.write("The value of i is " + i + ", and converted to type boolean: " + Boolean(i) + "<br>");
+       i = null;
+       document.write("The value of i is " + i + ", and converted to type boolean: " + Boolean(i) + "<br>");
+       document.write(("" == false) + " : == 연산자는 양변의 값이 일치할 겨우 true <br>");
+       document.write(("" === false) + " : == 연산자는 양변의 값이 일치할 겨우 true <br>");
+
+   </script>
+</head>
+<body>
+
+</body>
+</html>

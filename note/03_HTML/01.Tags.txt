@@ -1,0 +1,56 @@
+[1] STRUCTURE OF HTML:
+
+[1.1] : <!DOCTYPE html>
+   -   Defines that the current web page is a HTML5 document. 
+   -   All HTML5 documents require this tag ont he first line of the document
+
+[1.2] : <html  lang=”ko”>
+   -   Announces the begining of a html tag
+   -   Allows input of lang properties
+   -   ko: Korean, en: English, ja: Japanese, zh: Chinese, de: German
+
+[1.3] : <head>  …  </head>
+   -   The following tags can be used in the head tag:
+	● meta : Sends additional information to the web page
+	● title : Title of the webpage
+	● script : Sends script to the webpage
+	● link : Adds another file to the webpage
+	● style : Adds style to the web page
+
+[1.4] : <body>  …  </body>
+   -   The actual information of the web document, that is visible to the users.
+
+
+[2] : Text Tags
+	● <h1></h1>: heading (1 can be substitued with 2, 3, 4 for subheadings)
+	● <p></p> :  main text
+	● <br> : new line
+	● <a> : anchor tag (Marks beginning and/or the end of a hypertext link)
+	● <b></b> : bold
+
+[3] : List Tags
+	● <ul></ul>: List non-ordered
+	● <ol></ol> :  List ordered
+	● <li></li> : list elements (goes under ul/ol)
+	
+[4] : Table Tags
+	● <tr></tr>: Row tags inside table
+	● <th></th> :  Columns inside rows. (Used for column titles)
+	● <td></td> :  Columns inside rows. (Used for data)
+
+[4.1] : Table Tags (Additional information)
+	● rowspan="x" :  merging 'x' rows (vertical merge)
+	● colspan="y" : merging 'y' columns  (horizontal merge)
+
+[5] : Image Tags
+	● src: Specifies the path to the image
+	● alt: substitute text that appears when there is no image
+	● width: Specifies the width of the image
+	● height: Specifies the height of the image
+
+[6] :Audio Tags
+	● src: Specifies the path of the audio file
+	● preload : Specifies whether to load all audio before playing
+	● autoplay: specify whether to play the audio automatically
+	● loop : Specifies whether to repeat the audio
+

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Student(name, kor, mat) {
+            this.name = name;
+            this.kor = kor;
+            this.mat = mat
+        }
+        Student.prototype.getSum = function () {
+            return this.kor + this.mat;
+        };
+        Student.prototype.getAvg = function () {
+            return this.getSum()/2;
+        };
+        Student.prototype.toString = function () {
+            return this.name + '(' + this.kor + ', ' + this.mat + ', 총점: ' + this.getSum() + ', 평균: ' + this.getAvg() + ')';
+        };
+        var students = [new Student('Unie', 99, 100), new Student('Jimmy', 78, 98), new Student('Frank', 99, 88),
+                       new Student('Joana', 79, 96), new Student('Amy', 91, 89), new Student('Vlaja', 90, 94)];
+        document.write('<h3>Data before sorting </h3>')
+        students.forEach(function (value, idx) {
+            document.write(idx + ' : ' + value + '<br>');
+        });
+        originStudents = students;
+        // [1] INCREMENTAL SORTING BY TOTAL SCORE
+        students.sort(function (left, right) {
+            return left.getSum() - right.getSum();
+        });
+        document.write('<h3>Incremental sorting by total score </h3>');
+        students.forEach(function (value, idx) {
+            document.write(idx + ' : ' + value + '<br>');
+        });
+
+        // [2] 가-나-다 SORTING
+        students.sort(function (left, right) {
+            if (left.name < right.name) {
+                return -1;
+            } else if (left.name > right.name) {
+                return 1;
+            } else {
+                return 0; // return 0이면 위치 그대로
+            }
+        });
+        document.write('<h3>Incremental sorting by name </h3>');
+        students.forEach(function (value, idx) {
+            document.write(idx + ' : ' + value + '<br>');
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

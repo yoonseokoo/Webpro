@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var arr1 = [273, 2, 3, 'Hello',];
+        var arr2 = array(273, 2, 3, 'Hello'); //매개변수갯수가 2개 이상일때
+        var arr3 = [, , ,];
+        var arr4 = array(3);
+        var arr5 = [];
+        var arr6 = array();
+
+        document.write('arr1=' + arr1 + ' : 방 수=' + arr1.length + '<br>');
+        document.write('arr2=' + arr2 + ' : 방 수=' + arr2.length + '<br>');
+        document.write('arr3=' + arr3 + ' : 방 수=' + arr3.length + '<br>');
+        document.write('arr4=' + arr4 + ' : 방 수=' + arr4.length + '<br>');
+        document.write('arr5=' + arr5 + ' : 방 수=' + arr5.length + '<br>');
+        document.write('arr6=' + arr6 + ' : 방 수=' + arr6.length + '<br>');
+       
+        function array() {
+            //arguments = 배열
+            //arguments.length: Number of arguments actu];ally passed to a function. 
+            var result = [];
+            if (arguments.length == 1) {
+                for (var cnt = 1; cnt <= arguments[0]; cnt++) {
+                    result.push(null);
+                }
+            } else if (arguments.length >= 2) {
+                for (var idx in arguments) {
+                    result.push(arguments[idx]);
+                }
+            }
+            return result;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

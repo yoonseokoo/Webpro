@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onload = function () {
+            var header = document.getElementById('header');
+            var p = document.querySelector('p');
+            for (var key in header) {
+                if (key == 'onclick') {
+                    p.innerHTML += key + ':' + header[key] + '<br>';
+                }
+            }
+            header.onclick = function () {
+                alert('click');
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">Click해 봐</h1>
+</body>
+</html>

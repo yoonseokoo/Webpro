@@ -1,0 +1,8 @@
+< Downloading program >
+
+Tool used: Visual Studio community 2022
+
+Website: https://visualstudio.microsoft.com
+    -   Installation of iisexpress_amd64_ko-KR.msi' might be necessary
+    -   Free trial period: 30 days
+    -   Accesssing the program: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7 \IDE\devenv.exe 

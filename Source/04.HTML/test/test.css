@@ -1,0 +1,28 @@
+﻿
+table {
+    width: 280px;
+}
+
+fieldset {
+    width: 400px;
+    text-align: left;
+}
+
+    fieldset legend {
+        font-weight: bold;
+    }
+
+    fieldset #mid {
+        width: 200px;
+    }
+
+td {
+    text-align: center;
+    padding: 1px;
+    font-size: 10pt;
+}
+
+b {
+    color: red;
+}
+

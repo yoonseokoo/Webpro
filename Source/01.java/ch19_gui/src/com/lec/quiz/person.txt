@@ -1,0 +1,4 @@
+Person [NAME]= Uni	[TEL]= 010-1241-1231	[AGE]= 21
+
+...1 person has registered
+

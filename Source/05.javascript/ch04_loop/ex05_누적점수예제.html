@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var cumTot = 0;
+        var count = 0;
+        var cum = 0;
+        var count2 = 0;
+        do {
+            answer = confirm('누적할래?');
+            if (answer == true) {
+                //누적할때
+                cum = Number(prompt('누적할 점수는?'));
+                do {
+                    count++;
+                    if (cum != null && cum != '' && !isNaN(cum) && (cum<0 && cum>100)) {
+                        cumTot += cum;
+                        count2++;
+                        break;
+                    } else {
+                        break;
+                    }
+                } while (true)
+            }
+        } while (answer == true);
+        var count3 = count - count2;
+        document.write(count + '번 입력' + '<br>');
+        document.write("누적점수: " + cumTot + '<br>');
+        document.write('점수를 제대로 입력한 횟 수: ' + count2 + '<br>');
+        document.write('점수를 잘못 입력한 횟 수: ' + count3 + '<br>');
+
+    </script>
+</head>
+<body>
+</body> 
+</html>

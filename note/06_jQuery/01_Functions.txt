@@ -1,0 +1,92 @@
+$('selector').function();
+
+[1] html('code') : Inserting HTML codes
+         ●    $(selector).html(content) 
+         ●    Example:   $("p").html("Hello <b>world</b>!");
+
+[2] text('text') :  Sets or returns the text content of the selected elements.
+         ●    $(selector).text(content)
+         ●    Example:   $("p").text("Hello world!");
+
+[3] hide() : Hides the selected elements.
+         ●    $(selector).hide(speed,easing,callback)
+         ●    Example:   $("p").hide();
+
+	speed (Optional): Specifies the speed of the show effect. Default = 400 milliseconds
+	       -   Possible values: milliseconds, "slow", "fast"
+
+	easing (Optional):  Specifies the speed of the element in different points of the animation. Default = "swing"
+	       -   Possible values: "swing" - moves slower at the beginning/end, but faster in the middle, "linear" - moves in a constant speed
+
+	callback (Optional): A function to be executed after the show() method is completed
+	       -   Possible values: milliseconds, "slow", "fast"
+
+[4] show() : Display the hidden and selected elements. *see hide() for options
+         ●    $(selector).show ( speed, easing, callback )
+         ●    Example:   $("p").show();
+
+[5] toggle() :  Toggles between hide() and show() for the selected elements. *see hide() for options
+         ●    $(selector).toggle(speed,easing,callback
+         ●    Example:   $("p").toggle();
+
+[6] val() : Returns or sets the value attribute of the selected elements.
+         ●    $(selector).val()
+         ●    Example:  $("input:text").val("Glenn Quagmire");
+
+[7] .css() : Sets or returns one or more style properties for the selected elements.
+         ●    $(selector).css({"propertyname":"value","propertyname":"value",...});
+         ●    Example:  $("p").css({"background-color": "yellow", "font-size": "200%"});
+
+[8] .each :  specifies a function to run for each matched element (used frequently for array)
+         ●   $(selector).each(function(index,element))
+         ●    Example:  $("li").each(function(){
+    		   alert($(this).text())});
+
+[9]  .addClass : Adds one or more class names to the selected elements.
+         ●   $(selector).addClass(classname,function(index,currentclass))
+         ●    Example:  $("p:first").addClass("intro");
+
+	classname (Required): Specifies one or more class names to be added
+
+	function(index,currentclass) (Optional):  Specifies a function that returns one or more class names to be added
+	       -   index : Returns the index position of the element in the set
+	       -   currentclass : Returns the current class name of the selected element
+
+[10]  .removeClass :  Removes one or more class names from the selected elements.*see .addClassfor options
+         ●   $(selector).removeClass(classname,function(index,currentclass))
+         ●    Example :  $("p").removeClass("intro");
+
+[11]  .append : Inserts specified content at the end of the selected elements.
+         ●   $(selector).append(content,function(index,html))
+         ●   Example :  $("p").append("<b>Appended text</b>");
+
+	content (Required): Specifies the content to insert (can contain HTML tags)
+
+	function(index,html) (Optional):  Specifies a function that returns the content to insert
+	       -   index : Returns the index position of the element in the set
+	       -   html : Returns the current HTML of the selected element
+
+[12]  .prepend: Inserts specified content at the beginning of the selected elements.
+         ●   $(selector).prepend(content,function(index,html))
+         ●   Example :  $("p").append("<b>Appended text</b>");
+
+	content (Required): Specifies the content to insert (can contain HTML tags) 
+	       -   Possible values: HTML elements, jQuery objects, DOM elements
+
+	function(index,html) (Optional):  Specifies a function that returns the content to insert
+	       -   index : Returns the index position of the element in the set
+	       -   html : Returns the current HTML of the selected element
+
+[13]  .attr:  Sets or returns attributes and values of the selected elements.
+         ●    $(selector).attr(attribute)
+         ●    Example:  $("img").attr("width","500");
+
+[14]  Functions relating to event 
+         ●    click(Callback function)
+         ●    on/off(delete event)
+         ●    trigger (start event forefully)
+
+[15]  Functions relating to aJax
+
+
+

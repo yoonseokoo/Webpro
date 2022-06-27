@@ -1,0 +1,121 @@
+INPUT FORM TAGS: A space that can recieve content input from the user, that is then sent to the server
+
+[1] :  ACTION - Saves the location of where data input of the user will be sent to. 
+	     - Example: 
+
+				<form action="http://www.naver.com" method="get">
+				<form action="http://www.naver.com" method="post">
+
+[2] : METHOD -  Types of HTTP requests
+   -   GET: Used for viewing something, without changing it (retrieve remote data) . Example: A search page should use GET to get data
+   -   POST: Used for changing something insert/update remote data. . Example: A form that changes your password should use POST.
+
+[3] : BUTTON -  Push button with no default behavior displaying the value of the 'value' attribute, empty by default.
+ 
+				<input type="button" value="로그인">
+
+[4] : CHECK BOX - A check box allowing single values to be selected/deselected. 
+	● When there are multiple checkboxes, they are grouped by the same name.
+
+		사용언어 : <input type="checkbox" name="lang" value="kor" checked="checked"/>한글
+                   		<input type="checkbox" name="lang" value="eng" />영어
+                  		 <input type="checkbox" name="lang" value="chi" />중국어
+                   		<input type="checkbox" name="lang" value="ind" />인도어
+
+
+[5] : FILE - Create a form that generates a file import button
+
+
+[6] : SELECT: you see one option but can see more by pressing '▼'
+			<select name="nation">
+				<option>대한민국</option>
+				<option>미국</option>
+           				 <option>중국</option>
+				<option>인도</option>
+  			</select>
+ 
+
+[6.1] : MULTIPLE SELECT: When program is run, multiple options can be seen:
+
+			<select multiple="multiple" name="food">
+				<option>불고기</option>
+				<option>닭고기</option>
+            				<option>돼지고기</option>
+				<option>샐러드</option>
+        			</select>
+
+[7] : IMAGE - Creates image shape
+
+       			 사진 : <input type="file" name="ufilename" /><br />
+
+[8] : PASSWORD - Creates a password entry form
+
+			비밀번호 : <input type="password" name="pw" /><br />
+						OR
+				<label for="pw">비밀번호 : </label>
+ 			 <input type="password" id="pw" name="password"><br><br>
+
+[9] : RADIO - Creates a radio button 
+
+	● When there are multiple radio's under the same name, only one can be selected
+			<input type="radio" name="cgender" value="m" checked="checked">남자
+			<input type="radio" name="cgender" value="f" >여자
+
+[10] : RESET - Creates a reset button
+
+			<input type="reset" value="다시하기">
+
+[11] : SUBMIT - Creates a submit button (When this is clicked, the program sends the information where the action is linked to)
+			
+			<input type="submit" value="가입하기">
+
+[12] : TEXT - Creates a text input form
+
+			아이디 : <input type="id" name="id" /><br />
+					OR
+				<label for="pw">아이디 : </label>
+ 			 <input type="text" id="id" name="id"><br><br>
+
+[12] : DATE - A control for entering a date (year, month, and day, with no time). 
+	● Opens a date picker or numeric wheels for year, month, day when active in supporting browsers.
+			
+			<input type="date" name="bday" class="bday">
+
+[13] : TEXTAREA
+			
+			<p><label for="txtarea">text are title:</label></p>
+  		<textarea id="txtarea" name="txtarea" rows="4" cols="50"></textarea>
+
+[14] : COLOR - A control for specifying a color; opening a color picker when active in supporting browsers. (color #e66465 is there by default)
+			
+				 <label for="favColor">Favorite Color</label>
+		<input type="color" id="favColor" name="favColor"  value="#e66465">
+[15] : HIDDEN - A control that is not displayed but whose value is submitted to the server.
+
+			<input type="hidden" id="postId" name="postId" 
+
+[16] : NUMBER - A control for entering a number
+		<label for="height">Enter your height: </label>
+		<input type="number" id="height" name="height"
+      			 min="150" max="200">
+
+ADDIITONAL:
+	● name="xxx" : Name of the form control
+	● onsubmit="return function()"
+	● required="required" : A value is required or must be check for the form to be submittable
+	● autofocus="autofocus" : Input should automatically have focus when the page has finished loading
+	● placeholder="홍길동" : default value/text
+	● class = "xxx"
+	● min, max : Sets range for number input
+	● pattern : puts condition (regex)
+	● disabled="disabled" : Whether the form control is disabled
+	● readonly="readonly : The value is not editable
+
+TIPS:
+	● &nbsp : Putting space (e.g: 비&nbsp번)
+
+
+
+
+
+

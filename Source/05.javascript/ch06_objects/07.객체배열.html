@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var students = [{name: '홍길동', kor: 99, mat: 90, eng: 98, sci: 100 },
+            {name: '김길동', kor: 100, mat: 90, eng: 98, sci: 100 }];
+        students.push({ name: '최길동', kor: 100, mat: 90, eng: 98, sci: 100 });
+        students.push({ name: '이길동', kor: 80, mat: 79, eng: 98, sci: 85 });
+        students.push({ name: '신길동', kor: 98, mat: 88, eng: 90, sci: 70 });
+        for (var idx in students) {
+            students[idx].getSum = function () {
+                return this.kor+ this.mat + this.eng +this.sci;
+            };
+            students[idx].getAvg = function () {
+                return this.getSum() / 4;
+            };
+            students[idx].toString = function () {
+                var output = '';
+                for (var key in this) {
+                    if (key != 'getSum' && key != 'getAvg' && key != 'toString') {
+                        output += key + ':' + this[key] + '<br>';
+                    } else if (key == 'getSum' || key == 'getAvg') {
+                        output += key.substring(3).toUpperCase() + ':' + this[key]() + '<br>';
+                    }
+                }
+                return output;
+            };
+        };
+        //1. Print array students (using the normal 'for' function)
+        document.write('<h4>for문 이용</h4>');
+        var output = '';
+        for (var idx = 0; idx < students.length; idx++) {
+            output += idx + '번째' + '<br>';
+            output += students[idx];
+        }
+        document.write(output);
+
+        //2. print array students (using 'ForIn' function)
+        document.write('<h4>for-in문 이용</h4>');
+        var output = '';
+        for (var idx in students) {
+            output += idx + '번째' + '<br>';
+            output += students[idx];
+        }
+        document.write(output);
+
+
+        //3. print array students (using 'forEach() function)
+        document.write('<h4>forEach함수 이용</h4>');
+        students.forEach(function (data, idx) {
+            document.write(idx + '번째<br>');
+            document.write(data + '<hr>');
+        });
+
+
+        function replaceAll(str, oldStr, newStr) {
+            var splitStr = str.split(oldStr);
+            var joinStr = splitStr.join(newStr);
+            return joinStr;
+        }
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

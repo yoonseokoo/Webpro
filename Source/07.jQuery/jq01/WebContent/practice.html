@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table td {
+			width:100px;
+			height:100px;
+			background-color: #9fa9a3;
+			text-align:center;
+		}
+		.tdRed {
+			background-color: red;
+		}
+		.tdPhoto {
+			background-image: url(img/dduk.jpg);
+			background-repeat: no-repeat;
+			background-size : 100%;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			var dduk = Math.floor(Math.random() * 10);
+			$('td').each(function(idx, item){
+				$(this).click(function(){
+					var no = $(this).text();
+					if (no == dduk) {
+						$('td').removeClass('tdRed');
+						$(this).addClass('tdPhoto');
+						$('input[name="result"]').val('축하축하 마췄어요');
+						$('td').off();
+						
+					} else {
+						$('td').removeClass('tdRed');
+						$(this).addClass('tdRed');
+						$('input[name="result"]').val('거기가 아닌데요');
+					};
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<table>
+		<tr><td>0</td><td>1</td><td>2</td></tr>
+		<tr><td>3</td><td>4</td><td>5</td></tr>
+		<tr><td>6</td><td>7</td><td>8</td></tr>
+	</table>
+	<p>택한 곳이 맞는지 답 뿌리는 곳</p>
+	<p><input type="text" name="result"></p>
+</body>
+</html>

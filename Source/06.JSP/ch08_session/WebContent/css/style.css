@@ -1,0 +1,24 @@
+@charset "UTF-8";
+	body { 
+		font-size: 9pt;
+		background-color: #d6cbd3;
+	}
+	table{ 
+		border: #eea29a solid 2px; 
+		margin: 0 auto;
+	}
+	tr {
+	background-color: #eea29a;
+	}
+	
+	tr:HOVER {
+		background-color: #b0aac0;
+		cursor: pointer;
+	}
+	td, th { 
+		text-align: center; 
+		padding: 5px;
+	}
+	caption { 
+		font-size: 25px; 
+	}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table td {
+			width:100px;
+			height:100px;
+			background-color: #b9b0b0;
+		}
+		.tdMint {
+			background-color: #9fa9a3;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$('td').each(function(idx, item){
+				$(this).click(function(){
+					alert('You have selected box  ' + idx);
+					$('td').removeClass('tdMint');
+					$(this).addClass('tdMint');
+				});
+			});
+			
+			
+			/* $('td').click(function() {
+				$('td').removeClass('tdMint');
+				$(this).addClass('tdMint');
+				var no = $(this).attr('id');
+				alert('you have chosen the box ' + no);
+			}); */
+		});
+	</script>
+
+</head>
+<body>
+	<table>
+		<tr><td id="0"></td><td id="1"></td></tr>
+		<tr><td id="2"></td><td id="3"></td></tr>
+	</table>
+</body>
+</html>

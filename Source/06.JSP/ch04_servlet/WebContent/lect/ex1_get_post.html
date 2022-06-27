@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+	</script>
+</head>
+<body>
+	<a href="../Ex1?id=김&pw=ppp">Ex1서블릿에게 id와 pw넘기기 (GET)</a> <!-- 주소창에 parameter (id...)가 있으면 get -->
+	
+	<hr>
+	<button onclick="location.href='../Ex1?id=김%pw=ppp'">Ex1서블릿에게 id와 pw넘기기(GET)</button>
+	<hr>
+	<form action="../Ex1" method="get">
+		<p>ID<input type="text" name="id"></p>
+		<p>PW<input type="password" name="pw"></p>
+		<p><input type="submit" value="Ex1 서블릿에게 id 와  pw 넘기기(GET)">
+	</form>
+	
+	<hr>
+	<form action="../Ex1" method="post">
+		<p>ID<input type="text" name="id"></p>
+		<p>PW<input type="password" name="pw"></p>
+		<p><input type="submit" value="Ex1 서블릿에게 id 와  pw 넘기기(POST)">
+	</form>
+</body>
+</html>

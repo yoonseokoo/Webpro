@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+    //PRINT DIFFERENT SCREEN (AM/PM SCREEN) ACCORDING TO WHEN THE USER ACCESSES THE SITE
+        //var date = new Date();
+        var hour = new Date().getHours();
+        if (hour < 12) {
+            document.write('Good morning')
+            document.write('<img src="img/am.jpg" alt="AM_photo">');
+        } else {
+            document.write('Good afternoon')
+            document.write('<img src="img/pm.jpg" alt="PM_photo">');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

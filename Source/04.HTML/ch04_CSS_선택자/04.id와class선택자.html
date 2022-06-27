@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<!--id 라고 지정된 곳에는 #으로 CSS를 넣고, -->
+<!--class 라고 지정된 곳에는 .(점)으로 CSS를 넣는다, -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            border: 1px solid lightgray;
+        }
+
+        #header {
+            width: 600px;
+            margin: 0 auto;
+            background-color: pink;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        #wrap {
+            width: 600px;
+            margin: 0 auto;
+            background-color: #839876;
+            overflow: hidden;
+        }
+
+            #wrap #content {
+                width: 350px; /*contents 영역 = 가로(350px) + 테두리(2px)*/
+                float: left;
+                text-align: center;
+            }
+
+            #wrap #side_banner {
+                width: 246px;
+                float: left;
+                text-align: center;
+            }
+
+        .menu1 {
+            font-size: 1.5em;
+        }
+
+        .menu2, .menu4 {
+            font-weight: bold;
+        }
+
+        img {
+            width: 200px;
+        }
+
+        #footer {
+            clear: both;
+            background-color: pink;
+            width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>HEADER</h1>
+    </div>
+
+    <div id="wrap">
+        <div id="content">
+            <h2>content</h2>
+            <ul>
+                <li class="menu1">menu1</li>
+                <li class="menu2">menu2</li>
+                <li class="menu1">menu3</li>
+                <li class="menu4">menu4</li>
+                <li class="menu1">menu5</li>
+            </ul>
+        </div>
+        <div id="side_banner">
+            <h2>BANNER</h2>
+            <a href="http://www.daum.net" target="_blank">
+                <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png"
+                     alt="다음아이콘" />
+            </a>
+        </div>
+    </div>
+    <div id="footer">
+        <h1>FOOTER</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+	body { 
+		font-size: 9pt;
+		background-color: #FFDFDD
+	}
+	form {
+		margin: 0 auto;
+		text-align:center;
+	}
+	table{ 
+		margin: 0 auto;
+		width:80%;
+		padding:10px 20px;
+	}
+	tr {
+	background-color: #FFCCCB;
+	}
+	
+	tr:HOVER {
+		background-color: #C4AEAD;
+		cursor: pointer;
+	}
+	td, th { 
+		text-align: center; 
+		padding: 10px 20px;
+	}
+	caption { 
+		font-size: 25px; 
+	}
+	
+	h2 {
+		text-align:center;
+		color:blue;
+	}
+	p {
+		margin: 0 auto;
+		text-align: center;
+	}

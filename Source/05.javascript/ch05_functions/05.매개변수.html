@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        document.write('pow(4, 2) = ' + pow(4, 2) + '<br>');
+
+        //if more object variables than the ones stated in the function (x and y) are called, only the first two is used.
+        document.write('pow(3, 2, 2) = ' + pow(3, 2, 2) + '<br>');
+
+        //if less object variables than the ones stated in the function are called, the for command cannot run as the rest is 'undefined'
+        document.write('pow(3) = ' + pow(3) + '<br>');
+        document.write('pow() = ' + pow() + '<br>');
+
+        function pow(x, y) {
+            var result = 1;
+            for (var i=1; i <= y; i++) {
+                result *= x;
+            }
+            return result;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

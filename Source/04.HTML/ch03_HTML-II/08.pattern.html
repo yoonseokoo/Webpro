@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>필드의 입력형식의 힌트를 주고 pattern 체크하는 사용자 인터페이스</legend>
+            <!--정규표현식 (연습장 (http://www.regexr.com))
+            [0-9] : 0~9 사이 중 하나
+            [a-zA-Z] : 알파벳 중 하나
+            [가-힣ㄱ-하-ㅣ] : 한글, 자음, 모음 중 한문자
+            {n} : n번 반복
+            {n,m} : 최소 n번, 최대 m번
+             \d : 숫자 [0-9] 와 동일
+             \w :  문자 (숫자와 알파벳)
+             +1 : 한번 이상 빈복함
+             *0 : 0번 이상 반복함
+             . : '\n' 을 제외한 임의의 한문자 자리수
+             \. : 문자
+        -->
+            <ul>
+                <li>
+                    연락처 <input type="text" name="tel" placeholder="000-0000-0000/xx-xxxx-xxxx"
+                               pattern="\d{2,3}[ .-]{0,1}\d{3,4}[ .-]{0,1}\d{4}"
+                               title="전화번호 형식(000-0000-0000/xx-xxxx-xxxx)을 지켜주세요"
+                               required="required" />
+                </li>
+                <li>
+                    카 드 <input type="text" name="cardno" placeholder="1564-xxxx-xxxx-xxxx"
+                               pattern="[1-9][0-9]{3}-\d{4}-[0-9]{4}-[0-9]{4}"
+                               title="카드번호 형식을 지켜주세요" /> <!--카드번호에 일치되는 값만 입력 가능하도록-->
+                </li>
+                <li>
+                    <!--메일형식에 일치되는 값만 입력 가능하도록 hong@hong.com / hong@hong.co.kr -->
+                    이메일 <input type="email" name="email" placeholder="메일형식을 지켜주세요"
+                               pattern="[a-zA-Z0-9][a-zA-Z0-9_.]+@[a-zA-z]\w+(\.[a-z]+){1,2}"
+                               title="이메일 형식을 지켜주세요" />
+                </li>
+
+
+            </ul>
+            <center><input type="submit" /></center>
+        </fieldset>
+    </form>
+</body>
+</html>

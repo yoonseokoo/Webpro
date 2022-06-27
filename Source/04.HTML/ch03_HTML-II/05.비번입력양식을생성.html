@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        /*frm.id.value has to be more than 4 letters, frm.pw.value and frm.pwChk.value has to be more an 1 letter and should be the same */
+        function chk() {
+            if (frm.id.value.length < 4) {
+                alert('ID must be more than 4 letters');
+                frm.id.focus();
+                return false;
+            } else if (!frm.pw.value) {
+                alert('Please insert a password');
+                frm.pw.focus();
+                return false;
+            } else if (frm.pw.value != frm.pwChk.value) {
+                alert('Please check your password');
+                frm.pw.value = '';
+                frm.pwChk.value = '';
+                frm.pw.focus();
+                return false;
+
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="frm" onsubmit="return chk()">
+        <table>
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" name="id" /></td>
+            </tr>
+
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="pw" /></td>
+            </tr>
+
+            <tr>
+         
+                <th>비밀번호확인</th>
+                <td><input type="password" name="pwChk" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="전송" /><center/></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

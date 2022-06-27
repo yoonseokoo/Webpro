@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var str = 'abcd@ef9';
+        //PATTERN
+        var patternNum = /[0-9]/; //Is there a number?
+        var patternEng = /[A-Za-z]/; //Is there an alphabet?
+        var patternKor = /[가-힣ㄱ-ㅎㅏ-ㅣ]/; //Is there an Hangul?
+        var patternSpc = /[~`!@#$%^&*()-_+=|\\\[\]?''""]/; // Is there a special character?     [ => \[,       ]=>\]          \=>\\//
+        document.write('Is there a number included in str?: ' + patternNum.test(str) + '<br>');
+        document.write('Are there special characters included in str?: ' + patternSpc.test(str) + '<br>');
+        document.write('Are there Hangul characters included in str?: ' + patternKor.test(str) + '<br>');
+        document.write('Are there alphabets included in str?: ' + patternEng.test(str) + '<br>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

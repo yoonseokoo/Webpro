@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		span{
+			padding-left:25px;
+		}
+	
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			 $('button').click(function(){
+				var mId = $('#mId').val();
+				$.get('idConfirm.jsp?mId='+mId, function(data, status){
+					if(status=='success') {
+						$('#result').html(data);
+					}
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+		ID <input type="text" name="mId" id="mId">
+		<button>Check ID</button><br>
+		<span id="result"></span>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var id = opener.document.getElementById('id').value;
+            var checkId = document.getElementById('checkId');
+            checkId.setAttribute('value', id);
+        }
+        function sendData(id) {
+            opener.document.getElementById('idConfirm').value = 1;
+            opener.document.getElementById('id').innerHTML = id;
+            close();
+        }
+    </script>
+
+</head>
+<body>
+    <div id="wrap">
+        <p>
+            ID
+            <input type="text" id="checkId" size="14" />
+            <input type="button" value="체크"  size="5" />
+        </p>
+        <p>
+            <input type="button" onclick="sendData('id')" value="아이디사용" size="8" />
+        </p>
+    </div>
+       </body>
+</html>

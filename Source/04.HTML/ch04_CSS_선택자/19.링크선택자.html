@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap {
+            width:800px;
+            margin: 0 auto;
+        }
+        #header {
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid lightgray;
+            text-decoration: underline;
+        }
+        #content ul li a{
+            text-decoration:none; /*밑줄 없애기*/
+            color: black;
+        }
+        #content ul li a:after{ /*링크 선택자*/
+            content: ' - ' attr(href);
+        }
+        #content ul li.nate { /*li's class whos name is nate*/
+            
+        }
+        #content ul li:not( .nate) a{ /*a tag from, li's whos class name is not nate (google, naver and daum)*/
+            background-color: #f1e4a8;
+        }
+
+        #footer ul {
+            overflow: hidden;
+        }
+
+        #footer ul li {
+            float: left;
+            list-style: none;
+            padding: 10px;
+        }
+
+        #footer ul li:first-child {
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            Weekly connect Website
+        </div>
+
+        <div id="content">
+            <ul>
+                <li><a href="http://www.google.com" target="_blank">구굴</a></li>
+                <li><a href="http://www.naver.com" target="_blank">네이버</a></li>
+                <li><a href="http://www.daum.net" target="_blank">다음</a></li>
+                <li class="nate"><a href="http://www.nate.com" target="_blank">네이트</a></li>
+            </ul>
+        </div>
+
+        <div id="footer">
+            <ul>
+                <li><img src="0503/logo.png" alt="회사주소" height="40" /></li>
+                <li><img src="0503/add.png" alt="회사주소" width="500" /></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

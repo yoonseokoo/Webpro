@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$('#msg').html('<b>Ciao jQuery</b>');
+			//$('#msg').text('<b>Hello, jQuery</b>');
+			//var msg = $('#msg').html(); // msg = '<b>Hello, jQuery</b>'
+			var msg = $('#msg').text();
+			$('input[name="msg"]').val('Ciao jQuery2');
+			msg = $('input[name="msg"]').val();
+			alert(msg);
+		});
+	</script>
+</head>
+<body>
+	<p id="msg"></p>
+	<p>message<input type="text" name="msg"></p>
+	</body>
+</html>
+

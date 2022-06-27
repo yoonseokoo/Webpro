@@ -1,0 +1,2 @@
+-- [II] 'SELECT' COMMAND - THE MOST USED DML(Data manipulation Lanuge); search tool
+--1.HOW TO USE THE SQL 'SELECT' COMMAND 

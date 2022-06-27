@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		form {
+			margin: 0 auto;
+			text-align: center;
+			border: 1px solid black;
+			padding-top:50px;
+		}
+		p{
+			margin: 0 auto;
+		}
+		p:last-child {
+			padding-left: 25px;	
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$('input[name="pwChk"]').keyup(function(){
+				var pw = $('input[name="pw"]').val();
+				var pwChk =$('input[name="pwChk"]').val();
+				if (pw == pwChk) {
+					$(' .result').html('<b>Passwords match!</b>');
+				} else {
+					$(' .result').html('<b>Passwords unmatch</b>');
+				}
+			});
+			$('form').submit(function(){
+				var resultMsg = $('.result').text().trim();
+				if(resultMsg != 'Passwords match!') {
+					alert('Please check your password');
+					$('input[name="pw"]').val('');
+					$('input[name="pwChk"]').val('');
+					$('.result').html('');
+					$('input[name="pw"]').focus();
+					return false;
+				}
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<form action="">
+		<p>ID <input type="text" name="id"></p>
+		<p>PW <input type="password" name="pw"></p>
+		<p>PW <input type=password name="pwChk"></p>
+		<p class="result"></p>
+		<p><input type="submit" value="가입하기"></p>
+	</form>
+</body>
+</html>

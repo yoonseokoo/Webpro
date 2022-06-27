@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        span:nth-child(5n+1) {
+            color: red;
+        }
+        span:nth-child(5n+2) {
+            color: orange;
+        }
+        span:nth-child(5n+3) {
+            color: yellow;
+        }
+        span:nth-child(5n+4) {
+            color: green;
+        }
+        span:nth-child(5n) {
+            color: blue;
+        }
+
+    </style>
+    <script>
+        var cnt = 0;
+        window.onload = function () {
+            document.querySelector('h1').onclick = function () {
+                this.innerHTML += '<span>♥</span>';
+                cnt++;
+                //MAKE SURE THAT AFTER 5 CLICKS STOP EVENT:
+                if (cnt == 5) {
+                    this.onclick = null;
+                }
+            };
+        };
+        
+    </script>
+</head>
+<body>
+    <h1>좋아요</h1>
+</body>
+</html>

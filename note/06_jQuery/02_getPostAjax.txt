@@ -1,0 +1,50 @@
+AJAX
+
+[1] GET : Loads data from the server using a HTTP GET request.
+         ●    Syntax: $.get(URL,data,function(data,status,xhr),dataType)
+         ●    Example:     $.get("demo_test.asp", function(data, status){
+   		alert("Data: " + data + "\nStatus: " + status);
+ 		});
+
+	URL (Required): Specifies the URL you wish to request
+
+	data (Optional):  Specifies data to send to the server along with the request
+
+	function(data,status,xhr) (Optional): Specifies a function to run if the request succeeds
+	       -   Possible values: 
+		→ data: contains resulting data from the request
+		→ status : contains status of the request ("success", "notmodified", "error", "timeout", or "parsererror")
+		→ xhr : contains the XMLHttpRequest object
+	
+	dataType  (Optional): Specifies the data type expected of the server response. ( jQuery guesses by default)
+	       -   Possible values:
+		→ "xml" :  An XML document
+		→ "html : HTML as plain text
+		→ "text" : A plain text string
+		→ "script" : Runs the response as JavaScript, and returns it as plain text
+		→ "json" : Runs the response as JSON, and returns a JavaScript object
+		→ "jsonp" : Loads in a JSON block using JSONP. Will add an "?callback=?" to the URL to specify the callback
+
+
+[2] POST : Loads data from the server using a HTTP POST request:
+         ●    Syntax: $(selector).post(URL,data,function(data,status,xhr),dataType) 
+         ●    Example:       $.post("demo_test.asp", function(data, status){
+   			 alert("Data: " + data + "\nStatus: " + status);
+ 			});
+	URL (Required): Specifies the url to send the request to
+
+	data, function, dataType  Optional) : *see get method
+
+[3] AJAX : Used to perform an AJAX (asynchronous HTTP) request.
+         ●    Syntax: $.ajax({name:value, name:value, ... }) *see below
+         ●    Example:     $.ajax({url: "demo_test.txt", success: function(result){
+   		 $("#div1").html(result);
+ 		}});;
+
+	Most frequently used parameters: 
+		→ url :  Specifies the URL to send the request to. Default is the current page
+		→ data : Specifies data to be sent to the server
+		→ type : Specifies the type of request. (GET or POST)
+		→ dataType : The data type expected of the server response.
+		→ success : A function to be run when the request succeeds
+		→ error : A function to run if the request fails.

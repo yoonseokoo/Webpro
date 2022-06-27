@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var arr = [273, 32, '홍길동'];
+        document.write(arr + '<br>');
+        document.write('<h2> 1. 일반for문 이용한 배열 출력</h2>');
+        for (var i = 0; i < arr.length; i++) {
+            document.write(i + '번째 : ' + arr[i] + '<br>');
+        }
+        document.write('<h2> 2. for-in문 이용한 배열 출력</h2>');
+        for (var idx in arr) {
+            document.write(idx + '번째 : ' + arr[idx] + '<br>');
+        }
+        document.write('<h2> 2. (index사용한) forEach함수를 이용한 배열 출력</h2>');
+        arr.forEach(function (data, idx) {
+            document.write(idx + '번째 : ' + data);
+        });
+        document.write('<h2> 2. (index 없이) forEach함수를 이용한 배열 출력</h2>');
+        arr.forEach(function (data) {
+            document.write(data + '<br>');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

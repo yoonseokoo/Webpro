@@ -1,0 +1,43 @@
+1. 문제가 자주 발생해서 이클릭스 소스 정리
+   1) Close Eclipse
+   2) Delete '.metadata' and 'Servers' from Source folder
+   3) Delete tomcat in ID
+   4) In download folder, extract tomcat file in to IDE
+   5) move 'cos.jar', 'jstl.jar' and 'standard.jar' into tomcat lib in IDE
+   6) Open Eclipse
+
+   7) In Window-preferrnce: 
+   	6.1 Encoding (UTF-8)
+	      a. window -> preferences -> general -> workspace
+	      b. window -> preferences -> web -> css files
+	      c. window -> preferences -> web -> HTML files
+	      d. window -> preferences -> web -> jsp files
+    	6.2 Test Web browser
+	       window -> webBrowser-> Chrome 
+   8) In servers tab (bottom) click new to set tomcat settings
+      	-  connect to tomcat9.0 under apache, set port-num to 8090 and change the other two fields
+   8) Update targeted runtime version:
+	right click on your project > Properties > Targeted Runtime > Click the version required 8.0
+   8) Severs folder -> Tomcat v9.0  -> context.xml, add:
+	    <Resource 
+		auth="Container"
+		driverClassName = "oracle.jdbc.driver.OracleDriver"
+		url = "jdbc:oracle:thin:@localhost:1521:xe"
+		username = "scott"
+		password = "tiger"
+		name = "jdbc/Oracle11g" 
+		type = "javax.sql.DataSource"
+		maxActive = "10"
+		maxWait = "1000"
+	/>
+
+    9) Import projects
+
+   10) After running on project change to  IPv4
+eclipse > Run > Run Configuration > Apache Tomcat > Tomcat v9.0 Server >
+	Arguments > 
+	In Program arguments, insert "-Djava.net.preferIPv4Stack=true"
+	In VM arguments, insert:  "-Djava.net.preferIPv4Stack=true"
+
+   
+   

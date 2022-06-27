@@ -1,0 +1,27 @@
+1. Oracle install -> cmd창 띄워 다음을 실행
+
+2. c:\> sqlplus system/oracle(비번) -- 시스템권한으로 oracleDB에 접근
+   c:\> sqlplus "/as sysdba
+
+3. user ID 생성
+SQL>create user scott identified by tiger;
+"User created."
+
+4. Give dba authorization for scott
+SQL>grant dba to scott;
+"Grant succeeded."
+
+5. leave the system permission
+SQL>exit; 
+
+6. Access Oracle DB using account scott
+SQL>sqlplus scott/tiger
+SQL> SELECT*FROM TAB;
+"no rows selected"
+
+7. To give base data, execute demo.sql, as a whole
+SQL>@C:/Users/user/Desktop/Unie/Webpro/note/02_DBMS/demo.sql;
+c:\>
+
+8. Checking if demo.sql is succesfully executed for the account scott
+c:\>sqlplus scott/tiger

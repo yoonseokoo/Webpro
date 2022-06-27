@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+    /* A가 만든 부분 */
+    function pythagoras(width, height) {
+      // Function within function is used to avoid conflict/crashing
+      function rightAngle(x) { //function square can only be used within the function phythagoras
+        return x * x;
+      }
+        return Math.sqrt(rightAngle(width) + rightAngle(height));
+    }
+    </script>
+    <script>
+    /* B가 만든 부분 :Checking if tri is a right angled tri, by receiving width, height and hypotenuse as object variables  */
+    function rightAngle(w, h, hypotenuse) {
+      if (w * w + h * h == hypotenuse * hypotenuse) { //pythagoras condition
+        return true; //It is a right angled triangle
+      }else {
+        return false; //It is not a right angled triangle
+      }
+    }
+    </script>
+    <script>
+    // 내가 구현
+    document.write('Hypotenuse of a right angled triangle with the height of 4 and width of 3 is ' + pythagoras(3, 4) + '<br>');
+    document.write('If a triangle has a height of 4, width of 3 and hypotenuse of 5, is it a right angled triangle ? ' + rightAngle(3, 4, 5));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+-- 부서번호 중복체크
+SELECT * FROM DEPT WHERE DEPTNO=70; -- rs.next()결과가 true(중복출력) / false(부서명/부서위치입력받아 입력)
+SELECT COUNT(*) CNT FROM DEPT WHERE DEPTNO=70;
+-- 입력
+INSERT INTO DEPT VALUES (55, 'IT', 'SEOUL');
+-- 수정
+UPDATE DEPT SET DNAME='ABC', LOC='SEOUL' WHERE DEPTNO=11;
+COMMIT;
+SELECT * FROM DEPT;
+desc dept;
