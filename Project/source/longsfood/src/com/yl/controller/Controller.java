@@ -14,10 +14,10 @@ import com.yl.service.*;
 /**
  * Servlet implementation class Controller
  */
-@WebServlet("*.do")
+@WebServlet("*.do") 
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+        
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -53,7 +53,7 @@ public class Controller extends HttpServlet {
 			service = new MainService();
 			service.execute(request, response);
 			viewPage="main/mainpage.jsp";
-		}else if(command.equals("/longfoodIntro.do")) {// longfood 소개
+		}else if(command.equals("/longfoodIntro.do")) {// longfood �냼媛�
 			viewPage = "main/longfoodIntro.jsp";
 		}
 		
@@ -95,7 +95,7 @@ public class Controller extends HttpServlet {
 			service = new MDeleteService();
 			service.execute(request, response);
 			viewPage = "main.do";
-		}else if(command.equals("/logout.do")) {//session초기화
+		}else if(command.equals("/logout.do")) {//session珥덇린�솕
 			service = new LogoutService();
 			service.execute(request, response);
 			viewPage = "main.do";
@@ -103,7 +103,7 @@ public class Controller extends HttpServlet {
 			service = new MBuyHistoryService();
 			service.execute(request, response);
 			viewPage = "member/mBuyHistory.jsp";
-		}else if(command.equals("/mBuyDetail.do")) {// 구매 상세
+		}else if(command.equals("/mBuyDetail.do")) {// 援щℓ �긽�꽭
 			service = new MBuyDetailService();
 			service.execute(request, response);
 			viewPage = "member/mBuyDetail.jsp";
@@ -144,99 +144,99 @@ public class Controller extends HttpServlet {
 			service = new MgPageService();
 			service.execute(request, response);
 			viewPage = "manager/mgPage.jsp";
-		}else if(command.equals("/registProductView.do")) {// 매니저 상품등록
+		}else if(command.equals("/registProductView.do")) {// 留ㅻ땲�� �긽�뭹�벑濡�
 			viewPage = "manager/registProduct.jsp";
 		}else if(command.equals("/registProduct.do")) {
 			service = new RegistProduct();
 			service.execute(request, response);
 			viewPage = "productAll.do";
-		}else if(command.equals("/mgAddStockProduct.do")) {//재고추가
+		}else if(command.equals("/mgAddStockProduct.do")) {//�옱怨좎텛媛�
 			service = new MgAddStockProductService();
 			service.execute(request, response);
 			viewPage = "manager/mgAddStockProductMessage.jsp";
-		}else if(command.equals("/mgCouponView.do")) {//쿠폰추가뷰
+		}else if(command.equals("/mgCouponView.do")) {//荑좏룿異붽�酉�
 			viewPage = "manager/mgCouponView.jsp";
-		}else if(command.equals("/mgCoupon.do")) {//쿠폰추가
+		}else if(command.equals("/mgCoupon.do")) {//荑좏룿異붽�
 			service = new MgCouponService();
 			service.execute(request, response);
 			viewPage = "manager/mgPage.jsp";
-		}else if(command.equals("/mgCalendarView.do")) {//매출조회달력
+		}else if(command.equals("/mgCalendarView.do")) {//留ㅼ텧議고쉶�떖�젰
 			service = new MgCalendarService();
 			service.execute(request, response);
 			viewPage = "manager/mgSalesinquiry.jsp";
-		}else if(command.equals("/memberInquiry.do")) {//멤버조회
+		}else if(command.equals("/memberInquiry.do")) {//硫ㅻ쾭議고쉶
 			service = new MemberLookUpService();
 			service.execute(request, response);
 			viewPage = "manager/memberInquiry.jsp";
-		}else if(command.equals("/mgModifyView.do")) {//매니저 정보수정
+		}else if(command.equals("/mgModifyView.do")) {//留ㅻ땲�� �젙蹂댁닔�젙
 			service = new MgModifyViewService();
 			service.execute(request, response);
 			viewPage = "manager/mgModify.jsp";
-		}else if(command.equals("/mgModify.do")) {//매니저 정보수정
+		}else if(command.equals("/mgModify.do")) {//留ㅻ땲�� �젙蹂댁닔�젙
 			service = new MgModifyService();
 			service.execute(request, response);
 			viewPage = "manager/mgPage.jsp";
 		}
 		
 		//Product
-		else if(command.equals("/productAll.do")) {//전체 제품 보기
+		else if(command.equals("/productAll.do")) {//�쟾泥� �젣�뭹 蹂닿린
 			service = new ProductAllService();
 			service.execute(request, response);
 			viewPage = "board_product/productAll.jsp";
-		}else if(command.equals("/productDetail.do")) {//제품 상세 보기 + 리뷰
+		}else if(command.equals("/productDetail.do")) {//�젣�뭹 �긽�꽭 蹂닿린 + 由щ럭
 			service = new ProductDetailService();
 			service.execute(request, response);
 			viewPage = "board_product/productDetail.jsp";
-		}else if(command.equals("/cartAddProduct.do")) {//장바구니 제품 추가
+		}else if(command.equals("/cartAddProduct.do")) {//�옣諛붽뎄�땲 �젣�뭹 異붽�
 			service = new CartAddProduct();
 			service.execute(request, response);
 			viewPage = "board_product/productAddCartMessage.jsp";
-		}else if(command.equals("/modifyProductView.do")) { //상품수정뷰
+		}else if(command.equals("/modifyProductView.do")) { //�긽�뭹�닔�젙酉�
 			service = new ProductModifyViewService();
 			service.execute(request, response);
 			viewPage = "board_product/productModify.jsp";
-		}else if(command.equals("/modifyProduct.do")) { //상품수정
+		}else if(command.equals("/modifyProduct.do")) { //�긽�뭹�닔�젙
 			service = new ProductModifyService();
 			service.execute(request, response);
 			viewPage = "productAll.do";
 		}
 		
-		// 카트
-		else if(command.equals("/cartView.do")) {//카트보기
+		// 移댄듃
+		else if(command.equals("/cartView.do")) {//移댄듃蹂닿린
 			service = new CartViewService();
 			service.execute(request, response);
 			viewPage = "cart/cartView.jsp";
-		}else if(command.equals("/cartDelProduct.do")) {//카트에서 물품 삭제
+		}else if(command.equals("/cartDelProduct.do")) {//移댄듃�뿉�꽌 臾쇳뭹 �궘�젣
 			service = new CartDelProductService();
 			service.execute(request, response);
 			viewPage = "cartView.do";
-		}else if(command.equals("/cartBuyProduct.do")) {//카트에서 물품 구매
+		}else if(command.equals("/cartBuyProduct.do")) {//移댄듃�뿉�꽌 臾쇳뭹 援щℓ
 			service = new CartBuyProductService();
 			service.execute(request, response);
 			viewPage = "board_product/productPurchaseConfirm.jsp";
 		}
 		
-		//결제
-		else if(command.equals("/payment.do")) {//결제 이동페이지
+		//寃곗젣
+		else if(command.equals("/payment.do")) {//寃곗젣 �씠�룞�럹�씠吏�
 			service = new PaymentService();
 			service.execute(request, response);
 			viewPage = "board_product/productPurchaseAfter.jsp";
 		}
 		
-		//리뷰
-		else if(command.equals("/rGoodPlus.do")) {//좋아요
+		//由щ럭
+		else if(command.equals("/rGoodPlus.do")) {//醫뗭븘�슂
 			service = new RGoodPlusService();
 			service.execute(request, response);
 			viewPage = "board_review/pRGoodMessage.jsp";
-		}else if(command.equals("/rCommentWrite.do")) {//관리자 리뷰 댓글 작성
+		}else if(command.equals("/rCommentWrite.do")) {//愿�由ъ옄 由щ럭 �뙎湲� �옉�꽦
 			service = new RCommentWriteService();
 			service.execute(request, response);
 			viewPage = "productDetail.do?pcode="+(String)request.getAttribute("pcode").toString();
-		}else if(command.equals("/rCommentView.do")) {//리뷰 댓글 보기
+		}else if(command.equals("/rCommentView.do")) {//由щ럭 �뙎湲� 蹂닿린
 			service = new RCommentViewService();
 			service.execute(request, response);
 			viewPage = "board_review/pRcMessage.jsp";
-		}else if(command.equals("/rWrite.do")) {//리뷰쓰기
+		}else if(command.equals("/rWrite.do")) {//由щ럭�벐湲�
 			service = new RWriteService();
 			service.execute(request, response);
 			viewPage = "productDetail.do?pcode="+(String)request.getAttribute("pcode").toString();
@@ -245,39 +245,39 @@ public class Controller extends HttpServlet {
 		
 		
 		//csBoards
-		else if(command.equals("/csBoardsListService.do")) {//고객센터리스트
+		else if(command.equals("/csBoardsListService.do")) {//怨좉컼�꽱�꽣由ъ뒪�듃
 			service = new CsBoardsListService();
 			service.execute(request, response);
 			viewPage = "board_cs/customerService.jsp";
-		}else if(command.equals("/csBoardWriteView.do")) {//고객센터글쓰기 ono추가
+		}else if(command.equals("/csBoardWriteView.do")) {//怨좉컼�꽱�꽣湲��벐湲� ono異붽�
 			service = new CsBoardWriteView();
 			service.execute(request, response);
 			viewPage = "board_cs/customerServiceWrite.jsp";
-		}else if(command.equals("/csBoardWrite.do")) {//고객센터글쓰기
+		}else if(command.equals("/csBoardWrite.do")) {//怨좉컼�꽱�꽣湲��벐湲�
 			service = new CsBoardWrite();
 			service.execute(request, response);
 			viewPage = "csBoardsListService.do";
-		}else if(command.equals("/csBoardsSecretCheck.do")) {//비밀글 확인
+		}else if(command.equals("/csBoardsSecretCheck.do")) {//鍮꾨�湲� �솗�씤
 			service = new CsBoardsSecretCheckService();
 			service.execute(request, response);
 			viewPage = "board_cs/csBoardsSecretCheck.jsp";
-		}else if(command.equals("/csBoardsDetail.do")) {//cs글 상세보기
+		}else if(command.equals("/csBoardsDetail.do")) {//cs湲� �긽�꽭蹂닿린
 			service = new CsBoardsDetailService();
 			service.execute(request, response);
 			viewPage = "board_cs/csBoardsDetail.jsp";
-		}else if(command.equals("/csBoardModifyView.do")) {//수정화면
+		}else if(command.equals("/csBoardModifyView.do")) {//�닔�젙�솕硫�
 			service = new CsBoardsModifyViewService();
 			service.execute(request, response);
 			viewPage = "board_cs/csBoardsModify.jsp";
-		}else if(command.equals("/csBoardModify.do")) {//수정실행
+		}else if(command.equals("/csBoardModify.do")) {//�닔�젙�떎�뻾
 			service = new CsBoardsModifyService();
 			service.execute(request, response);
 			viewPage = "csBoardsListService.do";
-		}else if(command.equals("/csBoardsDelete.do")) {//삭제실행
+		}else if(command.equals("/csBoardsDelete.do")) {//�궘�젣�떎�뻾
 			service = new CsBoardsDeleteService();
 			service.execute(request, response);
 			viewPage = "csBoardsListService.do";
-		}else if(command.equals("/cmCommentWrite.do")) {//관리자 코멘트작성
+		}else if(command.equals("/cmCommentWrite.do")) {//愿�由ъ옄 肄붾찘�듃�옉�꽦
 			service = new CmCommentWriteService();
 			service.execute(request, response);
 			viewPage = "csBoardsDetail.do?cno="+(String)request.getAttribute("cno").toString();
@@ -285,7 +285,7 @@ public class Controller extends HttpServlet {
 			service = new CsBoardReplyViewService();
 			service.execute(request, response);
 			viewPage = "board_cs/csBoardsReply.jsp";
-		}else if(command.equals("/csBoardsReply.do")) {//답변 실행
+		}else if(command.equals("/csBoardsReply.do")) {//�떟蹂� �떎�뻾
 			service = new CsBoardReplyService();
 			service.execute(request, response);
 			viewPage = "csBoardsListService.do";

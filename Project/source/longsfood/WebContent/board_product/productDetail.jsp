@@ -5,7 +5,7 @@
 <c:set var="conPath" value="${pageContext.request.contextPath }"></c:set>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>

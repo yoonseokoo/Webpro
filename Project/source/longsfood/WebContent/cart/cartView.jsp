@@ -23,10 +23,10 @@
 		width:36px;
 		height:36px;
 	}
+	 
 	
-	
-</style>
-<script
+</style> 
+<script 
   src="https://code.jquery.com/jquery-3.4.1.js"></script> 
  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>

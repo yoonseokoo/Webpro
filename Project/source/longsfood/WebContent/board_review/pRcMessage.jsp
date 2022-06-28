@@ -12,4 +12,4 @@
 		<div class="row bg-white text-dark rounded">${rc.rccontent }</div>
 	</div>
 </body>
-</html>
+</html> 

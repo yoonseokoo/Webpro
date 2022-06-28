@@ -1,0 +1,41 @@
+@charset "UTF-8";
+	#loginForm_wrap {
+		width:430px; 
+		margin: 10px auto;
+		border: 1px solid #625750; 
+		padding:20px;
+		text-align: center;
+	}
+	#login_title{
+		width:400px;            	
+		margin:10px auto;
+		padding-bottom:20px;     	
+		border-bottom:1px solid #625750;
+		color:#625750;          	
+		font-size:1.5em;
+		text-align:center;       	
+		font-weight:bold;
+	}
+	#loginForm_wrap table {
+		margin: 0 auto;
+	}
+	#loginForm_wrap table tr{
+		height: 40px;
+	}
+	#loginForm_wrap table th{
+		width: 120px;
+		color: #625750;
+		text-align: left;
+		padding-left: 10px;
+	}
+	#loginForm_wrap table  td {
+		width:300px;
+	}
+	#loginForm_wrap .loginBtn_style{
+		color: #ffffff;        	
+		background: #625750;
+		border:0;              
+		outline: none;
+		width:200px;              
+		padding:5px 0;
+	}
