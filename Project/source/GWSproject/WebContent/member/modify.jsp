@@ -27,52 +27,99 @@
     });
   });
   </script>
-	<link href="${conPath }/css/style.css" rel="stylesheet">
+  <script>
+		$(document).ready(function(){
+				$('input[name="mPw"], input[name="mPwChk"]').keyup(function(){
+					var mPw = $('input[name="mPw"]').val();
+					var mPwChk = $('input[name="mPwChk"]').val();
+					if(mPw == mPwChk){
+						$('#pwChkResultModify').text('비밀번호 일치');
+					}else{
+						$('#pwChkResultModify').html('<b>비밀번호 불일치</b>');
+					}
+				});
+				
+				$('form').submit(function(){
+					var pwChkResultModify = $('#pwChkResultModify').text().trim();
+					if (pwChkResultModify !='비밀번호 일치'){
+						alert('비밀번호 불일치');
+						return false;
+					} 
+				});
+			});
+	</script>
+	<link href="${conPath }/css/modify.css" rel="stylesheet">
 </head>
 <body>
-	<c:if test="${empty member }"> <!-- 로그인 전이면 로그인 페이지로 가기 -->
-		<script>location.href="login.do";</script>
-	</c:if>
 	<jsp:include page="../main/header.jsp"/>
-	<form action="${conPath }/modify.do" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="dbmPhoto" value="${member.mPhoto }">
+	<div id="modifyForm_wrap">
+	<form action="${conPath }/modify.do" method="post" >
 		<table>
 			<caption>회원 정보 수정</caption>
-			<tr><th>아이디</th>
-					<td><input type="text" name="mId" value="${member.mId }" readonly="readonly"></td>
-					<td rowspan="3"><img src="${conPath }/memberPhotoUp/${member.mPhoto}" width="100"></td>
-			</tr>
-			<tr><th>비밀번호</th>
-					<td><input type="password" name="mPw" required="required" value="${member.mPw }"></td>
-			</tr>
-			<tr><th>이름</th>
-					<td><input type="text" name="mName" required="required" value="${member.mName }"></td>
+			<tr>
+				<th>아이디</th>
+				<td>
+					<input type="text" name="mId" value="${member.mId }" readonly="readonly" class="mId">
+				</td>
 			</tr>
 			<tr>
-				<th>메일</th>
-				<td><input type="email" name="mEmail" value="${member.mEmail }"></td>
-				<td>사진</td>
+				<th>비밀번호</th>
+				<td>
+					<input type="password" name="mPw" required="required" value="${member.mPw }" class="mPw">
+				</td>
 			</tr>
 			<tr>
-				<th>사진</th>
-				<td colspan="2"><input type="file" name="mPhoto"></td>
+				<th>비밀번호 확인</th>
+				<td>
+					<input type="password" name="mPwChk" required="required"  autofocus="autofocus" class="mPwChk">
+					<div id="pwChkResultModify"></div>
+				</td>
 			</tr>
 			<tr>
-				<th>생년월일</th>
-				<td colspan="2"><input type="text" name="mBirth" id="datepicker" value="${member.mBirth }"></td>
+			<th>이름</th>
+				<td>
+					<input type="text" name="mName" required="required" value="${member.mName } " autofocus="autofocus" class="mName">
+				</td>
+			</tr>
+			<tr>
+				<th>전화번호</th>
+				<td>
+					<input type="text" name="mPhone" value="${member.mPhone }" autofocus="autofocus" class="mPhone" >
+				</td>
 			</tr>
 			<tr>
 				<th>주소</th>
-				<td colspan="2"><input type="text" name="mAddress" value="${member.mAddress }"></td>
+				<td colspan="2">
+					<input type="text" name="mAddress" value="${member.mAddress }" class="mAddress">
+				</td>
+			</tr>
+			<tr>
+				<th>상세주소</th>
+				<td colspan="2">
+					<input type="text" name="mAddressDetail" value="${member.mAddressDetail }" class="mAddressDetail">
+				</td>
+			</tr>
+			<tr>
+				<th>생년월일</th>
+				<td colspan="2">
+					<input type="text" name="mBirth" id="datepicker" value="${member.mBirth }" autofocus="autofocus" class="mBirth">
+				</td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td>
+					<input type="email" name="mEmail" value="${member.mEmail }" autofocus="autofocus" class="mEmail"></td>
 			</tr>
 			<tr>
 				<td colspan="3">
-					<input type="submit" value="정보수정" class="btn">
-						<input type="reset" value="초기화" class="btn">
-						<input type="reset" value="이전" onclick="history.go(-1)" class="btn">
+					<input type="submit" value="정보수정" class="modifyBtn_style">
+					<input type="reset" value="초기화" class="modifyBtn_style">
+					<input type="reset" value="이전" onclick="history.go(-1)" class="modifyBtn_style">
 				</td>
 			</tr>
 		</table>
 	</form>
+	</div>
+	<jsp:include page="../main/footer.jsp"/>
 </body>
 </html>

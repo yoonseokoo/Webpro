@@ -9,7 +9,7 @@
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<link href="${conPath }/css/join.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function(){
 				$('input[name="mId"]').keyup(function(){
@@ -25,24 +25,32 @@
 				});
 			});
 				$('input[name="mEmail"]').keyup(function(){
+					var patternMail = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+(\.[a-zA-Z]+){1,2}$/;
 					var mEmail = $('input[name="mEmail"]').val();
-					$.ajax({
-						url : '${conPath}/emailConfirm.do',
-						data : 'mEmail=' + mEmail,
-						type: 'get',
-						dataType:'html',
-						success: function(data){
-							$('#emailConfirmResult').html(data);			
+					if(patternMail.test(mEmail)){
+						$.ajax({
+							url : '${conPath}/emailConfirm.do',
+							data : 'mEmail=' + mEmail,
+							type: 'get',
+							dataType:'html',
+							success: function(data){
+								$('#emailConfirmResult').html(data);			
+							}
 						}
+					} else if (!mEmail) {
+						$('#emailConfirmResult');
+					} else {
+						$('#emailConfirmResult').html('메일 형식을 지켜주세요');
+					}
 				});
-			});
+						
 				$('input[name="mPw"], input[name="mPwChk"]').keyup(function(){
 					var mPw = $('input[name="mPw"]').val();
 					var mPwChk = $('input[name="mPwChk"]').val();
 					if(mPw == mPwChk){
-						$('#pwChkResult').text('Passwords match!');
+						$('#pwChkResult').text('비밀번호 일치');
 					}else{
-						$('#pwChkResult').html('<b>Passwords do not match</b>');
+						$('#pwChkResult').html('<b>비밀번호 불일치</b>');
 					}
 				});
 				
@@ -50,15 +58,15 @@
 					var idConfirmResult = $('#idConfirmResult').text().trim();
 					var pwChkResult = $('#pwChkResult').text().trim();
 					var emailConfirmResult = $('#emailConfirmResult').text().trim();
-					if (idConfirmResult != "Available ID"){
-						alert('Please use choose another ID');
+					if (idConfirmResult != "사용가능한 아이디입니다"){
+						alert('다른 아이디를 선택해 주세요');
 						$('#idConfirmResult').focus();
 						return false;
-					} else if (pwChkResult !='Passwords match!'){
-						alert('Please check your password');
+					} else if (pwChkResult !='비밀번호 일치'){
+						alert('비밀번호를 확인하세요');
 						return false;
-					} else if (emailConfirmResult != "Available email") {
-						alert('This email is already used by another member. Please choose another email');
+					} else if (emailConfirmResult != "사용가능한 이메일입니다") {
+						alert('해당 이메일 주소를 사용할 수 없습니다. 다른 주소를 선택하십시오');
 						$('#emailConfirmResult').focus();
 						return false;
 					}
@@ -77,7 +85,7 @@
     	showMonthAfterYear : true,
     	yearSuffix : '년',
     	showOtherMonths : true,
-    	dayNamesMin:['일','월','화','수','목','금','토'],
+    	dayNamesMin:['Mon','Tues','Wed','Thur','Fri','Sat','Sun'],
 			changeYear : true,
 			minDate : '-100y',
 			yearRange : 'c-100:c+0',
@@ -87,71 +95,103 @@
 
 </head>
 <body>
-	<jsp:include page="../main/header.jsp"/>
-	<div id="joinForm_wrap">
-	<form action="${conPath }/join.do" method="post" enctype="multipart/form-data">
+	<header>
+		<div class="gnb">
+			<ul>
+				<li><a href="${conPath }/joinView.do">회원가입</a></li>
+				<li><a href="${conPath }/loginView.do">로그인</a></li>
+				<li><a href="${conPath }/list.do">검색</a></li>
+			</ul>
+		</div>
+		<div class="logo" onclick="location.href='${conPath}/main/main.jsp'">
+			<img src="${conPath }/img/logo.png">
+		</div>	
+	</header>
+	
+	
+	<form action="${conPath }/join.do" method="post">
+	<div id="totalJoin">
+		<div id="joinForm_wrap1">
 		<table>
 			<caption>회원가입</caption>
 			<tr>
-				<th>아이디</th>
+				<th>아이디<b>*</b></th>
 				<td>
-					<input type="text" name="mId" required="required" class="id">
+					<input type="text" name="mId" required="required"  autofocus="autofocus" class="mId" >
 					<div id="idConfirmResult"></div>
 				</td
 			></tr>
 				
 			<tr>
-				<th>비밀번호</th>
+				<th>비밀번호<b>*</b></th>
 				<td>
-					<input type="password" name="mPw" required="required" class="pw">
+					<input type="password" name="mPw" required="required"  autofocus="autofocus" class="mPw">
 				</td>
 			</tr>
 			<tr>
-				<th>비밀번호</th>
+				<th>비밀번호<b>*</b></th>
 				<td>
-					<input type="password" name="mPwChk" required="required" class="pwChk">
+					<input type="password" name="mPwChk" required="required"  autofocus="autofocus" class="mPwChk">
 					<div id="pwChkResult"></div>
 				</td>
 			</tr>
 			<tr>
-				<th>이름</th>
+				<th>이름<b>*</b></th>
 				<td>
-				<input type="text" name="mName" required="required" class="name">
-			</td></tr>
-			<tr>
-				<th>메일</th>
-				<td>
-					<input type="email" name="mEmail" class="email">
-					<div id="emailConfirmResult"></div>
+					<input type="text" name="mName" required="required"  autofocus="autofocus" class="mName">
 				</td>
 			</tr>
 			<tr>
-				<th>사진</th>
+				<th>전화번호<b>*</b></th>
 				<td>
-					<input type="file" name="mPhoto" class="photo">
-				</td>
-			</tr>
-			<tr>
-				<th>생년월일</th>
-				<td>
-					<input type="text" name="mBirth" id="datepicker" class="birth">
+					<input type="text" name="mPhone" required="required"  autofocus="autofocus" class="mPhone" placeholder="000-0000-0000" >
 				</td>
 			</tr>
 			<tr>
 				<th>주소</th>
 				<td>
-					<input type="text" name="mAddress" class="address">
+					<input type="text" name="mAddress"  autofocus="autofocus" class="mAddress">
 				</td>
 			</tr>
 			<tr>
+				<th>상세주소</th>
+				<td>
+					<input type="text" name="mAddressDetail" autofocus="autofocus"  class="mAddressDetail"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>생년월일<b>*</b></th>
+				<td>
+					<input type="text" name="mBirth"  required="required" autofocus="autofocus" id="datepicker" class="mBirth" placeholder="YYYY/MM/DD">
+				</td>
+			</tr>
+			<tr>
+				<th>이메일<b>*</b></th>
+				<td>
+					<input type="email" name="mEmail" required="required" autofocus="autofocus" class="mEmail">
+					<div id="emailConfirmResult"></div>
+				</td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>
+					<input type="radio" name="mGender" value="m" id="m" />
+                    <label for="m">남자</label>
+                    <input type="radio" name="mGender" value="f" id="f" />
+                    <label for="f">여자</label>
+                 </td>
+			<tr>
 				<td colspan="2">
-					<input type="submit" value="회원가입" class="joinBtn_style">
-					<input type="button" value="로그인" onclick="location='${conPath}/loginView.do'" class="joinBtn_style">
+					<input type="submit" value="회원가입" onclick="location='${conPath}/loginView.do'" class="joinBtn_style">
 				</td>
 			</tr>
 		</table>
-	</form>
 	</div>
+	<div id="joinForm_wrap2">
+			<img src="${conPath }/img/joinPage.jpg" >
+		</div>
+	</div>
+	</form>
 	<jsp:include page="../main/footer.jsp"/>
 </body>
 </html>

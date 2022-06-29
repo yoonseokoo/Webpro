@@ -28,11 +28,11 @@
 					<li><a href="${conPath }/list.do">고객센터</a></li>
 					<li><a href="${conPath}/logout.do">로그아웃</a></li>
 					<li><a href="${conPath}/modifyView.do">정보수정</a></li>
-					<li><a>${member.mName }님 ▶</a>
+					<li><a a href="${conPath}/myInfoView.do">${member.mName }님 ▶</a>
 				</ul>
 			</div>
 		</c:if>
-			<div class="logo" onclick="location.href='#logo'">
+			<div class="logo" onclick="location.href='${conPath}/main/main.jsp'">
 				<img src="${conPath }/img/logo.png">
 			</div>	
 	</div>

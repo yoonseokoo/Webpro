@@ -21,8 +21,9 @@ public class MLoginService implements MService {
 			HttpSession session = request.getSession();
 			MemberDto member = mDao.getMember(mId);
 			session.setAttribute("member", member);
+			request.setAttribute("loginResult", "로그인 성공");
 		}else { 
-			request.setAttribute("loginErrorMsg", "Please check ID & PW");
+			request.setAttribute("loginErrorMsg", "로그인 실패. 아이디와 비밀번호를 확인해주세요");
 		}
 	}
 

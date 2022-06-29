@@ -1,0 +1,15 @@
+@charset "UTF-8";
+body {
+	
+	font-size: 12px;
+}
+table {border-collapse: collapse;width:70%; margin: 10px auto;}
+td, th { border: 1px solid pink; text-align: center; padding:10px;}
+input[type='text'] {width:97%; padding: 3px;}
+textarea {width:90%;}
+caption {font-size: 25px; padding:10px;}
+h2{text-align: center; }
+a { text-decoration: none;}
+.left{text-align: left;}
+.paging {text-align: center;}
+b {color:red;}

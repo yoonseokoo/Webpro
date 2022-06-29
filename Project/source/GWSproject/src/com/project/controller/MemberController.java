@@ -14,6 +14,8 @@ import com.project.service.MJoinService;
 import com.project.service.MLoginService;
 import com.project.service.MLogoutService;
 import com.project.service.MService;
+import com.project.service.MinfoService;
+import com.project.service.ModifyService;
 
 
 
@@ -70,16 +72,26 @@ public class MemberController extends HttpServlet {
 			service = new MLogoutService();
 			service.execute(request, response);
 			viewPage = "main/main.jsp";
+		} else if(com.contentEquals("/myInfoView.do")) { //내 정보 페이지
+			viewPage = "member/myinfo.jsp";
+		}else if(com.equals("/myinfo.jsp")) {  
+			service = new MinfoService();
+			service.execute(request, response); 
+			viewPage ="main/main.jsp"; 
 			/*
 			 * }else if(com.equals("/adminLogout.do")) { //ADMIN 로그아웃 service = new
 			 * ALogoutService(); service.execute(request, response); viewPage =
 			 * "main/main.jsp";
 			 */
-			/*
-			 * }else if(com.equals("/modifyView.do")) { //회원 정보 수정 viewPage =
-			 * "member/modify.jsp"; }else if(com.equals("/modify.do")){ service = new
-			 * ModifyService(); service.execute(request, response); viewPage =
-			 * "main/main.jsp"; } else if (com.equals("/contentView.do")) { //게시판 자세히 보기
+			
+		}else if(com.equals("/modifyView.do")) { 
+			viewPage = "member/modify.jsp"; 
+		}else if(com.equals("/modify.do")){ 
+			service = new ModifyService(); 
+			service.execute(request, response); 
+			viewPage ="main/main.jsp"; 
+			 
+			 /* } else if (com.equals("/contentView.do")) { //게시판 자세히 보기
 			 * service = new BContentService(); service.execute(request, response); viewPage
 			 * = "board/contentView.jsp"; } else if (com.equals("/bModifyView.do")) {
 			 * service = new BModifyViewService(); service.execute(request, response);

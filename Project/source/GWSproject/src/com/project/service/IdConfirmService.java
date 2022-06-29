@@ -13,9 +13,9 @@ public class IdConfirmService implements MService {
 		MemberDao mDao = MemberDao.getInstance();
 		int result = mDao.mIdConfirm(mId);
 		if(result == MemberDao.EXISTENT) {
-			request.setAttribute("idConfirmResult", "Unavailable ID");
+			request.setAttribute("idConfirmResult", "다른 아이디를 선택해 주세요");
 		}else {
-			request.setAttribute("idConfirmResult", "Available ID");
+			request.setAttribute("idConfirmResult", "사용가능한 아이디입니다");
 		}
 	}
 }

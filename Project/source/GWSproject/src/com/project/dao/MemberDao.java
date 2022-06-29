@@ -36,7 +36,7 @@ public class MemberDao {
 		} catch (NamingException e) {
 			System.out.println(e.getMessage());
 		}
-		return conn;
+		return conn; 
 	}
 	
 	
@@ -116,30 +116,29 @@ public class MemberDao {
 	
 	
 	
-	//[3] SIGN UP
+	//[3] JOIN
 
-	public int joinMember(String mId,String mPw,String mName,String mPhone,String mAddress, 
-			String mAddressDetail,Date mBirth,String mEmail,String mGender) {
+	public int joinMember(MemberDto member) {
 		int result = FAIL;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "INSERT INTO MEMBER (MID,MPW,MNAME,MPHONE,MADDRESS,MADDRESSDETAIL,MBIRTH ,MEMAIL,MGENDER)  " + 
-				"   VALUES (?,?,?,?,?,?,?,?,? )";
+		String sql = "INSERT INTO MEMBER (MID,MPW,MNAME,MPHONE,MADDRESS,MADDRESSDETAIL,MBIRTH ,MEMAIL, MGENDER)  " + 
+				"   VALUES (?,?,?,?,?,?,?,?,?)";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, mId);
-			pstmt.setString(2, mPw);
-			pstmt.setString(3, mName);
-			pstmt.setString(4, mPhone);
-			pstmt.setString(5, mAddress);
-			pstmt.setString(6, mAddressDetail);
-			pstmt.setDate(7, mBirth);
-			pstmt.setString(8, mEmail);
-			pstmt.setString(9, mGender);
+			pstmt.setString(1, member.getmId());
+			pstmt.setString(2, member.getmPw());
+			pstmt.setString(3, member.getmName());
+			pstmt.setString(4, member.getmPhone());
+			pstmt.setString(5, member.getmAddress());
+			pstmt.setString(6, member.getmAddressDetail());
+			pstmt.setDate(7, member.getmBirth());
+			pstmt.setString(8, member.getmEmail());
+			pstmt.setString(9, member.getmGender());
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage() + "joinMember 예외");
 		} finally {
 			try {
 				if(pstmt!=null) {
@@ -252,7 +251,7 @@ public class MemberDao {
 					int mGrade = rs.getInt("mGrade");
 					String gName = rs.getString("gName");
 					int cart_cnt = rs.getInt("cart_cnt");
-					members.add(new MemberDto(mId, mPw, mName, mPhone, mAddress, mAddressDetail, mBirth, mEmail, mGender, mCumPurchase, mRdate, mGrade, gName, cart_cnt));
+					members.add(new MemberDto(mId, mPw, mName, mPhone, mAddress, mAddressDetail, mBirth, mEmail, mGender, mCumPurchase, mRdate, mGrade));
 				}
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());
@@ -269,9 +268,8 @@ public class MemberDao {
 		}
 	
 	
-
-	public int memberModify(String mId,String mPw,String mName,String mPhone,String mAddress, 
-			String mAddressDetail,Date mBirth,String mEmail,String mGender) {
+		//MODIFY
+	public int memberModify(MemberDto member) {
 		int result = FAIL;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -282,14 +280,14 @@ public class MemberDao {
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, mPw);
-			pstmt.setString(2, mName);
-			pstmt.setString(3, mPhone);
-			pstmt.setString(4, mAddress);
-			pstmt.setString(5, mAddressDetail);
-			pstmt.setDate(6, mBirth);
-			pstmt.setString(7, mEmail);
-			pstmt.setString(8, mId);
+			pstmt.setString(1, member.getmPw());
+			pstmt.setString(2, member.getmName());
+			pstmt.setString(3, member.getmPhone());
+			pstmt.setString(4, member.getmAddress());
+			pstmt.setString(5, member.getmAddressDetail());
+			pstmt.setDate(6, member.getmBirth());
+			pstmt.setString(7, member.getmEmail());
+			pstmt.setString(8, member.getmId());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
