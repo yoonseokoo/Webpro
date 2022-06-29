@@ -8,6 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.project.service.EmailConfirmService;
+import com.project.service.IdConfirmService;
+import com.project.service.MJoinService;
+import com.project.service.MLoginService;
+import com.project.service.MLogoutService;
+import com.project.service.MService;
+
 
 
 @WebServlet("*.do")
@@ -38,14 +45,13 @@ public class MemberController extends HttpServlet {
 			viewPage = "main/main.jsp";
 		} else if(com.equals("/adminLoginView.do")) { //ADMIN 로그인
 			viewPage = "admin/adminLogin.jsp";
-		}else if(com.equals("/adminLogin.do")) { //ADMIN 로그인
-			service = new ALoginService();
-			service.execute(request, response);
-			viewPage = "adminMain.do";
-		} else if(com.equals("/adminMain.do")) { 
-			service = new MAllViewService();
-			service.execute(request, response); 
-			viewPage = "main/adminMain.jsp"; 
+			/*
+			 * }else if(com.equals("/adminLogin.do")) { //ADMIN 로그인 service = new
+			 * ALoginService(); service.execute(request, response); viewPage =
+			 * "adminMain.do"; } else if(com.equals("/adminMain.do")) { service = new
+			 * MAllViewService(); service.execute(request, response); viewPage =
+			 * "main/adminMain.jsp";
+			 */
 		} else if(com.equals("/idConfirm.do")) { //아이디 확인
 			service = new IdConfirmService();
 			service.execute(request, response);
@@ -63,11 +69,12 @@ public class MemberController extends HttpServlet {
 		}else if(com.equals("/logout.do")) { //로그아웃
 			service = new MLogoutService();
 			service.execute(request, response);
-			viewPage = "member/login.jsp";
-		}else if(com.equals("/adminLogout.do")) { //ADMIN 로그아웃
-			service = new ALogoutService();
-			service.execute(request, response);
 			viewPage = "main/main.jsp";
+			/*
+			 * }else if(com.equals("/adminLogout.do")) { //ADMIN 로그아웃 service = new
+			 * ALogoutService(); service.execute(request, response); viewPage =
+			 * "main/main.jsp";
+			 */
 			/*
 			 * }else if(com.equals("/modifyView.do")) { //회원 정보 수정 viewPage =
 			 * "member/modify.jsp"; }else if(com.equals("/modify.do")){ service = new

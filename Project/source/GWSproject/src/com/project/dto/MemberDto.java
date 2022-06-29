@@ -15,8 +15,6 @@ public class MemberDto {
 	private int mCumPurchase;
 	private Date mRdate;
 	private int mGrade;
-	private String gName;
-	private int cart_cnt;
 	
 	public MemberDto() {
 	}
@@ -36,25 +34,6 @@ public class MemberDto {
 		this.mCumPurchase = mCumPurchase;
 		this.mRdate = mRdate;
 		this.mGrade = mGrade;
-		
-	}
-
-	public MemberDto(String mId, String mPw, String mName, String mPhone, String mAddress, String mAddressDetail,
-			Date mBirth, String mEmail, String mGender, int mCumPurchase, Date mRdate, int mGrade, String gName, int cart_cnt) {
-		this.mId = mId;
-		this.mPw = mPw;
-		this.mName = mName;
-		this.mPhone = mPhone;
-		this.mAddress = mAddress;
-		this.mAddressDetail = mAddressDetail;
-		this.mBirth = mBirth;
-		this.mEmail = mEmail;
-		this.mGender = mGender;
-		this.mCumPurchase = mCumPurchase;
-		this.mRdate = mRdate;
-		this.mGrade = mGrade;
-		this.gName = gName;
-		this.cart_cnt = cart_cnt;
 		
 	}
 
@@ -154,28 +133,12 @@ public class MemberDto {
 		this.mGrade = mGrade;
 	}
 
-	public String getgName() {
-		return gName;
-	}
-
-	public void setgName(String gName) {
-		this.gName = gName;
-	}
-
-	public int getCart_cnt() {
-		return cart_cnt;
-	}
-
-	public void setCart_cnt(int cart_cnt) {
-		this.cart_cnt = cart_cnt;
-	}
-
 	@Override
 	public String toString() {
 		return "MemberDto [mId=" + mId + ", mPw=" + mPw + ", mName=" + mName + ", mPhone=" + mPhone + ", mAddress="
 				+ mAddress + ", mAddressDetail=" + mAddressDetail + ", mBirth=" + mBirth + ", mEmail=" + mEmail
 				+ ", mGender=" + mGender + ", mCumPurchase=" + mCumPurchase + ", mRdate=" + mRdate + ", mGrade="
-				+ mGrade + ", gName=" + gName + ", cart_cnt=" + cart_cnt + "]";
+				+ mGrade + "]";
 	}
 
 	

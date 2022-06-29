@@ -12,9 +12,9 @@
 	
 	#mainForm_wrap img{
 		margin: 0 auto;
-		height: auto;
-		text-align: center;
+		
 		float:left;
+		width:100%;
 	}
 	.btn1{
 		position: absolute;

@@ -98,9 +98,7 @@ public class MemberDao {
 				int mCumPurchase = rs.getInt("mCumPurchase");
 				Date mRdate =  rs.getDate("mRdate");
 				int mGrade = rs.getInt("mGrade");
-				String gName = rs.getString("gName");
-				int cart_cnt = rs.getInt("cart_cnt");
-				member = new MemberDto(mId, mPw, mName, mPhone, mAddress, mAddressDetail, mBirth, mEmail, mGender, mCumPurchase, mRdate, mGrade, gName, cart_cnt);
+				member = new MemberDto(mId, mPw, mName, mPhone, mAddress, mAddressDetail, mBirth, mEmail, mGender, mCumPurchase, mRdate, mGrade);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

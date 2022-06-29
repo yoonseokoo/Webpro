@@ -4,8 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.lec.dao.MemberDao;
-import com.lec.dto.MemberDto;
+import com.project.dao.MemberDao;
+import com.project.dto.MemberDto;
+
+
 
 public class MLoginService implements MService {
 

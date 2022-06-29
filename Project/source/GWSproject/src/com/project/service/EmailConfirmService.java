@@ -3,7 +3,8 @@ package com.project.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lec.dao.MemberDao;
+import com.project.dao.MemberDao;
+
 
 public class EmailConfirmService implements MService {
 
