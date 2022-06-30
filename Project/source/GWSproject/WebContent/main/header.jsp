@@ -41,7 +41,7 @@
 					<li ><a href="#1">HISTORY</a></li>
 					<li ><a href="#2">PRODUCTS</a></li>
 					<li ><a href="#3">LOCATION</a></li>
-					<li ><a href="#4">BOARD</a></li>
+					<li ><a href="${conPath}/list.do">BOARD</a></li>
 					<li ><a href="#5">ABOUT</a></li>
 				</ul>
 			</div>

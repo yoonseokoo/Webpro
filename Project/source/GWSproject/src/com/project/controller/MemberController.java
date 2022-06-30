@@ -8,13 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.project.service.BContentService;
+import com.project.service.BListService;
+import com.project.service.BModifyService;
+import com.project.service.BModifyViewService;
+import com.project.service.BReplyService;
+import com.project.service.BReplyViewService;
 import com.project.service.EmailConfirmService;
 import com.project.service.IdConfirmService;
 import com.project.service.MJoinService;
 import com.project.service.MLoginService;
 import com.project.service.MLogoutService;
 import com.project.service.MService;
-import com.project.service.MinfoService;
 import com.project.service.ModifyService;
 
 
@@ -72,46 +77,66 @@ public class MemberController extends HttpServlet {
 			service = new MLogoutService();
 			service.execute(request, response);
 			viewPage = "main/main.jsp";
-		} else if(com.contentEquals("/myInfoView.do")) { //내 정보 페이지
+			/*} else if(com.contentEquals("/myInfoView.do")) { //내 정보 페이지
 			viewPage = "member/myinfo.jsp";
 		}else if(com.equals("/myinfo.jsp")) {  
 			service = new MinfoService();
 			service.execute(request, response); 
 			viewPage ="main/main.jsp"; 
-			/*
+			
 			 * }else if(com.equals("/adminLogout.do")) { //ADMIN 로그아웃 service = new
 			 * ALogoutService(); service.execute(request, response); viewPage =
 			 * "main/main.jsp";
 			 */
-			
+		
 		}else if(com.equals("/modifyView.do")) { 
 			viewPage = "member/modify.jsp"; 
 		}else if(com.equals("/modify.do")){ 
 			service = new ModifyService(); 
 			service.execute(request, response); 
 			viewPage ="main/main.jsp"; 
-			 
-			 /* } else if (com.equals("/contentView.do")) { //게시판 자세히 보기
-			 * service = new BContentService(); service.execute(request, response); viewPage
-			 * = "board/contentView.jsp"; } else if (com.equals("/bModifyView.do")) {
-			 * service = new BModifyViewService(); service.execute(request, response);
-			 * viewPage = "board/bModifyView.jsp";
-			 * 
-			 * } else if (com.equals("/bModify.do")) { service = new BModifyService();
-			 * service.execute(request, response); viewPage = "list.do"; } else if
-			 * (com.equals("/reply_view.do")) { service = new BReplyViewService();
-			 * service.execute(request, response); viewPage = "board/reply_view.jsp"; } else
-			 * if (com.equals("/reply.do")) { service = new BReplyService();
-			 * service.execute(request, response); viewPage = "list.do"; } else if
-			 * (com.equals("/bDelete.do")) { service = new BDeleteService();
-			 * service.execute(request, response); viewPage = "list.do"; }else
-			 * if(com.equals("/write_view.do")) { // 글쓰기 view viewPage =
-			 * "board/write_view.jsp"; write_view = true; } else if
-			 * (com.equals("/write.do")) { if (write_view == true) { service = new
-			 * BWriteService(); service.execute(request, response); write_view = false; }
-			 * viewPage = "list.do"; */
 		
-		 }
+			
+			
+		} else if(com.equals("/list.do")) { //게시판
+			service = new BListService();
+			service.execute(request, response);
+			viewPage = "board/list.jsp";
+		} else if (com.equals("/contentView.do")) { //게시판 자세히 보기
+			 service = new BContentService(); 
+			 service.execute(request, response); 
+			 viewPage = "board/contentView.jsp"; 
+		} else if (com.equals("/bModifyView.do")) {
+			 service = new BModifyViewService(); 
+			 service.execute(request, response);
+			 viewPage = "board/bModifyView.jsp";
+		} else if (com.equals("/bModify.do")) { 
+			 service = new BModifyService();
+			 service.execute(request, response); 
+			 viewPage = "list.do"; 
+		} else if (com.equals("/reply_view.do")) { 
+			 service = new BReplyViewService();
+			 service.execute(request, response); 
+			 viewPage = "board/reply_view.jsp"; 
+		} else if (com.equals("/reply.do")) { 
+			service = new BReplyService();
+			service.execute(request, response); 
+			viewPage = "list.do";
+			 /*} else if (com.equals("/bDelete.do")) { 
+			service = new BDeleteService();
+			service.execute(request, response); 
+			viewPage = "list.do"; 
+		}else if(com.equals("/write_view.do")) { // 글쓰기 view viewPage =
+			viewPage = "board/write_view.jsp"; 
+			write_view = true; 
+		} else if (com.equals("/write.do")) { 
+			if (write_view == true) { 
+				service = new BWriteService(); 
+				service.execute(request, response); 
+				write_view = false; 
+			}
+			 viewPage = "list.do"; 
+		 */}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 		}

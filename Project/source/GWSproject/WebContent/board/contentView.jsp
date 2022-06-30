@@ -11,15 +11,15 @@
 <link href="${conPath }/css/style.css" rel="stylesheet">
 </head>
 <body>
-	<input type="hidden" name="dbmPhoto" value="${contentView.fFilename }">
+	<input type="hidden" name="dbmPhoto" value="${contentView.bImage }">
 	<table>
 		<caption>상세보기</caption>
 
 		<tr>
 			<th>글번호</th>
-			<td>${contentView.fId }</td>
+			<td>${contentView.bId }</td>
 			<td rowspan="7">
-				<img src="${conPath }/memberPhotoUp/${contentView.fFilename}" width="100">
+				<img src="${conPath }/memberPhotoUp/${contentView.bImage}" width="100">
 			</td>
 		</tr>
 		<tr>
@@ -28,23 +28,19 @@
 		</tr>
 		<tr>
 			<th>제목</th>
-			<td>${contentView.fTitle }</td>
+			<td>${contentView.bTitle }</td>
 		</tr>
 		<tr>
 			<th>본문</th>
-			<td><pre>${contentView.fContent }</pre></td>
+			<td><pre>${contentView.bContent }</pre></td>
 		</tr>
 		<tr>
 			<th>작성일</th>
-			<td><fmt:formatDate value="${contentView.fRdate }" pattern="yy/MM/dd(E)"/>
-		</tr>
-		<tr>
-			<th>IP</th>
-			<td>${contentView.fIp }</td>
+			<td><fmt:formatDate value="${contentView.bRdate }" pattern="yy/MM/dd(E)"/>
 		</tr>
 		<tr>
 			<th>조회수</th>
-			<td>${contentView.fHit }</td>
+			<td>${contentView.bHit }</td>
 		</tr>
 		
 		
@@ -53,8 +49,8 @@
 			<c:if test="${member.mId eq contentView.mId }">
 				<tr>
 					<td colspan="3">
-						<button onclick="location='${conPath }/bModifyView.do?fId=${contentView.fId }&pageNum=${param.pageNum }'">수정</button>
-						<button onclick="location='${conPath }/bDelete.do?fId=${contentView.fId }&pageNum=${param.pageNum }'">삭제</button>
+						<button onclick="location='${conPath }/bModifyView.do?bId=${contentView.bId }&pageNum=${param.pageNum }'">수정</button>
+						<button onclick="location='${conPath }/bDelete.do?bId=${contentView.bId }&pageNum=${param.pageNum }'">삭제</button>
 						<button onclick="location='${conPath }/reply_view.do?mId=${member.mId }&pageNum=${param.pageNum }'">답변</button>
 						<button onclick="location='${conPath }/list.do?mId=${member.mId }&pageNum=${param.pageNum }'">목록</button>
 		
@@ -65,7 +61,7 @@
 				<tr>
 					<td colspan="3">
 						
-						<button onclick="location='${conPath }/reply_view.do?fId=${contentView.fId }&pageNum=${param.pageNum }'">답변</button>
+						<button onclick="location='${conPath }/reply_view.do?bId=${contentView.bId }&pageNum=${param.pageNum }'">답변</button>
 						<button onclick="location='${conPath }/list.do?mId=${member.mId }&pageNum=${param.pageNum }'">목록</button>
 					</td>
 				</tr>

@@ -3,7 +3,7 @@ package com.project.dto;
 import java.sql.Date;
 
 public class BoardDto {
-	private String bId;
+	private int bId;
 	private String mId;
 	private String bTitle;
 	private String bContent;
@@ -17,7 +17,7 @@ public class BoardDto {
 	
 	public BoardDto() {
 	}
-	public BoardDto(String bId, String mId, String bTitle, String bContent, String bImage, int bHit, int bGroup,
+	public BoardDto(int bId, String mId, String bTitle, String bContent, String bImage, int bHit, int bGroup,
 			int bStep, int bIndent, Date bRdate, int oNo) {
 		this.bId = bId;
 		this.mId = mId;
@@ -31,10 +31,10 @@ public class BoardDto {
 		this.bRdate = bRdate;
 		this.oNo = oNo;
 	}
-	public String getbId() {
+	public int getbId() {
 		return bId;
 	}
-	public void setbId(String bId) {
+	public void setbId(int bId) {
 		this.bId = bId;
 	}
 	public String getmId() {

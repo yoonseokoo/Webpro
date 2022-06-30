@@ -36,11 +36,11 @@
 							success: function(data){
 								$('#emailConfirmResult').html(data);			
 							}
-						}
+						});
 					} else if (!mEmail) {
 						$('#emailConfirmResult');
 					} else {
-						$('#emailConfirmResult').html('메일 형식을 지켜주세요');
+						$('#emailConfirmResult').html('<b>메일 형식을 지켜주세요</b>');
 					}
 				});
 						
@@ -119,8 +119,8 @@
 				<td>
 					<input type="text" name="mId" required="required"  autofocus="autofocus" class="mId" >
 					<div id="idConfirmResult"></div>
-				</td
-			></tr>
+				</td>
+			</tr>
 				
 			<tr>
 				<th>비밀번호<b>*</b></th>
@@ -182,7 +182,7 @@
                  </td>
 			<tr>
 				<td colspan="2">
-					<input type="submit" value="회원가입" onclick="location='${conPath}/loginView.do'" class="joinBtn_style">
+					<input type="submit" value="회원가입"  class="joinBtn_style">
 				</td>
 			</tr>
 		</table>

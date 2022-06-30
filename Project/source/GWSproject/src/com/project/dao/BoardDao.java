@@ -51,7 +51,7 @@ public class BoardDao {
 			pstmt.setInt(2, endRow);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				int    bId = rs.getInt("bId");
+				int bId = rs.getInt("bId");
 				String mId = rs.getString("mId");
 				String bTitle = rs.getString("bTitle");
 				String bContent = rs.getString("bContent");
@@ -61,7 +61,7 @@ public class BoardDao {
 				int bStep = rs.getInt("bStep");
 				int bIndent = rs.getInt("bIndent");
 				Date   bRdate = rs.getDate("bRdate");
-				String oNo = rs.getString("oNo");
+				int oNo = rs.getInt("oNo");
 				dtos.add(new BoardDto(bId, mId, bTitle, bContent, bImage, bHit, bGroup, bStep, bIndent, bRdate, oNo));
 			}
 		}catch (SQLException e) {
@@ -83,7 +83,7 @@ public class BoardDao {
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 		ResultSet         rs    = null;
-		String sql = "SELECT COUNT(*) FROM FILEBOARD";
+		String sql = "SELECT COUNT(*) FROM BOARD";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -104,20 +104,19 @@ public class BoardDao {
 		return totalCnt;
 	}
 	// 원글쓰기
-	public int insertBoard(String mId, String fTitle, String fContent, String fFilename, String fIp) {
+	public int insertBoard(String mId, String bTitle, String bContent, String bImage) {
 		int result = FAIL;
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		String sql = "INSERT INTO FILEBOARD (FID, MID, FTITLE, FCONTENT, FFILENAME, FHIT, FGROUP, FSTEP, FINDENT, FIP) "
-				+ " VALUES (FILEBOARD_SEQ.NEXTVAL, ?, ?, ?, ?, 0, FILEBOARD_SEQ.CURRVAL, 0, 0, ?)";
+		String sql = "INSERT INTO BOARD (BID, MID, BTITLE, BCONTENT, BIMAGE, BHIT, BGROUP, BSTEP, BINDENT) " + 
+				"    VALUES (BOARD_SEQ.NEXTVAL, ?, ?, ?, ?, 0, BOARD_SEQ.CURRVAL, 0, 0 )";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mId);
-			pstmt.setString(2, fTitle);
-			pstmt.setString(3, fContent);
-			pstmt.setString(4, fFilename);
-			pstmt.setString(5, fIp);
+			pstmt.setString(2, bTitle);
+			pstmt.setString(3, bContent);
+			pstmt.setString(4, bImage);
 			
 			result = pstmt.executeUpdate();
 		}catch (SQLException e) {
@@ -127,20 +126,19 @@ public class BoardDao {
 				if(pstmt!=null) pstmt.close();
 				if(conn!=null)  conn.close();
 			}catch (SQLException e) {
-				// TODO: handle exception
 			}
 		}
 		return result;
 	}
 	// fid로 조회수 올리기(private)
-	private void hitUp(int fId) {
+	private void hitUp(int bId) {
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		String sql = "UPDATE FILEBOARD SET FHIT = FHIT+1 WHERE FID = ?";
+		String sql = "UPDATE BOARD SET BHIT = BHIT+1 WHERE BID = ?";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, fId);
+			pstmt.setInt(1, bId);
 			pstmt.executeUpdate();
 		}catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -154,30 +152,30 @@ public class BoardDao {
 		}
 	}
 	// fid로 dto가져오기=글상세보기(조회수올리기 포함)
-	public BoardDto contentView(int fId) {
+	public BoardDto contentView(int bId) {
 		BoardDto dto = null;
-		hitUp(fId); // 글 상세보기시 자동적으로 hitup
+		hitUp(bId); // 글 상세보기시 자동적으로 hitup
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 		ResultSet         rs    = null;
-		String sql = "SELECT * FROM FILEBOARD WHERE FID = ?";
+		String sql = "SELECT * FROM BOARD WHERE BID = ?";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, fId);
+			pstmt.setInt(1, bId);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				String mId = rs.getString("mId");
-				String fTitle = rs.getString("fTitle");
-				String fContent = rs.getString("fContent");
-				String fFilename = rs.getString("fFilename");
-				Date   fRdate = rs.getDate("fRdate");
-				int fHit = rs.getInt("fHit");
-				int fGroup = rs.getInt("fGroup");
-				int fStep = rs.getInt("fStep");
-				int fIndent = rs.getInt("fIndent");
-				String fIp = rs.getString("fIp");
-				dto = new BoardDto(fId, mId, fTitle, fContent, fFilename, fRdate, fHit, fGroup, fStep, fIndent, fIp);
+				String bTitle = rs.getString("bTitle");
+				String bContent = rs.getString("bContent");
+				String bImage = rs.getString("bImage");
+				int bHit = rs.getInt("bHit");
+				int bGroup = rs.getInt("bGroup");
+				int bStep = rs.getInt("bStep");
+				int bIndent = rs.getInt("bIndent");
+				Date bRdate = rs.getDate("bRdate");
+				int oNo = rs.getInt("oNo");
+				dto = new BoardDto(bId, mId, bTitle, bContent, bImage, bHit, bGroup, bStep, bIndent, bRdate, oNo);
 			}
 		}catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -193,29 +191,29 @@ public class BoardDao {
 		return dto;
 	}
 	// Fid로 dto가져오기=수정하기 + 답변글쓰기(form, 조회수 올리기 미포함)
-	public BoardDto modifyView_replyView(int fId) {
+	public BoardDto modifyView_replyView(int bId) {
 		BoardDto dto = null;
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 		ResultSet         rs    = null;
-		String sql = "SELECT * FROM FILEBOARD WHERE FID = ?";
+		String sql = "SELECT * FROM BOARD WHERE BID = ?";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, fId);
+			pstmt.setInt(1, bId);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				String mId = rs.getString("mId");
-				String fTitle = rs.getString("fTitle");
-				String fContent = rs.getString("fContent");
-				String fFilename = rs.getString("fFilename");
-				Date   fRdate = rs.getDate("fRdate");
-				int fHit = rs.getInt("fHit");
-				int fGroup = rs.getInt("fGroup");
-				int fStep = rs.getInt("fStep");
-				int fIndent = rs.getInt("fIndent");
-				String fIp = rs.getString("fIp");
-				dto = new BoardDto(fId, mId, fTitle, fContent, fFilename, fRdate, fHit, fGroup, fStep, fIndent, fIp);
+				String bTitle = rs.getString("bTitle");
+				String bContent = rs.getString("bContent");
+				String bImage = rs.getString("bImage");
+				int bHit = rs.getInt("bHit");
+				int bGroup = rs.getInt("bGroup");
+				int bStep = rs.getInt("bStep");
+				int bIndent = rs.getInt("bIndent");
+				Date bRdate = rs.getDate("bRdate");
+				int oNo = rs.getInt("oNo");
+				dto = new BoardDto(bId, mId, bTitle, bContent, bImage, bHit, bGroup, bStep, bIndent, bRdate, oNo);
 			}
 		}catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -231,15 +229,15 @@ public class BoardDao {
 		return dto;
 	}
 	// 답변글 쓰기 전 step a
-	private void preReplyStep(int fGroup, int fStep) {
+	private void preReplyStep(int bGroup, int bStep) {
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		String sql = "    UPDATE FILEBOARD SET FSTEP = FSTEP+1 WHERE FGROUP=? AND FSTEP > ?";
+		String sql = "UPDATE BOARD SET BSTEP = BSTEP+1 WHERE BGROUP = ? AND BSTEP > ?";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, fGroup);
-			pstmt.setInt(2, fStep);
+			pstmt.setInt(1, bGroup);
+			pstmt.setInt(2, bStep);
 			pstmt.executeUpdate();
 		}catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -254,26 +252,24 @@ public class BoardDao {
 	}
 	// 답변글 쓰기 -- 답변자 : bname, btitle, bcontent, bip
 	//          -- 원글 : bgroup, bstep, bindent
-	public int reply(String mId, String fTitle, String fContent, String fFilename,
-					int fGroup, int fStep, int fIndent, String fIp) {
+	public int reply(String mId, String bTitle, String bContent, String bImage,
+					int bGroup, int bStep, int bIndent) {
 		int result = FAIL;
-		preReplyStep(fGroup, fStep);
+		preReplyStep(bGroup, bStep);
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		String sql = "INSERT INTO FILEBOARD (FID, MID, FTITLE, FCONTENT, FFILENAME, FGROUP, FSTEP, FINDENT, FIP)\r\n" + 
-				"	    VALUES (FILEBOARD_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?, ? , ?)";
-
+		String sql = "INSERT INTO BOARD (BID, MID, BTITLE, BCONTENT, BIMAGE, BHIT, BGROUP, BSTEP, BINDENT, ONO)\r\n" + 
+				"        VALUES (BOARD_SEQ.NEXTVAL, ?, ?, ? ,?, ?, ?, ?, ?)";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mId);
-			pstmt.setString(2, fTitle);
-			pstmt.setString(3, fContent);
-			pstmt.setString(4, fFilename);
-			pstmt.setInt(5, fGroup);
-			pstmt.setInt(6, fStep+1);
-			pstmt.setInt(7, fIndent+1);
-			pstmt.setString(8, fIp);
+			pstmt.setString(2, bTitle);
+			pstmt.setString(3, bContent);
+			pstmt.setString(4, bImage);
+			pstmt.setInt(5, bGroup);
+			pstmt.setInt(6, bStep+1);
+			pstmt.setInt(7, bIndent+1);
 			result = pstmt.executeUpdate();
 			System.out.println(result==SUCCESS? "답변글 성공":"답변글 실패");
 		}catch (SQLException e) {
@@ -289,24 +285,22 @@ public class BoardDao {
 		return result;
 	}
 	// 글수정
-	public int modify(int fId, String fTitle, String fContent, String fFilename, String fIp) {
+	public int modify(int bId, String bTitle, String bContent, String bImage) {
 		int result = FAIL;
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		String sql = "UPDATE FILEBOARD " + 
-				"    		 SET FTITLE = ?, " + 
-				"            FCONTENT = ?, " + 
-				"            FFILENAME = ?, " + 
-				"            FIP = ? " + 
-				"        WHERE FID=?";
+		String sql = "UPDATE BOARD  " + 
+				"    SET BTITLE = ?, " + 
+				"        BCONTENT = ?, " + 
+				"        BIMAGE = ? " + 
+				"        WHERE BID=?";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, fTitle);
-			pstmt.setString(2, fContent);
-			pstmt.setString(3, fFilename);
-			pstmt.setString(4, fIp);
-			pstmt.setInt(5, fId);
+			pstmt.setString(1, bTitle);
+			pstmt.setString(2, bContent);
+			pstmt.setString(3, bImage);
+			pstmt.setInt(4, bId);
 			result = pstmt.executeUpdate();
 			System.out.println(result==SUCCESS? "글 수정 성공":"글 수정 실패");
 		}catch (SQLException e) {
@@ -322,15 +316,15 @@ public class BoardDao {
 		return result;
 	}
 	// 글 삭제	
-	public int delete(int fId) {
+	public int delete(int bId) {
 		int result = FAIL;
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		String sql = " DELETE FROM FILEBOARD WHERE FID=?";
+		String sql = " DELETE FROM BOARD WHERE BID=?";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, fId);
+			pstmt.setInt(1, bId);
 			result = pstmt.executeUpdate();
 			System.out.println(result==SUCCESS? "글 삭제 성공":"글 삭제 실패");
 		}catch (SQLException e) {

@@ -14,27 +14,23 @@
 	<jsp:include page="../main/header.jsp"/>
 	<form action="${conPath }/bModify.do" method="post">
 		<input type="hidden" name="pageNum" value="${param.pageNum }">
-		<input type="hidden" name="fId" value="${param.fId }">
+		<input type="hidden" name="bId" value="${param.bId }">
 		<table>
-			<caption>${param.fId }번 글 수정</caption>
+			<caption>${param.bId }번 글 수정</caption>
 			<tr>
 				<th>글제목</th>
-				<td><input type="text" name="fTitle" value="${bModifyView.fTitle }"></td>
-				<td rowspan="4"><img src="${conPath }/memberPhotoUp/${bModifyView.fFilename}" width="100"></td>
+				<td><input type="text" name="bTitle" value="${bModifyView.bTitle }"></td>
+				<td rowspan="4"><img src="${conPath }/memberPhotoUp/${bModifyView.bImage}" width="100"></td>
 			</tr>
 			<tr>
 				<th>본문</th>
-				<td><textarea rows="5" cols="20" name="fContent">${bModifyView.fContent }</textarea></td>
+				<td><textarea rows="5" cols="20" name="bContent">${bModifyView.bContent }</textarea></td>
 			</tr>
 			<tr>
 				<th>사진</th>
 				<td>
-					<input type="file" name="fFilename" class="photo">
+					<input type="file" name="bImage" class="photo">
 				</td>
-			</tr>
-			<tr>
-				<th>IP</th>
-				<td><input type="text" name="fIp" value="${bModifyView.fIp }" readonly="readonly"></td>
 			</tr>
 			
 			<tr>

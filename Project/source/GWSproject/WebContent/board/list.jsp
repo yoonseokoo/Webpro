@@ -90,36 +90,36 @@
 	</table>
 	
 	<table>
-		<tr><th>사진</th><th>글번호</th><th>작성자ID</th><th>글제목</th><th>IP</th><th>작성일</th><th>조회수</th></tr>
+		<tr><th>글번호</th><th>작성자ID</th><th>글제목</th><th>사진</th><th>작성일</th><th>조회수</th></tr>
 		<c:if test="${list.size() eq 0 }">
 			<tr><td colspan="7">해당 페이지 글이 없습니다</td></tr>
 		</c:if>
 		<c:if test="${list.size() != 0}">
 			<c:forEach var="dto" items="${list }">
 				<tr>
-					<td>
-						<img src="${conPath }/memberPhotoUp/${dto.fFilename}" alt="사진" width="50" ><br>
-					</td>
-					<td>${dto.fId }</td>
+					
+					<td>${dto.bId }</td>
 					<td>${dto.mId }</td>
 					<td class="left">
-						<c:forEach var="i" begin="1" end="${dto.fIndent }">
-						  <c:if test="${i eq dto.fIndent }">
+						<c:forEach var="i" begin="1" end="${dto.bIndent }">
+						  <c:if test="${i eq dto.bIndent }">
 						  	└
 						  </c:if>
-						  <c:if test="${i != dto.fIndent }">
+						  <c:if test="${i != dto.bIndent }">
 						  	&nbstp; &nbstp; 
 						  </c:if> 
 						</c:forEach><!--  답변글 들여쓰기  -->
-						<a href="${conPath }/contentView.do?fId=${dto.fId}&pageNum=${pageNum}&mId=${member.mId}">
-						${dto.fTitle }</a>
-						<c:if test="${dto.fHit > 10 }">
+						<a href="${conPath }/contentView.do?bId=${dto.bId}&pageNum=${pageNum}&mId=${member.mId}">
+						${dto.bTitle }</a>
+						<c:if test="${dto.bHit > 10 }">
 							<b> * </b>
 						</c:if>
-					</td> <!-- 글제목 -->
-					<td>${dto.fIp }</td>
-					<td><fmt:formatDate value="${dto.fRdate }" pattern="yy년MM월dd일(E)"/></td>
-					<td>${dto.fHit }</td>
+					</td>
+					<td>
+						<img src="${conPath }/memberPhotoUp/${dto.bImage}" alt="사진" width="50" ><br>
+					</td>
+					<td><fmt:formatDate value="${dto.bRdate }" pattern="yy/MM/dd(E)"/></td>
+					<td>${dto.bHit }</td>
 				</tr>
 			</c:forEach>
 		</c:if>
