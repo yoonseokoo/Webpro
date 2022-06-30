@@ -1,0 +1,56 @@
+@charset "UTF-8";
+	*{
+		padding:0; margin: 0;
+	}
+	footer {
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+	footer #footer_up{
+		overflow:hidden;
+		height:100px;
+		display:flex;
+		justify-content:center;
+		width: 100%;
+	}
+	footer #footer_up div {
+		float:left;
+		text-align: center;
+	}
+	footer div.office_logo img {
+		padding:5px;
+		height:70px;
+		width: auto;
+		padding:5px;
+	}
+	footer div.office_address{
+		padding:5px;
+		margin-left:15px;
+		height:100px;
+		display: block;
+	}
+	footer div.office_address ul{
+		margin: 10px 10px 0 10px;
+	}
+	footer div.office_address ul li{
+		padding:2px;
+		color:gray;
+		font-size: 0.8em;
+		list-style: none;
+	}
+	footer div.office_address ul li a{
+		padding:2px;
+		color:gray;
+		font-size: 0.8em;
+		list-style: none;
+	}
+	footer div.copyright{
+		clear: both;
+		border: 0;
+		width: 100%;
+		height: 25px;
+		margin: 0 auto;
+		text-align: center;
+		line-height: 25px;
+		font-size: 0.9em;
+	}
