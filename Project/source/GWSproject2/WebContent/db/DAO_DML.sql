@@ -1,0 +1,325 @@
+
+SELECT * FROM GRADE;
+SELECT * FROM MEMBER;
+SELECT * FROM BOARD;
+SELECT * FROM ORDERS;
+SELECT * FROM ORDER_DETAIL;
+SELECT * FROM PRODUCT;
+SELECT * FROM PRODUCT_GROUP;
+SELECT * FROM REVIEW;
+SELECT * FROM CART;
+SELECT * FROM ADMIN;
+                    
+                    
+-- ■■■■■ MEMBER TABLE ■■■■■ --
+
+-- [1] MEMBER LOGIN
+
+    SELECT MID, MPW
+        FROM MEMBER
+        WHERE MID='id1'
+        AND MPW = '111';
+
+-- [2] BRING DTO USING MID
+    
+    SELECT *
+        FROM MEMBER
+        WHERE MID='id1';
+
+-- [3] UPDATE MEMBER INFORMATION
+
+    UPDATE MEMBER
+        SET MPW = '111',
+        MNAME = '이름11',
+        MPHONE = '010-2222-3333',
+        MADDRESS = '변경 주소1',
+        MADDRESSDETAIL = '변경 주소1',
+        MBIRTH = '1990-12-12',
+        MEMAIL = 'a@A.COM'
+        WHERE MID= 'id1';
+
+-- [4] PRINT MEMBER LIST
+
+        SELECT *
+            FROM (SELECT ROWNUM RN, M.* ,G.GNAME,(SELECT COUNT(*) 
+                                                    FROM CART C, MEMBER M 
+                                                    WHERE C.MID=M.MID) CART_CNT 
+                FROM MEMBER M, GRADE G 
+                WHERE M.MGRADE= G.MGRADE
+                AND M.MCUMPURCHASE BETWEEN G.LOWGRADE AND G.HIGHGRADE)
+                WHERE RN BETWEEN 2 AND 3;
+            
+            
+-- [5] COUNT NUMBER OF MEMBERS
+
+    SELECT COUNT(*) 
+        FROM MEMBER;
+    
+-- [6] JOIN
+
+    INSERT INTO MEMBER (MID,MPW,MNAME,MPHONE,MADDRESS,MADDRESSDETAIL,MBIRTH ,MEMAIL,MGENDER) 
+        VALUES ('id5','111','이름5','010-1111-2222','주소1','주소2','2017-08-21','one@one/com','남' ); 
+
+-- [7] CHECKING FOR MID DUPLICATES
+
+    SELECT * FROM MEMBER WHERE MID=?;
+    
+-- [8] CHECKING FOR EMAIL DUPLICATES
+
+    SELECT * FROM MEMBER WHERE MEMAIL=?;
+    
+    
+-- [9] WITHDRAWAL ACCOUNT (회원탈퇴)
+
+    DELETE FROM MEMBER WHERE MID = 'id2';
+    
+    
+    
+-- ■■■■■ BOARD TABLE ■■■■■ --
+ 
+ -- [1] LIST POSTS (startRow - endRow)
+
+    SELECT * 
+        FROM (SELECT ROWNUM RN, A.* 
+                        FROM (SELECT B.*
+                                 FROM BOARD B, MEMBER M 
+                                 WHERE B.MID = M.MID 
+                                 ORDER BY BGROUP DESC, BSTEP) A)
+        WHERE RN BETWEEN 2 AND 3;
+            
+-- [2] COUNT NUMBER OF POSTS
+
+    SELECT COUNT(*)
+        FROM BOARD;
+
+-- [3] WRITE MAIN POST
+
+    INSERT INTO BOARD (BID, MID, BTITLE, BCONTENT, BIMAGE, BHIT, BGROUP, BSTEP, BINDENT, ONO)
+        VALUES (BOARD_SEQ.NEXTVAL, 'id4', 'titile2','',null, 21, BOARD_SEQ.CURRVAL, 0,0, 2);            
+
+-- [4] PRE-STEP BEFORE WRITING REPLY POST (step A)
+    
+    UPDATE BOARD 
+        SET BSTEP = BSTEP+1 
+        WHERE BGROUP=2 
+        AND BSTEP>0;
+    
+-- [5] WRITE REPLY POST
+
+    INSERT INTO BOARD (BID, MID, BTITLE, BCONTENT, BIMAGE, BHIT, BGROUP, BSTEP, BINDENT, ONO)
+        VALUES (BOARD_SEQ.NEXTVAL, 'id4', '글1-1', '답글1', null,0, 2, 1,1, 2);
+
+SELECT *
+    FROM BOARD;
+    
+COMMIT;
+    
+-- [7] INCREASE VIEW
+
+UPDATE BOARD 
+    SET BHIT = BHIT+1 
+    WHERE BID = 5;
+    
+-- [8] UPDATE POST
+
+UPDATE BOARD 
+    SET BTITLE = '수정된 제목',
+        BCONTENT = '수정된 본문',
+        BIMAGE = NULL
+        WHERE BID=1;
+    
+-- [9] DELETE POST
+
+DELETE FROM BOARD
+    WHERE BID=1;
+
+
+--[10] DETAIL VIEW OF POST
+
+SELECT * 
+    FROM BOARD 
+    WHERE BID = 2;
+    
+ 
+-- ■■■■■ ORDERS TABLE ■■■■■ --
+
+-- [1] ADD ORDER
+
+    INSERT INTO ORDERS (ONO, ONAME, OPHONE, OADDRESS, OADDRESSDETAIL, ONOTE, MID)   
+        VALUES (ORDERNUM_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?);
+
+-- [2] GET ORDER
+
+    SELECT * FROM ORDERS 
+        WHERE ONO=?;
+
+-- ■■■■■ ORDER_DETAIL TABLE ■■■■■ --
+
+-- [1] ADD ORDER DETAIL
+
+    INSERT INTO ORDER_DETAIL (ODNO,ONO,CARTQUANTITY, PID) 
+        SELECT ORDERDETAILNUM_SEQ.NEXTVAL, ORDERNUM_SEQ.CURRVAL, C.CARTQUANTITY, C.PID
+        FROM CART C
+        WHERE MID= ?;
+
+
+-- [2] GET ORDER DETAIL
+
+    SELECT OD.* , O.ODATE, PNAME, PPRICE, PIMAGE 
+        FROM ORDERS O, ORDER_DETAIL OD , PRODUCT P 
+        WHERE O.MID= ? 
+        AND O.ONO=OD.ONO 
+        AND P.PID = PD.PID;
+    
+-- ■■■■■ PRODUCT TABLE ■■■■■ --
+
+-- [1] ADD PRODUCT
+
+    INSERT INTO PRODUCT (PID,PNAME,PGROUP, PPRICE, PDISCOUNT, PIMAGE, PSTOCK,PDESCRIPTION) 
+        VALUES (PRODUCT_SEQ.NEXTVAL, ? , ? , ? , ? , ? , ? , ?);
+
+-- [2] GET PRODUCT LIST
+
+SELECT * FROM (SELECT ROWNUM RN, A.* 
+				 FROM (SELECT P.*, PGROUPNAME 
+				 FROM PRODUCT P, PRODUCT_GROUP G 
+				 WHERE P.PGROUP = G.PGROUP 
+				 AND P.PGROUP=? 
+				 ORDER BY PPRICE, P.PGROUP, PRDATE DESC) A) 
+				 WHERE (RN BETWEEN ? AND ?);
+                
+                
+-- [3] GET TOTAL LIST (REGARDLESS OF PGROUP)
+
+    SELECT * FROM (SELECT ROWNUM RN, A.*
+				FROM (SELECT *
+				FROM PRODUCT
+				ORDER BY PPRICE, PRDATE DESC) A)
+				WHERE (RN BETWEEN ? AND ?);
+
+-- [4] COUNT PRODUCTS BY GROUP
+
+    SELECT COUNT(*) 
+        FROM PRODUCT 
+        WHERE PGROUP=?;
+
+-- [5] COUNT TOTAL PRODUCTS
+
+    SELECT COUNT(*) 
+        FROM PRODUCT;
+
+-- [6] COUNT PRODUCTS BY SEARCH
+
+    SELECT COUNT(*) 
+        FROM PRODUCT 
+        WHERE PNAME LIKE '%'||?||'%';
+
+-- [7] PRODUCT DETAIL
+
+    SELECT P.*,PGROUPNAME  
+        FROM PRODUCT P, PRODUCT_GROUP G
+        WHERE P.PGROUP = G.PGROUP AND PID=?;
+
+-- [8] MODIFY PRODUCT
+
+    UPDATE PRODUCT   
+        SET PNAME= ?,   
+                PGROUP= ?, 
+                PPRICE= ? ,   
+                PIMAGE= ? ,   
+                PSTOCK= ? ,
+				PDESCRIPTION= ?,    
+                PDISCOUNT= ?    
+                WHERE PID=?;
+
+-- [9] DELETE PRODUCT
+
+    DELETE FROM PRODUCT 
+        WHERE PID = ?;
+
+-- [10] LIST PRODUCTS SEARCHED
+
+    SELECT PID, PNAME, PGROUP, PPRICE, PDISCOUNT, PIMAGE, PSTOCK, PDESCRIPTION, PRDATE 
+        FROM PRODUCT 
+		WHERE PNAME LIKE '%'||UPPER(?)||'%';
+                        
+
+-- ■■■■■ PRODUCT-GROUP TABLE ■■■■■ --
+
+--[1] GET GROUP LIST
+    
+    SELECT * FROM (SELECT ROWNUM RN, A.*  
+				FROM (SELECT PG.* FROM PRODUCT_GROUP PG 
+				ORDER BY PGROUP ASC) A) 
+				WHERE RN BETWEEN ? AND ?;
+
+--[2] SELECT TOTAL GROUP COUNT 
+
+    SELECT COUNT(*) 
+        FROM PRODUCT_GROUP;
+    
+--[3] SELECT GROUP BY DTO
+
+    SELECT * 
+        FROM PRODUCT_GROUP 
+        WHERE PGROUP = ?;
+    
+-- ■■■■■ PRODUCT REVIEW TABLE ■■■■■ --
+
+
+    
+-- ■■■■■ CART TABLE ■■■■■ --
+
+--[1] CHECKING CART EXISTENCE
+
+    SELECT * FROM CART WHERE MID=? AND PID=?;
+    
+--[2] ADDING PRODUCT IN CART
+
+    INSERT INTO CART VALUES (CART_SEQ.NEXTVAL,?,?, ?);
+    
+--[3] GETTING CART INFO
+
+    SELECT C.*, PSTOCK, PDISCOUNT, PPRICE, PNAME, PIMAGE 
+        FROM CART C, PRODUCT P, MEMBER M 
+				WHERE M.MID=C.MID
+				AND P.PID=C.PID 
+				AND M.MID=?;
+    
+--[4] BUY PRODUCT IN CART
+
+    SELECT C.* , P.PNAME, P.PID 
+        FROM CART C, MEMBER M, PRODUCT P 
+		WHERE M.MID=C.MID   
+		AND P.PID=C.PID 
+		AND C.MID = ?;
+        
+--[5] DELETE PRODUCT IN CART
+
+    DELETE FROM CART WHERE CARTNO=?;
+    
+--[6] EMPTY CART WHEN PRODUCT IS BOUGHT
+
+    DELETE FROM CART WHERE MID=?;
+
+--[7] UPDATE QUANTITY IN CART
+
+    UPDATE CART
+        SET CARTQUANTITY = ?
+        WHERE CARTNO = ?;
+        
+        
+-- ■■■■■ LOCATION TABLE ■■■■■ --
+
+    SELECT * FROM LOCATION;
+
+        
+-- ■■■■■ ADMIN TABLE ■■■■■ --
+
+    SELECT AID, APW
+        FROM ADMIN
+        WHERE AID='aaa'
+        AND APW = '111';
+        
+        
+        

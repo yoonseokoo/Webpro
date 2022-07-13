@@ -1,0 +1,129 @@
+@charset "UTF-8";
+ * {
+ 	font-family: 'Noto Serif KR', serif;
+ }
+	#mainForm_wrap1{
+		justify-content:center;
+		display:inline-block;
+		position:relative;
+		width:100%;
+		overflow:hidden;
+		text-align:center;
+	}
+	
+	#mainForm_wrap1 img{
+		margin: 0 auto;
+		float:left;
+		width:100%;
+		z-index:-100;
+	}
+
+	.btn1{
+		position: absolute;
+		bottom:5em;
+		left:3em;
+		background-color:white;
+		color:white;
+		opacity:0.7;		color: black;
+		width:200px;
+		height:70px;
+		font-size:1em;
+		
+	}
+	
+	.btn1:hover {
+		opacity:1;
+	}
+	.btn2{
+		position: absolute;
+		bottom:5.1em;
+		left:17em;
+		color:white;
+		border: 1px solid white;
+		width:200px;
+		height:66px;
+		background-color:transparent;
+		font-size:1em;
+	}
+	
+	.btn2:hover {
+		color:grey;
+		border: none;
+	}
+	#mainForm_wrap2 {
+		padding: 50px 0;
+	}
+	#mainForm_wrap2 h1 {
+		display: flex;
+        flex-direction: row;
+    }
+          
+    #mainForm_wrap2 h1:before, h1:after {
+		content: "";
+        flex: 1 1;
+        border-bottom: 1px solid #000;
+        margin: auto;
+    }
+    #mainForm_wrap2 img {
+        height: 80px;
+        width: auto;
+        border-radius: 50%;
+    }
+    #mainForm_wrap3 {
+        margin: 0 auto;
+		justify-content:center;
+		width:30%;
+		text-align:center;
+		color: black;
+		height:300px;
+    }
+    #mainForm_wrap3 a{
+		color: black;
+    }
+    @keyframes slidy {
+			0% { left: 0%; }
+			15% { left: 0%; }
+			20% { left: -100%; }
+			35% { left: -100%; }
+			40% { left: -200%; }
+			50% { left: -200%; }
+			55% { left: -300%; }
+			65% { left: -300%; }
+			70% { left: -400%; }
+			80% { left: -400%; }
+			85% { left: -500%; }
+			95% { left: -500%; }
+			100% { left: -600%; }
+			100% { left: 0%; }
+		}
+		
+		div.slide_banner { 
+			padding-top:50px;
+			margin: 0 auto;
+			height:720px;
+			width: 1130px;
+			overflow:hidden;
+		
+		}
+		div.slide_banner figure img { width: 14.2857143%; float: left; height:720px; }
+		div.slide_banner figure { 
+		  position: relative;
+		  width: 700%;
+		  height:300px;
+		  margin: 0;
+		  top:0;
+		  left: 0;
+		  text-align: left;
+		  font-size: 0;
+		  -webkit-animation: 2s slidy ease-in-out infinite;
+		  animation: 14s slidy ease-in-out infinite; 
+		}
+
+
+	
+	
+	
+	
+	
+	
+	

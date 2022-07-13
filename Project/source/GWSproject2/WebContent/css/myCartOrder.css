@@ -1,0 +1,126 @@
+@charset "UTF-8";
+*{
+	
+	font-family: 'Noto Serif KR', serif;
+}
+ 	
+	#cartView_wrap table{ 
+		margin: 15px auto;
+		width:800px;
+		border-collapse: collapse;
+		justify-content:center;
+	}
+	#cartView_wrap table caption{
+		        	
+		margin:10px auto;
+		padding-bottom:20px;     	  	
+		font-size:2em;
+		border-bottom: 1px solid lightgrey;
+		text-align:center;
+	}
+	
+	#cartView_wrap table h4{ 
+		text-align: left;
+		font-size: 1.3em;
+	}
+	
+	#cartView_wrap img{
+		width:150px;
+	}
+	#cartView_wrap tr td{
+		justify-content:center;
+		text-align:left;
+	}
+	
+	#cartView_wrap th{
+		width:200px;
+	}
+	#cartView_wrap ul li{
+		list-style: none;
+		text-align:left;
+		padding:5px;
+	}
+	
+	
+	#cartView_wrap table tr {
+		height: 40px;
+		border-bottom: 1px solid lightgrey;
+		justify-content:center;
+	}
+	
+	#cartView_wrap td, th { 
+		text-align: center; 
+		padding: 10px 20px;
+		background-color: rgba(255,255,255,0.2);
+		text-align: left;
+	}
+	#cartView_wrap caption { 
+		font-size:2em;
+		padding:10px;
+	}
+	
+	#cartView_wrap h2, b {
+		text-align:center;
+	}
+	#cartView_wrap a { 
+		text-decoration: none; 
+		color: black;
+	}
+	
+	#modifyForm_wrap {
+		width:800px;
+		margin: 0 auto;
+		padding:50px;
+		text-align: center; 
+		justify-content:center;
+		margin: 50px auto;   
+		border:1px solid lightgrey;
+		}
+	#modifyForm_wrap caption{
+		margin:10px auto;
+		padding-bottom:20px;     	  	
+		font-size:2em;
+		border-bottom: 1px solid lightgrey;
+		text-align:center;
+	}
+	#modifyForm_wrap table{
+		margin:0 auto; 
+		}
+	#modifyForm_wrap table tr{
+		height:50px; 
+		}
+	#modifyForm_wrap table th{
+		width: 80px;
+		text-align: left;
+	}
+	#modifyForm_wrap table td textarea {
+		width: 300px;
+		border-color:lightgrey;
+	}
+	
+	.mId, .mPw, .pwChk, .mPwChk, .mName, .mPhone, .mAddress, .mAddressDetail, .mBirth, .mEmail, .address{
+		height:20px;	
+		width:95%; 
+		padding:3px;
+		border: none;
+		border-bottom:1px solid lightgrey;
+	}
+	textarea:focus, input:focus{
+    	outline: none;
+	}
+	.btn2{
+		color: black;        	
+		background-color: #D5D8DC;
+		border:0;              
+		outline: none;
+		width:100px;              
+		padding:10px;
+		border-collapse: collapse;
+		box-shadow: 0 0 20px rgba(0,0,0,0.1);
+		border-radius: 4px;
+		font-weight:bold;
+	}
+	.btn2:HOVER{
+		filter: brightness(90%);
+		cursor: pointer;
+	}

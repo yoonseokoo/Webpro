@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="15" version="2.0">
 <workbenchAdvisor/>
-<window height="1047" maximized="true" width="974" x="209" y="78">
+<window height="1047" maximized="true" width="974" x="-7" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -54,8 +54,8 @@
 <editor id="com.tomato.exerd.editor.DiagramEditor" name="ex.exerd" partName="ex.exerd" path="C:/Users/user/Desktop/unie/Source/03.exERD/newProject/ex.exerd" title="ex.exerd" tooltip="newProject/ex.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/ex.exerd"/>
 </editor>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="myproject.exerd" partName="myproject.exerd" title="myproject.exerd" tooltip="C:\Users\user\Desktop\unie\Project\source\GWSproject\WebContent\DB\myproject.exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/Users/user/Desktop/unie/Project/source/GWSproject/WebContent/DB/myproject.exerd"/>
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="myproject.exerd" partName="myproject.exerd" title="myproject.exerd" tooltip="C:\Users\user\Desktop\unie\Project\source\GWSproject2\WebContent\db\myproject.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/Users/user/Desktop/unie/Project/source/GWSproject2/WebContent/db/myproject.exerd"/>
 </editor>
 </editors>
 <views>
@@ -194,8 +194,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/book.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/shoppingMall.exerd"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/C:/Users/user/Desktop/unie/Project/source/GWSproject/WebContent/DB/myproject.exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/C:/Users/user/Desktop/unie/Project/source/GWSproject2/WebContent/db/myproject.exerd"/>
 </editors>
-<item historyLabel="test.exerd" index="1"/>
 <item historyLabel="book.exerd" index="4"/>
 <item historyLabel="dept.emp.exerd" index="3"/>
 <item historyLabel="test.exerd" index="1"/>
@@ -244,7 +244,8 @@
 <item historyLabel="test.exerd(읽기 전용)" index="13"/>
 <item historyLabel="ex.exerd" index="14"/>
 <item historyLabel="shoppingMall.exerd" index="17"/>
-<item active="true" historyLabel="myproject.exerd" index="18"/>
+<item historyLabel="myproject.exerd" index="18"/>
+<item active="true" historyLabel="myproject.exerd" index="19"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -262,6 +263,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="myproject.exerd" tooltip="C:\Users\user\Desktop\unie\Project\source\GWSproject2\WebContent\db\myproject.exerd">
+<persistable uri="file:/C:/Users/user/Desktop/unie/Project/source/GWSproject2/WebContent/db/myproject.exerd"/>
+</file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="myproject.exerd" tooltip="C:\Users\user\Desktop\unie\Project\source\GWSproject\WebContent\DB\myproject.exerd">
 <persistable uri="file:/C:/Users/user/Desktop/unie/Project/source/GWSproject/WebContent/DB/myproject.exerd"/>
 </file>

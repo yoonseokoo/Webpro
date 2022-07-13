@@ -16,8 +16,6 @@
 	<table>
 	<tr>
 <%
-//loveYou 유니
-	//오늘 맛있는거 먹으러 가쟈 하핳하 :) 꺄륵 맛있겠다...ㅎㅎㅎㅎㅎ
 	String pageNum = request.getParameter("pageNum");
 		if(pageNum==null) pageNum="1";
 		int currentPage = Integer.parseInt(pageNum);
