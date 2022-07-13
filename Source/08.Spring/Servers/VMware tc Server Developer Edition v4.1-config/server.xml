@@ -16,7 +16,7 @@
             </Realm>
             <Host appBase="webapps" autoDeploy="true" deployOnStartup="true" deployXML="true" name="localhost" unpackWARs="true">
                 <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
-            <Context docBase="ch03_diLifeCycleConfig" path="/ch03" reloadable="true" source="org.eclipse.jst.jee.server:ch03_diLifeCycleConfig"/><Context docBase="ch04_externalFile" path="/ch04" reloadable="true" source="org.eclipse.jst.jee.server:ch04_externalFile"/></Host>
+            <Context docBase="ch03_diLifeCycleConfig" path="/ch03" reloadable="true" source="org.eclipse.jst.jee.server:ch03_diLifeCycleConfig"/><Context docBase="ch04_externalFile" path="/ch04" reloadable="true" source="org.eclipse.jst.jee.server:ch04_externalFile"/><Context docBase="ch05_aop" path="/ch05" reloadable="true" source="org.eclipse.jst.jee.server:ch05_aop"/></Host>
         </Engine>
         <Connector acceptCount="100" connectionTimeout="20000" executor="tomcatThreadPool" maxKeepAliveRequests="15" port="${nio.http.port}" protocol="org.apache.coyote.http11.Http11NioProtocol" redirectPort="${nio.https.port}"/>
     </Service>
