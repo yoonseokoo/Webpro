@@ -48,3 +48,45 @@ ${cursor}
 </html>
 
 
+web.xml:
+
+<filter>
+	<filter-name>encodingFilter</filter-name>
+	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	<init-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+	<init-param>
+		<param-name>forceEncoding</param-name>
+		<param-value>true</param-value>
+	</init-param>
+</filter>
+<filter-mapping>
+	<filter-name>encodingFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+pom.xml (right adbove ending of dependencies)
+
+<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version>
+    <scope>provided</scope>
+</dependency>
+
+
+Home.jsp:
+
+<%@ page language="java" contentType="text/html; charset= UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="conPath" value="$${pageContext.request.contextPath }"/>
+
+<head>
+	<title>Home</title>
+	<meta charset="UTF-8">
+	<link href="${conPath }/css/style.css" rel="stylesheet">
+</head>

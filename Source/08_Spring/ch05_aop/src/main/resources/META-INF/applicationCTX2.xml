@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+	<aop:aspectj-autoproxy/>
+	<bean id="proxyClass2" class="com.lec.ch05.ex2.ProxyClass2"/>
+	
+		<bean id="student2" class="com.lec.ch05.ex2.Student2">
+		<property name="name" value="Xavier"/>
+		<property name="age" value="21"/>
+		<property name="gradeNum" value="12"/>
+		<property name="classNum" value="3"/>
+	</bean>
+	<bean id="worker2" class="com.lec.ch05.ex2.Worker2">
+		<property name="name" value="Claudia"/>
+		<property name="age" value="26"/>
+		<property name="job" value="Doctor"/>
+	</bean>
+</beans>
