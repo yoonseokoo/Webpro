@@ -1,7 +1,8 @@
 Templates:
 
 
-JSP:
+[JSP] :
+
 <%@ page language="java" contentType="text/html; charset=${encoding}"
     pageEncoding="${encoding}"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -28,7 +29,8 @@ ${cursor}
 
 
 
-HTML:
+
+[HTML] :
 
 <!DOCTYPE html>
 <html>
@@ -48,7 +50,9 @@ ${cursor}
 </html>
 
 
-web.xml:
+
+
+[web.xml] :
 
 <filter>
 	<filter-name>encodingFilter</filter-name>
@@ -67,15 +71,31 @@ web.xml:
 	<url-pattern>/*</url-pattern>
 </filter-mapping>
 
-pom.xml (right adbove ending of dependencies)
 
-<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.24</version>
-    <scope>provided</scope>
-</dependency>
+
+[pom.xml] (right above ending tag of dependencies):
+
+	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+	<dependency>
+  		 <groupId>org.projectlombok</groupId>
+  		 <artifactId>lombok</artifactId>
+   		 <version>1.18.24</version>
+  		 <scope>provided</scope>
+	</dependency>
+
+	<!-- Valid -->    
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>4.2.0.Final</version>
+	</dependency>  
+	<!-- lombok -->
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>1.18.8</version>
+		<scope>provided</scope>
+	</dependency>
 
 
 Home.jsp:
@@ -89,4 +109,5 @@ Home.jsp:
 	<title>Home</title>
 	<meta charset="UTF-8">
 	<link href="${conPath }/css/style.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
 </head>
