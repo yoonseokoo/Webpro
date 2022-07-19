@@ -1,0 +1,12 @@
+- pom.xml:필요라이브러리 의존추가
+- web.xml :한글처리. *.do
+- db.properties : DB환경설정정보
+- root-context.xml에 dataSource 빈생성
+- DTO
+- xml 생성 :mapper(empList,deptList) + config
+- root-context.xml에 sessionTemplate 빈생성
+- 실행 첫화면 : css 추가해서 테스트
+- DAO
+- Service
+- Controller
+- emp.jsp

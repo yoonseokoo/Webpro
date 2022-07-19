@@ -75,13 +75,6 @@ ${cursor}
 
 [pom.xml] (right above ending tag of dependencies):
 
-	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-	<dependency>
-  		 <groupId>org.projectlombok</groupId>
-  		 <artifactId>lombok</artifactId>
-   		 <version>1.18.24</version>
-  		 <scope>provided</scope>
-	</dependency>
 
 	<!-- Valid -->    
 	<dependency>
@@ -89,13 +82,25 @@ ${cursor}
 		<artifactId>hibernate-validator</artifactId>
 		<version>4.2.0.Final</version>
 	</dependency>  
-	<!-- lombok -->
+
+Lombok (pom):
+	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 	<dependency>
 		<groupId>org.projectlombok</groupId>
 		<artifactId>lombok</artifactId>
 		<version>1.18.8</version>
 		<scope>provided</scope>
 	</dependency>
+
+File upload (pom):
+
+	<!-- 파일업로드 -->
+	<dependency>
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+		<version>1.3.1</version>
+	</dependency>
+
 
 
 Home.jsp:
