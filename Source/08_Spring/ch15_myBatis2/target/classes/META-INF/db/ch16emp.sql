@@ -1,32 +1,34 @@
 
--- Dept.xml의 id=deptList
+-- IN TOTAL THERE ARE TWO XML's (Dept.xml and Emp.xml)
+
+-- ★ Dept.xml의 id=deptList
 
 SELECT * FROM DEPT;
 
--- Emp.xml의 id=empList
+-- ☆ Emp.xml의 id=empList
 SELECT * FROM EMP ORDER BY EMPNO DESC;
 
 SELECT ROWNUM RN, A.* FROM (SELECT * FROM EMP ORDER BY EMPNO DESC) A;
 SELECT * FROM  (SELECT ROWNUM RN, A.* FROM (SELECT * FROM EMP ORDER BY EMPNO DESC) A)
 WHERE RN BETWEEN 4 AND 6;
 
--- Emp.xml의 id=totCnt
+-- ☆ Emp.xml의 id=totCnt
 
 SELECT COUNT(*) FROM EMP;
 
--- Emp.xml의 id=detail
+-- ☆ Emp.xml의 id=detail
 
 SELECT * FROM EMP WHERE EMPNO=7863;
 
--- Emp.xml의 id=managerList
+-- ☆ Emp.xml의 id=managerList
 
 SELECT * FROM EMP WHERE EMPNO IN (SELECT MGR FROM EMP);
 
--- Emp.xml의 id=insert
+--  ☆ Emp.xml의 id=insert
 
 INSERT INTO EMP VALUES (9000, 'HONG', 'IT',7566,'18/02/01',8000,200,40);
 
--- Emp.xml의 id=update
+-- ☆  Emp.xml의 id=update
 
 UPDATE EMP 
     SET ENAME='홍', 
@@ -41,11 +43,11 @@ UPDATE EMP
 SELECT * FROM EMP;
 ROLLBACK;
 
--- Emp.xml의 id=delete
+-- ☆ Emp.xml의 id=delete
 
 DELETE FROM EMP WHERE EMPNO=9000;
 
--- EmpDept.xml의 id=empDeptList
+-- ☆ Emp.xml의 id=empDeptList
 
 SELECT * FROM 
 	(SELECT ROWNUM RN, A.* FROM (SELECT E.*, DNAME, LOC FROM EMP E, DEPT D 

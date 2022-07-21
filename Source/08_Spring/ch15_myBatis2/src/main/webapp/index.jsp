@@ -18,8 +18,10 @@
 	</script>
 </head>
 <body>
-	<jsp:forward page="home.do"/>
-	
+	<%-- <jsp:forward page="empList.do"/> --%>
+	<%-- <jsp:forward page="dummyDataInsert.do"/> --%>
+	<jsp:forward page="empDeptList.do"/>
+	<%-- <jsp:forward page="insertForm.do"/> --%>
 </body>
 
 </html>
