@@ -37,7 +37,7 @@
 		<beans:property name="host" value="${mail.host}"/>
 		<beans:property name="port" value="${mail.port}"/>
 		<beans:property name="username" value="${mail.username}"/>
-		<beans:property name="password" value="${mail.passwoard}"/>
+		<beans:property name="password" value="${mail.password}"/>
 		<beans:property name="javaMailProperties">
 			<beans:props>
 				<beans:prop key="mail.smtp.auth">true</beans:prop>

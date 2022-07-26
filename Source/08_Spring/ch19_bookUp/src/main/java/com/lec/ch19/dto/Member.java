@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor 
 public class Member {
-	String mid;
-	String mpw;
-	String mname;
-	String mmail;
-	String mpost;
-	String maddr;
+	private String mid;
+	private String mpw;
+	private String mname;
+	private String mmail;
+	private String mpost;
+	private String maddr;
 }

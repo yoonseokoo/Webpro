@@ -10,13 +10,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Book {
-	int bnum;
-	String btitle;
-	String bwriter;
-	Date brdate;
-	String bimg1;
-	String bimg2;
-	String binfo;
-	int startRow;
-	int endRow;
+	private int bnum;
+	private String btitle;
+	private String bwriter;
+	private Date brdate;
+	private String bimg1;
+	private String bimg2;
+	private String binfo;
+	private int startRow;
+	private int endRow;
+	private String schItem;
+	private String schWord;
+	
 }

@@ -29,16 +29,15 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public List<Book> bookList(String pageNum) {
-		Paging paging = new Paging(bookDao.totCntBook(), pageNum, 3, 3);
-		Book book = new Book();
+	public List<Book> bookList(String pageNum, Book book) {
+		Paging paging = new Paging(bookDao.totCntBook(book), pageNum, 3, 3);
 		book.setStartRow(paging.getStartRow());
 		book.setEndRow(paging.getEndRow());
 		return bookDao.bookList(book);
 	}
 	@Override
-	public int totCntBook() {
-		return bookDao.totCntBook();
+	public int totCntBook(Book book) {
+		return bookDao.totCntBook(book);
 	}
 	@Override
 	public Book getDetailBook(int bnum) {

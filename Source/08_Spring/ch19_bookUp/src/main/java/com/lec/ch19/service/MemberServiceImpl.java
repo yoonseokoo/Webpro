@@ -15,7 +15,7 @@ import com.lec.ch19.dto.Member;
 @Service
 public class MemberServiceImpl implements MemberService {
 	@Autowired
-	private MemberDao memberDao; //dao 에 있는 함수들 호출하기 위해
+	private MemberDao memberDao;
 	@Autowired
 	private JavaMailSenderImpl mailSender;
 	@Override
@@ -25,41 +25,47 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int joinMember(final Member member, HttpSession httpSession) {
+		// member.getMname()에게 메일보내기, member insert, session에 mid attribute 추가하기
 		MimeMessagePreparator message = new MimeMessagePreparator() {
-			String content = "<div id=\"wrap\" style=\"text-align:center; width:500px; margin:0 auto;\">\n" + 
-					"	<h1 style=\"color:#535E7F; font-size:4em\">Welcome Mr/Mrs " + member.getMname() + "</h1>\n" + 
-					"	<p> Thank you for signing up. Here is a welcome discount coupon</p>\n" + 
-					"	<p>\n" + 
-					"		<img src=\"http://localhost:8090/ch19/img/coupon.jpg\">\n" + 
-					"	</p>\n" + 
-					"	<p style=\"color:blue\">파란 글씨 부분</p> \n" + 
-					"		<img src=\"https://ichef.bbci.co.uk/news/976/cpsprodpb/11F83/production/_126030637_hi077595101.jpg\">\n" + 
-					"		<p>서울시 어떤구 몰라17길 51 어떤빌딩 4층</p>\n" + 
-					"	</div>";
-			
+			String content = "<div style=\"width:500px; margin: 0 auto; text-align: center\">\n" + 
+					"	<h1 style=\"color:blue;\">"+ member.getMname() +"님 회원가입 감사합니다</h1>\n" + 
+					"	<div>\n" + 
+					"		<p>아무개 사이트에서만 쓰실 수 있는 감사쿠폰을 드립니다</p>\n" + 
+					"		<p>\n" + 
+					"			<img src=\"http://localhost:8090/ch19/img/coupon.jpg\">\n" + 
+					"		</p>\n" + 
+					"	</div>\n" + 
+					"	<div>\n" + 
+					"		<p style=\"color:red;\">빨간 글씨 부분</p>\n" + 
+					"		<p style=\"color:blue;\">파란 글씨 부분</p>\n" + 
+					"		<img src=\"https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png\">\n" + 
+					"	</div>\n" + 
+					"	<p>서울시 어떤구 XX로 00 **빌딩 402</p>\n" + 
+					"</div>"; 
 			@Override
 			public void prepare(MimeMessage mimeMessage) throws Exception {
-				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(member.getMmail()));
-				mimeMessage.setFrom(new InternetAddress("yoonseokoo@gmail.com"));
-				mimeMessage.setSubject("Mr/Mrs, " + member.getMname() + ", thank you for signing up");
+				mimeMessage.setRecipient(Message.RecipientType.TO, 
+											new InternetAddress(member.getMmail())); // 받는 메일
+				mimeMessage.setFrom(new InternetAddress("yoonseokoo@gmail.com")); // 보내는 메일
+				mimeMessage.setSubject(member.getMname()+"님 회원가입 감사합니다(쿠폰 동봉)");
 				mimeMessage.setText(content, "utf-8", "html");
-				
 			}
 		};
-		mailSender.send(message);
-		httpSession.setAttribute("mid",  member.getMid());
-		return memberDao.joinMember(member);
+		mailSender.send(message); // 메일 발송
+		httpSession.setAttribute("mid", member.getMid()); // 세션에 mid 속성 추가
+		return memberDao.joinMember(member); // member insert
 	}
 
 	@Override
 	public String loginCheck(String mid, String mpw, HttpSession httpSession) {
-		String result = "Login successful";
+		String result = "로그인 성공";
 		Member member = memberDao.getDetailMember(mid);
-		if(member==null) {
-			result = "Not a valid ID";
-		} else if (mpw.equals(member.getMpw())) {
-			result = "Password is incorrent. Please check your password";
-		} else {
+		if(member == null) {
+			result = "유효하지 않은 아이디입니다";
+		}else if(! mpw.equals(member.getMpw())) {
+			result = "비밀번호가 맞지 않습니다";
+		}else {
+			// 로그인 성공
 			httpSession.setAttribute("member", member);
 			httpSession.setAttribute("mid", mid);
 		}

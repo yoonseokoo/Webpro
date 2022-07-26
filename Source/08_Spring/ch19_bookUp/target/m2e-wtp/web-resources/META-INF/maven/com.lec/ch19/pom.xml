@@ -116,18 +116,21 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>  
+		
 		<!-- JDBC -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-jdbc</artifactId>
 		    <version>5.2.8.RELEASE</version>
 		</dependency>
+		
 		<!-- mybatis -->
 		<dependency>
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis</artifactId>
 		    <version>3.5.5</version>
 		</dependency>
+		
 		<!--  mybatis-spring -->
 		<dependency>
 		    <groupId>org.mybatis</groupId>
@@ -148,6 +151,7 @@
 		    <artifactId>mail</artifactId>
 		    <version>1.4.7</version>
 		</dependency>
+		
 		<!--  file upload  -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
