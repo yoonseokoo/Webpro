@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+	#content_form {
+		width:95%; 
+		margin: 10px auto;
+	}
+	#content_form h1 {
+		padding:10px;
+	}
+	
+	#content_form{
+		width:1000px; 
+		margin: 0 auto; 
+		height: 500px; 
+		text-align: center;
+		padding-top:100px;
+	}

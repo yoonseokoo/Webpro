@@ -18,7 +18,6 @@ public class CustomerDto {
 
 	public CustomerDto(String cid, String cpw, String cname, String ctel, String cemail, String caddress,
 			String cgender, Date cbirth, Date crdate) {
-		super();
 		this.cid = cid;
 		this.cpw = cpw;
 		this.cname = cname;

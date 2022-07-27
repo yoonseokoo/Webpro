@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+	*{
+		padding:0; margin: 0;
+	}
+	body { 
+		background-color: white; 
+	}
+	header{
+		width: 100%;
+	}
+	header h1 {
+		text-align:center;
+		background-color: #719192; 
+		color:white;	
+		padding:10px;
+	}
+	header a {
+		text-decoration: none; 
+	}
+	header li {
+		list-style: none;
+	}
+	header .nav{
+		margin:0 auto;
+		background-color: #dfcdc3; 
+	} 
+	header .nav ul {
+		overflow: hidden;
+		height: 30px;
+		line-height: 30px;
+		margin: 0 auto;
+		padding-right:30%;
+	}
+	header .nav ul li {
+		float: right;
+		padding-left:50px;
+		padding-right:50px;
+	}
+	header .nav a { 
+		color: black;
+		display: block;
+	}
