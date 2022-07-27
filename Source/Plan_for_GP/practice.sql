@@ -116,6 +116,9 @@ SELECT * FROM  PAY;
 -- Addding new paid transaction detail
 INSERT INTO PAY (PID, PNAME, PCONTENT, PIMAGE, PAMOUNT, PCOUNT, MID, GID)
     VALUES (PAY_SEQ.NEXTVAL, 'Lunch', 'Pizza near the station', '', 55000, 2, 'aaa', 1);
+    
+    
+
 
 -- Updating transaction information
 
@@ -125,11 +128,11 @@ COMMIT;
 
 -- [5] PAY DETAIL --
 
-DROP SEQUENCE PAYDETAIL_SEQ;
+DROP SEQUENCE PAYDETAIL_SEQ; --EVENT 에 참여한 MEMBER 의 SHARE
 
 CREATE SEQUENCE PAYDETAIL_SEQ MAXVALUE 99999999 NOCYCLE NOCACHE;
 
-DROP TABLE PAYDETAIL;
+DROP TABLE PAYDETAIL CASCADE CONSTRAINTS; 
 
 CREATE TABLE PAYDETAIL(
     PDID NUMBER(6) PRIMARY KEY, -- The member's unique ID WITHIN THE PAYMENT
@@ -138,6 +141,8 @@ CREATE TABLE PAYDETAIL(
     PDSHARE NUMBER(10) NOT NULL, -- (the share) amount the member has to pay (calculate using inner join)
     FOREIGN KEY (MID) REFERENCES MEMBER(MID),
     FOREIGN KEY (PID) REFERENCES PAY(PID));
+
+
 
 SELECT * FROM  PAYDETAIL;
 
@@ -162,6 +167,7 @@ COMMIT;
 SELECT * FROM  PAYDETAIL WHERE MID='aaa' AND PID=1;
 
 
+
 -- [6] PAY HISTORY --
 
 DROP SEQUENCE PAYHISTORY_SEQ;
@@ -177,17 +183,25 @@ CREATE TABLE PAYHISTORY(
     MID VARCHAR2(100)  NOT NULL, --member that was involved in this payment
     PDSHARE NUMBER(10) NOT NULL, -- (the share) amount the member has to pay (calculate using inner join)
     FOREIGN KEY (MID) REFERENCES MEMBER(MID),
-    FOREIGN KEY (PID) REFERENCES PAY(PID),
-    FOREIGN KEY (PDID) REFERENCES PAYDETAIL(PDID));
+    FOREIGN KEY (PID) REFERENCES PAY(PID));
     
 SELECT * FROM  PAYHISTORY;
 
 INSERT INTO PAYHISTORY
-    SELECT PAYHISTORY_SEQ.NEXTVAL, PDID, PID, MID, PDSHARE
+    SELECT PAYHISTORY_SEQ.NEXTVAL, PAYDETAIL_SEQ.CURRVAL, PID, MID, PDSHARE
     FROM PAYDETAIL 
     WHERE PDID=2;
-    
 
+
+-- 5. PAY DETAIL TABLE, 에서, GROUP MEMBER DETAIL TABLE 에 이미 업데이트 해준 정보는 지워준다
+
+DELETE FROM PAYDETAIL
+    WHERE PDID= (SELECT  PDID FROM PAYHISTORY WHERE PHID = (SELECT MAX(PHID) MAX FROM PAYHISTORY));
+    
+    
+    select * from paydetail;
+    
+    
 -- [7] GROUP MEMBER DETAIL 
 
 DROP SEQUENCE GROUPMEMBERDETAIL_SEQ;
@@ -200,13 +214,12 @@ CREATE TABLE GROUPMEMBERDETAIL( -- Contains details of each member in the group
     GMDID NUMBER(6) PRIMARY KEY, -- unique ID for each member in the group
     MID VARCHAR2(100)  NOT NULL, --member ID
     GMBALANCE NUMBER(10) DEFAULT 0, -- total balance (how much member owe's or needs to get back)
-    GMTOTALPAID NUMBER(10) DEFAULT 0, -- total amount member paid
-    GMTOTALDEBT NUMBER(10) DEFAULT 0, -- total amount member was paid for
     GID NUMBER(6) NOT NULL, -- indication of which group we are talking about
     FOREIGN KEY (GID) REFERENCES GROUPS(GID),
     FOREIGN KEY (MID) REFERENCES MEMBER(MID));
     
 SELECT * FROM  GROUPMEMBERDETAIL;
+
 
 -- default value for member aaa and bbb in group 1
 INSERT INTO GROUPMEMBERDETAIL (GMDID, MID, GID)
@@ -234,5 +247,89 @@ COMMIT;
 
 
 
+
+--★★★★★steps of making a new group★★★★★
+
+--1.새로운 그룹 생성:
+
+INSERT INTO GROUPS (GID, GNAME, GIMG, GCONTENT)
+    VALUES (GROUP_SEQ.NEXTVAL, 'Trip to Namhae', 'namhae.jpg' , 'Lets have a lit time');
+    
+--2. 바로 그룹에 멤버들 추가: Using checkbox
+
+INSERT INTO GROUPDETAIL (GDID, GID, MID)
+    VALUES (GROUPDETAIL_SEQ.NEXTVAL, 1 , 'aaa');
+    
+--3. 멤버 추가와 동시에, GROUPMEMBERDETAIL 테이블에, 각멤버의 default 값을 너어준다
+
+INSERT INTO GROUPMEMBERDETAIL (GMDID, MID, GID)
+    VALUES (GROUPMEMBERDETAIL_SEQ.NEXTVAL, 'aaa', '1');
+    
+
+
+-- ★★★★★steps of the payment★★★★★
+
+--1. 한사람이 돈을 낸다 (돈 낸 사람의 아이디를 session에서 받아온다)
+
+INSERT INTO PAY (PID, PNAME, PCONTENT, PIMAGE, PAMOUNT, PCOUNT, MID, GID)
+    VALUES (PAY_SEQ.NEXTVAL, 'Lunch', 'Pizza near the station', '', 55000, 2, 'aaa', 1);
+    
+SELECT * FROM PAY;
+    
+--2. 바로 PAY DETAIL 테이블에, 관련된 사람들의 정보도 넣어준다 (체크박스로 관련된 사람의 이름들을 ARRAYLIST에 받아온다)
+
+    --<c:if test="member.mid eq pay.mid">
+    INSERT INTO PAYDETAIL (PDID, PID, MID, PDSHARE) --돈 낸 사람의 ID 는 SESSION에서 가지고 온다
+        VALUES (PAYDETAIL_SEQ.NEXTVAL, 1, 'aaa', ((SELECT PAMOUNT FROM PAY WHERE PID=1)/(SELECT PCOUNT FROM PAY WHERE PID=1)));
+
+    --<c:if test="member.mid != pay.mid">  
+    INSERT INTO PAYDETAIL (PDID, PID, MID, PDSHARE)
+        VALUES (PAYDETAIL_SEQ.NEXTVAL, 1, 'bbb', -1*((SELECT PAMOUNT FROM PAY WHERE PID=1)/(SELECT PCOUNT FROM PAY WHERE PID=1)));
+
+SELECT * FROM PAYDETAIL;
+
+--3.바로 GROUP MEMBER DETAIL TABLE 에 멤버 정보를 업데이트 해준다
+
+    UPDATE GROUPMEMBERDETAIL 
+        SET GMBALANCE = GMBALANCE + (SELECT PDSHARE FROM PAYDETAIL WHERE MID='aaa' AND PID=1)
+        WHERE MID='aaa';
+    
+   UPDATE GROUPMEMBERDETAIL 
+        SET GMBALANCE = GMBALANCE + ( SELECT PDSHARE FROM PAYDETAIL WHERE MID='bbb' AND PID=1)
+        WHERE MID='bbb';
+
+SELECT * FROM GROUPMEMBERDETAIL; 
+
+-- 4. PAY HISTORY TABLE에, PAY DETAIL TABLE 정보를 옮겨준다
+
+INSERT INTO PAYHISTORY
+    SELECT PAYHISTORY_SEQ.NEXTVAL, PAYDETAIL_SEQ.CURRVAL, PID, MID, PDSHARE
+        FROM PAYDETAIL 
+        WHERE PDID=(SELECT MAX(PDID) MAX FROM PAYDETAIL);
+        
+-- 5. DELETE FROM PAY DETAIL
+        
+        
+        
+        SELECT *
+FROM EMP MANAGER
+WHERE EXISTS (SELECT *
+FROM EMP WHERE
+MANAGER.EMPNO =
+MGR);
+
+
+        SELECT ENAME, HIREDATE, 
+        DEPTNO
+        FROM EMP
+        (DEPTNO, HIREDATE) 
+        IN (SELECT DEPTNO,
+        MAX(HIREDATE) FROM
+        EMP);
+
+
+
+
+SELECT * FROM PAYHISTORY;   
 
 
