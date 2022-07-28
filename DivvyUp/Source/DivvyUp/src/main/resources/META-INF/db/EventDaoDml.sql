@@ -1,0 +1,64 @@
+
+--★★★★★ steps of making a new group ★★★★★
+
+--1.새로운 그룹 생성:
+
+INSERT INTO GROUPS (GID, GNAME, GIMG, GCONTENT)
+    VALUES (GROUPS_SEQ.NEXTVAL, 'Trip to Namhae', 'namhae.jpg' , 'Lets have a lit time', 'aaa');
+    
+--2. 바로 그룹에 멤버들 추가: Using checkbox
+
+INSERT INTO GROUPDETAIL (GDID, GID, MID)
+    VALUES (GROUPDETAIL_SEQ.NEXTVAL, 1 , 'aaa');
+
+
+-- ★★★★★ steps of the payment ★★★★★
+
+--1. 한사람이 돈을 낸다 (돈 낸 사람의 아이디를 session에서 받아온다)
+
+INSERT INTO EVENT (EID, ENAME, ECONTENT, EIMAGE, EAMOUNT, EADDRESS, ECOUNT, MID, GID)
+    VALUES (EVENT_SEQ.NEXTVAL, 'Lunch', 'Pizza near the station', '', 55000, '강남',  2, 'aaa', 1);
+    
+SELECT * FROM EVENT;
+    
+--2. 바로 PAY DETAIL 테이블에, 관련된 사람들의 정보도 넣어준다 (체크박스로 관련된 사람의 이름들을 ARRAYLIST에 받아온다)
+
+    --<c:if test="member.mid eq pay.mid">
+INSERT INTO EVENTDETAIL (EDID, EID, MID, EDSHARE)
+    VALUES (EVENTDETAIL_SEQ.NEXTVAL, 1, 'aaa', ((SELECT EAMOUNT FROM EVENT WHERE EID=1)/(SELECT ECOUNT FROM EVENT WHERE EID=1)));
+    
+    --<c:if test="member.mid != pay.mid">  
+INSERT INTO EVENTDETAIL  (EDID, EID, MID, EDSHARE)
+    VALUES (EVENTDETAIL_SEQ.NEXTVAL, 1, 'bbb', -1*((SELECT EAMOUNT FROM EVENT WHERE EID=1)/(SELECT ECOUNT FROM EVENT WHERE EID=1)));
+
+SELECT * FROM EVENT;
+SELECT * FROM EVENTDETAIL;
+
+--3.바로 GROUP DETAIL TABLE 에 멤버 정보를 업데이트 해준다
+
+    UPDATE GROUPDETAIL 
+        SET GMBALANCE = GMBALANCE + (SELECT EDSHARE FROM EVENTDETAIL WHERE MID='aaa' AND EID=1)
+        WHERE MID='aaa';
+    
+   UPDATE GROUPDETAIL 
+        SET GMBALANCE = GMBALANCE + ( SELECT EDSHARE FROM EVENTDETAIL WHERE MID='bbb' AND EID=1)
+        WHERE MID='bbb';
+
+SELECT * FROM GROUPDETAIL; 
+
+COMMIT;
+
+-- 4. PAY HISTORY TABLE에, PAY DETAIL TABLE 정보를 옮겨준다
+
+INSERT INTO EVENTHISTORY
+    ( SELECT  EVENTHISTORY_SEQ.NEXTVAL, E.EID, ED.MID, ED.EDSHARE, E.ERDATE, E.ENAME
+    FROM EVENTDETAIL ED, EVENT E
+    WHERE E.EID=ED.EID
+    AND E.EID=1);
+        
+SELECT * FROM  EVENTHISTORY;
+
+-- 5. DELETE FROM PAY DETAIL
+    
+    DELETE FROM EVENTDETAIL WHERE EID=1;
+    ROLLBACK;
