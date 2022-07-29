@@ -1,0 +1,16 @@
+
+!ENTRY org.eclipse.core.resources 4 568 2022-07-29 00:42:35.844
+!MESSAGE Could not write workspace metadata 'C:\Users\Unie\Documents\webPro\webPro\DivvyUp\Source\DivvyUp\src\main\resources\META-INF\db\.metadata\.plugins\org.eclipse.core.resources\0.snap'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Unie\Documents\webPro\webPro\DivvyUp\Source\DivvyUp\src\main\resources\META-INF\db\.metadata\.plugins\org.eclipse.core.resources\0.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:133)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:48)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:44)
+	at org.eclipse.core.internal.resources.SaveManager.snapTree(SaveManager.java:1474)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1198)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1143)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:55)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
