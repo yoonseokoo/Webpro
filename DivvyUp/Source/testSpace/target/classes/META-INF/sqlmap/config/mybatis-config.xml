@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ 
+<configuration>
+ 	<typeAliases>
+		<typeAlias type="com.lec.testSpace.dto.Member" alias="Member"/>
+		<typeAlias type="com.lec.testSpace.dto.Book" alias="Book"/>
+		<typeAlias type="com.lec.testSpace.dto.Groups" alias="Groups"/>
+		<typeAlias type="com.lec.testSpace.dto.GroupDetail" alias="GroupDetail"/>
+		<typeAlias type="com.lec.testSpace.dto.Event" alias="Event"/>
+		<typeAlias type="com.lec.testSpace.dto.EventDetail" alias="EventDetail"/>
+		<typeAlias type="com.lec.testSpace.dto.EventHistory" alias="EventHistory"/>
+		<typeAlias type="com.lec.testSpace.dto.CentralSystem" alias="CentralSystem"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="META-INF/sqlmap/mappers/Member.xml"/>
+		<mapper resource="META-INF/sqlmap/mappers/Book.xml"/>
+		<mapper resource="META-INF/sqlmap/mappers/Groups.xml"/>
+		<mapper resource="META-INF/sqlmap/mappers/GroupDetail.xml"/>
+		<mapper resource="META-INF/sqlmap/mappers/Event.xml"/>
+		<mapper resource="META-INF/sqlmap/mappers/EventDetail.xml"/>
+		<mapper resource="META-INF/sqlmap/mappers/EventHistory.xml"/>
+		<mapper resource="META-INF/sqlmap/mappers/CentralSystem.xml"/>
+	</mappers>
+</configuration>
