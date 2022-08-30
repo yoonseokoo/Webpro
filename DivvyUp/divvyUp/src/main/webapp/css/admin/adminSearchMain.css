@@ -1,0 +1,495 @@
+@charset "UTF-8";
+
+span {
+	color: #1DBF73;
+	font-size: 50px;
+}
+
+span:hover {
+	color: #fff;
+	transition: 0.5s;
+}
+
+.container {
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+.logo {
+	font-size: 46px;
+	color: #fff'
+}
+
+.header {
+	position: fixed;
+	background-color: rgba(34, 34, 34, 0.6);
+	top: 0;
+	left: 0;
+	right: 0;
+	transition: all 0.3s ease-in-out;
+	z-index: 100;
+}
+
+.header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 80px;
+	line-height: 80px;
+	transition: all 0.3s ease-in-out;
+	z-index: -3;
+}
+
+.header .container:nth-child(1) {
+	left: 0;
+}
+
+.header ul {
+	display: flex;
+	list-style-type: none;
+	align-items: center;
+	justify-content: center;
+}
+/***************김빈추가******************************************************************************/
+.submenu {
+	height: 0;
+	overflow: hidden;
+	display: none;
+	position: absolute;
+}
+
+.submenu>li {
+	line-height: 50px;
+	background-color: rgba(32, 34, 34, 0.5);
+}
+
+.header ul>li first-child:hover {
+	background-color: #94a9ff;
+	transition-duration: 0.5s;
+}
+
+.header ul>li:hover .submenu {
+	height: 200px;
+	transition-duration: 1s;
+	display: block;
+	font-weight: bold;
+	z-index: 100;
+}
+/***************김빈추가******************************************************************************/
+.header a {
+	color: #fff;
+	text-decoration: none;
+	padding: 7px 15px;
+	transition: all 0.3s ease-in-out;
+}
+
+.header.active {
+	background-color: #fff;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header.active a {
+	color: #000;
+}
+
+.header.active .container {
+	padding: 10px 0;
+}
+
+.header a.current, .header a:hover {
+	color: #1DBF73;
+	font-weight: bold;
+}
+
+.header .imgNoti {
+	margin-top: 30px;
+	height: 30px;
+	-webkit-filter: invert(100%);
+	filter: invert(100%);
+}
+
+.header .imgNoti:hover {
+	filter: sepia(100%);
+}
+
+.header .imgLogout {
+	margin-top: 30px;
+	height: 25px;
+}
+
+.header .imgLogout:hover {
+	-webkit-filter: invert(1);
+}
+
+.header .container .notification:hover {
+	color: red;
+}
+
+.header .container .notification {
+	position: relative;
+}
+
+.header .container .notification .badge {
+	position: absolute;
+	top: -7px;
+	right: 11px;
+	border-radius: 80%;
+	background: red;
+	color: white;
+	height: 17px;
+	line-height: 15px;
+	width: 17px;
+	text-align: center;
+	justify-content: center;
+	font-weight: bold;
+}
+
+@charset "UTF-8";
+
+div {
+	overflow: hidden;
+}
+
+div#backIMG {
+	background: linear-gradient(rgba(255, 255, 255, 0.2),
+		rgba(255, 255, 255, 0.2)),
+		url('https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTN8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom center;
+	min-height: 1000px;
+}
+
+div#tmpheader {
+	width: 100%;
+	height: 100px;
+}
+
+div#adminSearchWrap {
+	margin: 0 auto;
+	width: 900px;
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+/* 검색 바 */
+div#adminSearchBar {
+	width: 100%;
+	height: 70px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#adminSearchWrap h2 {
+	margin-top: 200px;
+	margin-bottom: 80px;
+}
+
+#adminSearchBar ul li {
+	list-style: none;
+	display: inline-block;
+	line-height: 50px;
+	width: 33.33333%;
+	height: 70px;
+	float: left;
+}
+
+#adminSearchWrap #adminSearchBar .searchBar.current {
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	font-weight: bold;
+	font-size: 18px;
+	border-top: 5px solid rgba(32, 34, 34, 0.8);
+	color: black;
+}
+
+#adminSearchBar ul li:hover {
+	cursor: pointer;
+	background-color: rgba(32, 34, 34, 0.4);
+}
+
+/* 검색 input  */
+.adminSearchResult.current select {
+	width: 150px;
+	height: 35px;
+	border: none;
+	background-color: rgba(0, 0, 0, 0.25); box-shadow : 0 0 20px rgba( 0, 0
+	, 0, 0.1);
+	text-align: center;
+	color: white;
+	border-radius: 5px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.adminSearchResult.current select:hover {
+	background-color: rgba(32, 34, 34, 0.4);
+}
+
+.adminSearchResult.current input[type=text] {
+	width: 400px;
+	height: 35px;
+	border: none;
+	outline:none;
+	color: white;
+	border-radius: 5px;
+	      	background-color:  rgba(0,0,0, 0.25);
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.adminSearchResult.current input[type=text]:focus {
+	background-color: gray;
+}
+
+.adminSearchResult.current input[type=submit] {
+	width: 100px;
+	height: 39px;
+	border: none;
+	      	background-color:  rgba(0,0,0, 0.25);
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	border-radius: 5px;
+	text-align: center;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+}
+
+.adminSearchResult.current input[type=submit]:hover {
+	background-color: gray;
+	cursor: pointer;
+}
+
+/* 회원 검색결과 */
+.adminSearchResult.current select[name="searchResultOrderBy"] {
+	border: none;
+	float: right;
+	width: 200px;
+	margin-right: 70px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.adminSearchResult.current select[name="searchResultOrderBy"]:hover {
+	border-radius: 5px;
+	background-color: gray;
+	cursor: pointer;
+}
+
+div.adminSearchResult.current {
+	text-align: center;
+	margin-bottom: 100px;
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.adminSearchResult.current table {
+	clear: both;
+	width: 90%;
+	border-collapse: collapse;
+}
+
+.adminSearchResult.current table tr th {
+	font-weight: bolder;
+	width: 200px;
+	padding-bottom: 20px;
+}
+
+.adminSearchResult.current table tr td {
+	padding-bottom: 15px;
+	padding-top: 15px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.adminSearchResult.current table#memberResultTable tr th:nth-child(1),
+	.adminSearchResult.current #memberResultDiv table tr td:nth-child(1) {
+	width: 30%;
+}
+
+.adminSearchResult.current table#memberResultTable tr th:nth-child(2),
+	.adminSearchResult.current #memberResultDiv table tr td:nth-child(2) {
+	width: 10%;
+}
+
+.adminSearchResult.current table#memberResultTable tr th:nth-child(3),
+	.adminSearchResult.current #memberResultDiv table tr td:nth-child(3) {
+	width: 40%;
+}
+
+.adminSearchResult.current table#memberResultTable tr th:nth-child(4),
+	.adminSearchResult.current #memberResultDiv table tr td:nth-child(4) {
+	width: 20%;
+}
+
+.adminSearchResult.current input.excelDownload {
+	float: right;
+	width: 300px;
+	margin-top: 20px;
+	margin-right: 70px;
+}
+/* 회원 스크롤 부분 검색결과 */
+.adminSearchResult.current #memberResultDiv {
+	height: 300px;
+	overflow: auto;
+	margin-right: 5px;
+}
+
+.adminSearchResult.current #memberResultDiv::-webkit-scrollbar-thumb {
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 10px;
+}
+
+.adminSearchResult.current #memberResultDiv::-webkit-scrollbar {
+	width: 10px;
+	opacity: 0.4;
+}
+
+.adminSearchResult.current #memberResultDiv::-webkit-scrollbar-track {
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 현재 페이지 보이기 숨기기 */
+.adminSearchResult {
+	display: none;
+	background: lightgray;
+	width: 100%;
+}
+
+.adminSearchResult.current {
+	background-color: rgba(32, 34, 34, 0.4);
+	padding-top: 20px;
+	padding-bottom: 20px;
+	display: inherit;
+}
+
+/* 그룹 검색결과 */
+.adminSearchResult.current table#groupResultTable tr th:nth-child(1),
+	.adminSearchResult.current #groupResultDiv table tr td:nth-child(1) {
+	width: 15%;
+}
+
+.adminSearchResult.current table#groupResultTable tr th:nth-child(2),
+	.adminSearchResult.current #groupResultDiv table tr td:nth-child(2) {
+	width: 20%;
+}
+
+.adminSearchResult.current table#groupResultTable tr th:nth-child(3),
+	.adminSearchResult.current #groupResultDiv table tr td:nth-child(3) {
+	width: 15%;
+}
+
+.adminSearchResult.current table#groupResultTable tr th:nth-child(4),
+	.adminSearchResult.current #groupResultDiv table tr td:nth-child(4) {
+	width: 40%;
+}
+
+.adminSearchResult.current table#groupResultTable tr th:nth-child(5),
+	.adminSearchResult.current #groupResultDiv table tr td:nth-child(5) {
+	width: 10%;
+}
+
+.adminSearchResult.current table#groupResultTable, .adminSearchResult.current #groupResultDiv table
+	{
+	margin-left: 40px;
+}
+
+/* 그룹 검색결과 스크롤 */
+.adminSearchResult.current #groupResultDiv {
+	height: 300px;
+	overflow: auto;
+	margin-right: 5px;
+}
+
+.adminSearchResult.current #groupResultDiv::-webkit-scrollbar-thumb {
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 10px;
+}
+
+.adminSearchResult.current #groupResultDiv::-webkit-scrollbar {
+	width: 10px;
+	opacity: 0.4;
+}
+
+.adminSearchResult.current #groupResultDiv::-webkit-scrollbar-track {
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 이벤트 검색 결과 */
+.adminSearchResult.current table#eventsResultTable tr th {
+	font-size: 15px;
+}
+
+.adminSearchResult.current table#eventsResultTable tr th:nth-child(1),
+	.adminSearchResult.current #eventResultDiv table tr td:nth-child(1) {
+	width: 10%;
+}
+
+.adminSearchResult.current table#eventsResultTable tr th:nth-child(2),
+	.adminSearchResult.current #eventResultDiv table tr td:nth-child(2) {
+	width: 10%;
+}
+
+.adminSearchResult.current table#eventsResultTable tr th:nth-child(3),
+	.adminSearchResult.current #eventResultDiv table tr td:nth-child(3) {
+	width: 10%;
+}
+
+.adminSearchResult.current table#eventsResultTable tr th:nth-child(4),
+	.adminSearchResult.current #eventResultDiv table tr td:nth-child(4) {
+	width: 10%;
+}
+
+.adminSearchResult.current table#eventsResultTable tr th:nth-child(5),
+	.adminSearchResult.current #eventResultDiv table tr td:nth-child(5) {
+	width: 20%;
+}
+
+.adminSearchResult.current table#eventsResultTable tr th:nth-child(6),
+	.adminSearchResult.current #eventResultDiv table tr td:nth-child(5) {
+	width: 10%;
+}
+
+.adminSearchResult.current table#eventsResultTable tr th:nth-child(7),
+	.adminSearchResult.current #eventResultDiv table tr td:nth-child(7) {
+	width: 10%;
+}
+
+.adminSearchResult.current table#eventsResultTable tr th:nth-child(8),
+	.adminSearchResult.current #eventResultDiv table tr td:nth-child(8) {
+	width: 10%;
+}
+
+.adminSearchResult.current table#eventsResultTable tr th:nth-child(9),
+	.adminSearchResult.current #eventResultDiv table tr td:nth-child(9) {
+	width: 10%;
+}
+/* 이벤트 검색결과 스크롤 */
+.adminSearchResult.current #eventResultDiv {
+	height: 300px;
+	overflow: auto;
+	margin-right: 5px;
+}
+
+.adminSearchResult.current #eventResultDiv::-webkit-scrollbar-thumb {
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 10px;
+}
+
+.adminSearchResult.current #eventResultDiv::-webkit-scrollbar {
+	width: 10px;
+	opacity: 0.4;
+}
+
+.adminSearchResult.current #eventResultDiv::-webkit-scrollbar-track {
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+}

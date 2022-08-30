@@ -1,0 +1,524 @@
+!SESSION 2022-08-16 10:39:01.220 -----------------------------------------------
+eclipse.buildId=4.15.3.202208110744
+java.version=17.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2022-08-16 10:39:25.706
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-08-16 10:39:25.706
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@46d51d5e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@530df3ab,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-08-16 10:39:25.706
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5e72c82a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@aaa7000,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-08-16 10:39:28.000
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Unie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 10:44:07.364
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/wildwebdeveloper/releases/latest/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 10:44:12.939
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/wildwebdeveloper/releases/latest/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 10:44:43.913
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/IntelliJIdeaKeymap4Eclipse/IntelliJIdeaKeymap4Eclipse-update-site/main/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 10:44:48.639
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/IntelliJIdeaKeymap4Eclipse/IntelliJIdeaKeymap4Eclipse-update-site/main/artifacts.jar
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2022-08-16 10:44:48.668
+!MESSAGE No digest algorithm is available to verify download of osgi.bundle,com.github.intellijideakeymap4eclipse.plugin,0.1.4.202102272024.
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2022-08-16 10:44:48.669
+!MESSAGE No digest algorithm is available to verify download of org.eclipse.update.feature,com.github.intellijideakeymap4eclipse.feature,0.1.4.202102272024.
+
+!ENTRY org.eclipse.ui 2 2 2022-08-16 10:44:58.294
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2022-08-16 10:44:59.399 -----------------------------------------------
+eclipse.buildId=4.15.3.202208110744
+java.version=17.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4 -data file:/C:/Users/Unie/Documents/webPro/webPro/Source/09_Springboot/ -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.ui 2 0 2022-08-16 10:45:03.380
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.bindings' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 10:45:03.380
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 10:45:03.380
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 10:45:03.380
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 10:45:03.380
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 10:45:03.380
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 10:45:03.380
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+
+!ENTRY org.eclipse.jface 2 0 2022-08-16 10:45:04.526
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-08-16 10:45:04.526
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@19f99aaf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5020e5ab,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-08-16 10:45:06.771
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Unie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 2 0 2022-08-16 11:03:48.259
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.bindings' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:03:48.259
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:03:48.259
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:03:48.259
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:03:48.259
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:03:48.259
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:03:48.259
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+
+!ENTRY org.eclipse.ui 2 2 2022-08-16 11:05:56.783
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-08-16 11:05:57.082
+!MESSAGE The workspace will exit with unsaved changes in this session.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2022-08-16 11:05:57.250
+!MESSAGE Could not download sources for org.apache.logging.log4j:log4j-api:2.17.2
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not resolve artifact org.apache.logging.log4j:log4j-api:jar:sources:2.17.2
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:117)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:796)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:773)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:311)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:285)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:255)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:223)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:152)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:156)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1416)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Could not transfer artifact org.apache.logging.log4j:log4j-api:jar:sources:2.17.2 from/to central (https://repo.maven.apache.org/maven2): The operation was cancelled.
+org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.apache.logging.log4j:log4j-api:jar:sources:2.17.2 from/to central (https://repo.maven.apache.org/maven2): The operation was cancelled.
+	at io.takari.aether.connector.AetherRepositoryConnector$2.wrap(AetherRepositoryConnector.java:889)
+	at io.takari.aether.connector.AetherRepositoryConnector$2.wrap(AetherRepositoryConnector.java:1)
+	at io.takari.aether.connector.AetherRepositoryConnector$GetTask.flush(AetherRepositoryConnector.java:659)
+	at io.takari.aether.connector.AetherRepositoryConnector.get(AetherRepositoryConnector.java:337)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:514)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:402)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:229)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:207)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:262)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:805)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:117)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:796)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:773)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:311)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:285)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:255)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:223)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:152)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:156)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1416)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.aether.transfer.TransferCancelledException: The operation was cancelled.
+	at org.eclipse.m2e.core.internal.embedder.ArtifactTransferListenerAdapter.transferProgressed(ArtifactTransferListenerAdapter.java:51)
+	at org.eclipse.aether.internal.impl.SafeTransferListener.transferProgressed(SafeTransferListener.java:106)
+	at io.takari.aether.connector.AetherRepositoryConnector.transferProgressed(AetherRepositoryConnector.java:860)
+	at io.takari.aether.connector.AetherRepositoryConnector$GetTask.resumableGet(AetherRepositoryConnector.java:621)
+	at io.takari.aether.connector.AetherRepositoryConnector$GetTask.run(AetherRepositoryConnector.java:481)
+	at io.takari.aether.connector.AetherRepositoryConnector$DirectExecutor.execute(AetherRepositoryConnector.java:915)
+	at io.takari.aether.connector.AetherRepositoryConnector.get(AetherRepositoryConnector.java:331)
+	... 22 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2022-08-16 11:05:57.251
+!MESSAGE Could not resolve artifact org.apache.logging.log4j:log4j-api:jar:sources:2.17.2
+!SUBENTRY 2 org.eclipse.m2e.core 4 -1 2022-08-16 11:05:57.251
+!MESSAGE Could not transfer artifact org.apache.logging.log4j:log4j-api:jar:sources:2.17.2 from/to central (https://repo.maven.apache.org/maven2): The operation was cancelled.
+!STACK 0
+org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.apache.logging.log4j:log4j-api:jar:sources:2.17.2 from/to central (https://repo.maven.apache.org/maven2): The operation was cancelled.
+	at io.takari.aether.connector.AetherRepositoryConnector$2.wrap(AetherRepositoryConnector.java:889)
+	at io.takari.aether.connector.AetherRepositoryConnector$2.wrap(AetherRepositoryConnector.java:1)
+	at io.takari.aether.connector.AetherRepositoryConnector$GetTask.flush(AetherRepositoryConnector.java:659)
+	at io.takari.aether.connector.AetherRepositoryConnector.get(AetherRepositoryConnector.java:337)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:514)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:402)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:229)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:207)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:262)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:805)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:117)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:796)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:773)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:311)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:285)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:255)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:223)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:152)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:156)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1416)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.aether.transfer.TransferCancelledException: The operation was cancelled.
+	at org.eclipse.m2e.core.internal.embedder.ArtifactTransferListenerAdapter.transferProgressed(ArtifactTransferListenerAdapter.java:51)
+	at org.eclipse.aether.internal.impl.SafeTransferListener.transferProgressed(SafeTransferListener.java:106)
+	at io.takari.aether.connector.AetherRepositoryConnector.transferProgressed(AetherRepositoryConnector.java:860)
+	at io.takari.aether.connector.AetherRepositoryConnector$GetTask.resumableGet(AetherRepositoryConnector.java:621)
+	at io.takari.aether.connector.AetherRepositoryConnector$GetTask.run(AetherRepositoryConnector.java:481)
+	at io.takari.aether.connector.AetherRepositoryConnector$DirectExecutor.execute(AetherRepositoryConnector.java:915)
+	at io.takari.aether.connector.AetherRepositoryConnector.get(AetherRepositoryConnector.java:331)
+	... 22 more
+!SESSION 2022-08-16 11:05:57.557 -----------------------------------------------
+eclipse.buildId=4.15.3.202208110744
+java.version=17.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4 -data file:/C:/Users/Unie/Documents/webPro/webPro/Source/09_Springboot/ -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-08-16 11:05:58.832
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2022-08-16 11:05:59.412
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.bindings' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:05:59.412
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:05:59.412
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:05:59.412
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:05:59.412
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:05:59.412
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:05:59.412
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+
+!ENTRY org.eclipse.jface 2 0 2022-08-16 11:06:00.604
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-08-16 11:06:00.604
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@23aaa756,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2d5d001f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-08-16 11:06:02.820
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Unie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-08-16 11:10:37.802
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-08-16 11:10:37.802
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@5afeaee7[org.springframework.tooling.boot.ls:1.38.0.202208110704(id=567)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-08-16 11:10:37.811
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-08-16 11:10:45.399
+!MESSAGE Boot LS startup time from start to initialized: 7579ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-08-16 11:10:48.194
+!MESSAGE executing callback sts4.classpath.vQBniqaH FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2022-08-16 11:10:48.197
+!MESSAGE TimeoutException
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:37)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:177)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:148)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 2 2 2022-08-16 11:11:06.595
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.jface 2 0 2022-08-16 11:13:44.513
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-08-16 11:13:44.513
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.togglelinecommentcommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7ff865b1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@535971a4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:40:55.413
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/IntelliJIdeaKeymap4Eclipse/IntelliJIdeaKeymap4Eclipse-update-site/main/artifacts.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:40:55.792
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/IntelliJIdeaKeymap4Eclipse/IntelliJIdeaKeymap4Eclipse-update-site/main/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:40:56.197
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/wildwebdeveloper/releases/latest/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:40:59.234
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/wildwebdeveloper/releases/latest/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:15.377
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:19.680
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.0.0.v20181205-1821/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:23.694
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.0.1.v20181217-1554/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:27.741
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.0.v20190501-0830/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:31.025
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.1.v20190701-1623/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:31.028
+!MESSAGE Unexpected interrupt while waiting on ECF browse request
+!STACK 0
+java.lang.InterruptedException
+	at org.eclipse.core.internal.jobs.Semaphore.acquire(Semaphore.java:35)
+	at org.eclipse.core.internal.jobs.JobManager.join(JobManager.java:931)
+	at org.eclipse.core.internal.jobs.InternalJob.join(InternalJob.java:344)
+	at org.eclipse.core.runtime.jobs.Job.join(Job.java:531)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.waitOnSelf(FileInfoReader.java:74)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFiles(FileInfoReader.java:110)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getRemoteFile(FileInfoReader.java:125)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileInfoReader.getLastModified(FileInfoReader.java:130)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.getLastModified(RepositoryTransport.java:244)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.getLastModified(CacheManager.java:283)
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:194)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepositoryFactory.getLocalFile(SimpleArtifactRepositoryFactory.java:68)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepositoryFactory.load(SimpleArtifactRepositoryFactory.java:92)
+	at org.eclipse.equinox.internal.p2.artifact.repository.simple.SimpleArtifactRepositoryFactory.load(SimpleArtifactRepositoryFactory.java:80)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:787)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:685)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:131)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:125)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:496)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:177)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:99)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:120)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:787)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:685)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:131)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:125)
+	at org.eclipse.epp.internal.mpc.ui.catalog.MarketplaceCatalog.lambda$12(MarketplaceCatalog.java:338)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:34.606
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.2.v20190903-1732/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:38.615
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.3.v20191117-2045/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:42.474
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.4.v20200326-1718/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:46.438
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.5.v20210113-0904/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:50.703
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.6.v20220511-1224/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:55.131
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:41:59.447
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.0.0.v20181205-1821/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:42:03.548
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.0.1.v20181217-1554/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:42:07.639
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.0.v20190501-0830/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:42:11.566
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.1.v20190701-1623/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:42:15.605
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.2.v20190903-1732/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:42:19.525
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.3.v20191117-2045/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:42:23.654
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.4.v20200326-1718/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:42:27.805
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.5.v20210113-0904/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-08-16 11:42:32.104
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/buildship/updates/e410/releases/3.x/3.1.6.v20220511-1224/, see CVE-2021-41033. Consider using https instead.
+!SESSION 2022-08-16 11:43:59.456 -----------------------------------------------
+eclipse.buildId=4.15.3.202208110744
+java.version=17.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4 -data file:/C:/Users/Unie/Documents/webPro/webPro/Source/09_Springboot/ -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.ui 2 0 2022-08-16 11:44:03.503
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.bindings' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:44:03.503
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:44:03.503
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:44:03.503
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:44:03.503
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:44:03.503
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-08-16 11:44:03.503
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+
+!ENTRY org.eclipse.jface 2 0 2022-08-16 11:44:04.650
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-08-16 11:44:04.650
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@11fb1691,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1f229c40,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-08-16 11:44:08.401
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-08-16 11:44:08.402
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@594a195d[org.springframework.tooling.boot.ls:1.38.0.202208110704(id=567)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-08-16 11:44:08.404
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-08-16 11:44:09.235
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Unie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-08-16 11:44:11.762
+!MESSAGE Boot LS startup time from start to initialized: 3351ms
+
+!ENTRY org.eclipse.ui 2 2 2022-08-16 11:45:16.660
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)

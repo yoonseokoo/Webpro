@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.lec.divvyup.dao.GroupsDao">
+	<resultMap type="Groups" id="GroupsResult">
+		<result property="gid" column="gid"/>
+		<result property="gname" column="gname"/>
+		<result property="grdate" column="grdate"/>
+		<result property="gimg" column="gimg"/>
+		<result property="gcontent" column="gcontent"/>
+		<result property="mid" column="mid"/>
+	</resultMap>
+
+
+	<select id="groupList" resultType="Groups" parameterType="Groups">
+            <![CDATA[
+            SELECT * FROM (SELECT ROWNUM RN, A.* 
+            FROM (SELECT * FROM GROUPS WHERE (GID IN(SELECT GID FROM GROUPDETAIL WHERE MID=#{mid})) OR (GID IN(SELECT GID FROM GROUPS WHERE MID=#{mid}))	 ORDER BY GRDATE DESC) A)
+            WHERE RN BETWEEN #{startRow} AND #{endRow}
+            ]]>
+	</select>
+	
+	<select id="countGroups" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM GROUPS WHERE (GID IN(SELECT GID FROM GROUPDETAIL WHERE MID=#{mid})) OR (GID IN(SELECT GID FROM GROUPS WHERE MID=#{mid}))		
+
+	</select>
+	
+	<select id="groupInfo" parameterType="int" resultType="Groups">
+		SELECT * FROM GROUPS WHERE GID =  #{gid}
+	</select>
+	
+	<select id="nextGid" parameterType="int" resultType="int">
+		SELECT NVL((MAX(GID)+1),1) FROM GROUPS
+	</select>
+	
+	<select id="followList" parameterType="String" resultType="String">
+		SELECT TO_MID FROM FOLLOW WHERE FROM_MID= #{mid}
+	</select>
+
+	<insert id="groupInsert" parameterType="Groups">
+		<if test="gimg==''">
+			INSERT INTO GROUPS (GID, GNAME, GCONTENT, MID)
+				VALUES (GROUPS_SEQ.NEXTVAL, #{gname}, #{gcontent}, #{mid})
+		</if>
+		<if test="gimg!=''">
+			INSERT INTO GROUPS (GID, GNAME, GIMG, GCONTENT, MID)
+   				VALUES (GROUPS_SEQ.NEXTVAL, #{gname}, #{gimg} , #{gcontent}, #{mid})
+		</if>
+	</insert>
+	
+	<update id="modify" parameterType="Groups">
+		UPDATE GROUPS SET
+			GNAME=#{gname},
+			<if test="gimg != null and gimg!=''">GIMG=#{gimg},</if>
+			GCONTENT=#{gcontent}
+			WHERE GID=#{gid}
+	</update>
+	
+	<delete id="finalStepDeleteGroup" parameterType="int">
+		DELETE FROM GROUPS WHERE GID=#{gid}
+	</delete>
+
+	<select id="groupListforAdminSearch" resultType="Groups" parameterType="String">
+		SELECT * FROM GROUPS WHERE MID = #{mid} ORDER BY GRDATE DESC
+	</select>
+
+	
+</mapper>

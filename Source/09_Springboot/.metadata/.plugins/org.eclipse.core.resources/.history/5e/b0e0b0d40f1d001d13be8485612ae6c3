@@ -1,0 +1,5 @@
+package com.lec.hello.controller;
+
+public class HelloController {
+
+}
