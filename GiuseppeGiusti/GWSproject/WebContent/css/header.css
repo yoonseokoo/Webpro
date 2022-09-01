@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+	*{
+		padding:0; margin: 0;
+ 		font-family: 'Noto Serif KR', serif;
+	}
+	header {
+		opacity:0.5;
+	}
+	header {
+		padding-top:10px;
+		opacity:1;
+	}
+	header a {
+		text-decoration: none; 
+	}
+	header li {
+		list-style: none;
+	}
+	header .gnb1, .gnb2{
+		width: 100%;
+		padding-top:5px;
+	} 
+	header .gnb1 ul,  header .gnb2 ul{
+		overflow: hidden;
+		line-height: 25px;
+		height: 25px;
+		margin: 0 auto;
+	}
+	
+	header .gnb1 ul li{
+		float: right;
+		margin-left: 50px;
+	}
+	header .gnb1 ul li:nth-child(1){
+		margin-right: 50px;
+	}
+	header .gnb2 ul li:nth-child(1) {
+		float: left;
+		margin-right: 50px;
+		margin-left: 50px;
+	}
+	header .gnb2 ul li:nth-child(2) {
+		float: left;
+		margin-right: 50px;
+	}
+	header .gnb2 ul li:nth-child(3) {
+		float: right;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	header .gnb2 ul li:nth-child(4) {
+		float: right;
+		margin-left: 50px;
+	}
+	header .gnb2 ul li:nth-child(5) {
+		float: right;
+		margin-left: 50px;
+	}
+	header .gnb2 ul li:nth-child(6) {
+		float: right;
+		margin-left: 50px;
+	}
+	header .gnb1 a , .gnb2 a { 
+		color:black;
+		display: block;
+		padding-left:10px;
+		padding-right:10px;
+	}
+	header .logo{
+		height:110px;
+		text-align:center;
+		cursor: pointer;
+	}
+	header .logo img{
+		height:110px;
+		width:auto;
+	}
+	header .lnb {
+		width:100%;
+		display:flex;
+		justify-content:center;
+	}
+	header .lnb ul{
+		overflow: hidden;
+		height: 70px;
+		line-height: 70px;
+		margin: 0 auto;
+		display: flex;
+
+	}
+	header .lnb ul li{
+		float: left;
+		color:black;
+	}
+	
+	li a:HOVER{
+		 cursor: pointer;
+		 color:grey;
+	}
+	header .lnb a {
+		display: block;
+		padding-left:40px;
+		padding-right:40px;
+		color: black;
+	}
+	
+	.gnb ul li:last-child{
+		left:15px;
+	}
+	#header_up .searchBtn{
+		border:none;
+		outline:none;
+		font-size:1em;
+		background-color:white;
+		color:black;
+	}
+	#header_up .searchBtn:HOVER{
+		cursor: pointer;
+		 color:grey;
+	}
+	#header_up .searchInput{
+		margin-right:15px; 
+		border:none; 
+		width:150px; 
+		outline: none; 
+		border-bottom:1px solid grey;
+		text-align:right;
+	}
+
+	

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+ * {
+ 	font-family: 'Noto Serif KR', serif;
+ }
+	#mainForm_wrap1{
+		justify-content:center;
+		display:inline-block;
+		position:relative;
+		width:100%;
+		overflow:hidden;
+		text-align:center;
+	}
+	
+	#mainForm_wrap1 img{
+		margin: 0 auto;
+		float:left;
+		width:100%;
+		z-index:-100;
+	}
+
+	#mainForm_wrap2 {
+		padding: 50px 0;
+	}
+	#mainForm_wrap2 h1 {
+		display: flex;
+        flex-direction: row;
+    }
+          
+    #mainForm_wrap2 h1:before, h1:after {
+		content: "";
+        flex: 1 1;
+        border-bottom: 1px solid #000;
+        margin: auto;
+    }
+    #mainForm_wrap2 img {
+        height: 80px;
+        width: auto;
+        border-radius: 50%;
+    }
+    #mainForm_wrap3 {
+        margin: 0 auto;
+		justify-content:center;
+		width:30%;
+		text-align:center;
+		color: black;
+		height:300px;
+    }
+    #mainForm_wrap3 a{
+		color: black;
+    }
+
+
+
+	
+	
+	
+	
+	
